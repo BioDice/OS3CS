@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OS3Server", "OS3Server\OS3Server.vcxproj", "{810D49C9-509A-4096-B7B4-F4A9A5B4FF56}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OS3Client", "OS3Client\OS3Client.vcxproj", "{87E48C41-868B-4B3D-9888-3CBE92F95D70}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{810D49C9-509A-4096-B7B4-F4A9A5B4FF56}.Debug|Win32.ActiveCfg = Debug|Win32
+		{810D49C9-509A-4096-B7B4-F4A9A5B4FF56}.Debug|Win32.Build.0 = Debug|Win32
+		{810D49C9-509A-4096-B7B4-F4A9A5B4FF56}.Release|Win32.ActiveCfg = Release|Win32
+		{810D49C9-509A-4096-B7B4-F4A9A5B4FF56}.Release|Win32.Build.0 = Release|Win32
+		{87E48C41-868B-4B3D-9888-3CBE92F95D70}.Debug|Win32.ActiveCfg = Debug|Win32
+		{87E48C41-868B-4B3D-9888-3CBE92F95D70}.Debug|Win32.Build.0 = Debug|Win32
+		{87E48C41-868B-4B3D-9888-3CBE92F95D70}.Release|Win32.ActiveCfg = Release|Win32
+		{87E48C41-868B-4B3D-9888-3CBE92F95D70}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
