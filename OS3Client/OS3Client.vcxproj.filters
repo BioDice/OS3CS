@@ -36,6 +36,9 @@
     <ClInclude Include="..\Shared\SocketException.h">
       <Filter>Header Files\Shared</Filter>
     </ClInclude>
+    <ClInclude Include="Client.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -45,5 +48,8 @@
       <Filter>Source Files\Shared</Filter>
     </ClCompile>
     <ClCompile Include="OS3Client.cpp" />
+    <ClCompile Include="Client.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
