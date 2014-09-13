@@ -19,6 +19,12 @@
     <Filter Include="Source Files\Shared">
       <UniqueIdentifier>{f02e1514-bec1-4ce3-8428-f7320aca7a65}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Commands">
+      <UniqueIdentifier>{33787180-22bb-49f3-b46b-e5535177e5ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Commands">
+      <UniqueIdentifier>{49f726dc-93a4-432a-9ed9-3f72a55e5ad7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />

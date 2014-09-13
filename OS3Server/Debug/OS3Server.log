@@ -1,16 +1,16 @@
-﻿Build started 30-8-2014 3:38:01.
-     1>Project "C:\Users\Martijn\Documents\Visual Studio 2012\Projects\OS3CS\OS3Server\OS3Server.vcxproj" on node 2 (Build target(s)).
+﻿Build started 13-9-2014 13:52:59.
+     1>Project "C:\Users\Martijn\Documents\GitHub\OS3CS\OS3Server\OS3Server.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         G:\Visual Studio 2012\VC\bin\CL.exe /c /I"G:\Visual Leak Detector\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt OS3Server.cpp
-         OS3Server.cpp
+         G:\Visual Studio 2012\VC\bin\CL.exe /c /I"G:\Visual Leak Detector\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt Server.cpp
+         Server.cpp
        Link:
-         G:\Visual Studio 2012\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Martijn\Documents\Visual Studio 2012\Projects\OS3CS\Debug\OS3Server.exe" /INCREMENTAL /NOLOGO /LIBPATH:"G:\Visual Leak Detector\lib\Win32" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Martijn\Documents\Visual Studio 2012\Projects\OS3CS\Debug\OS3Server.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Martijn\Documents\Visual Studio 2012\Projects\OS3CS\Debug\OS3Server.lib" /MACHINE:X86 Debug\Socket.obj
+         G:\Visual Studio 2012\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Martijn\Documents\GitHub\OS3CS\Debug\OS3Server.exe" /INCREMENTAL /NOLOGO /LIBPATH:"G:\Visual Leak Detector\lib\Win32" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Martijn\Documents\GitHub\OS3CS\Debug\OS3Server.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Martijn\Documents\GitHub\OS3CS\Debug\OS3Server.lib" /MACHINE:X86 Debug\Socket.obj
          Debug\OS3Server.obj
          Debug\Server.obj
          Debug\stdafx.obj
-         OS3Server.vcxproj -> C:\Users\Martijn\Documents\Visual Studio 2012\Projects\OS3CS\Debug\OS3Server.exe
-     1>Done Building Project "C:\Users\Martijn\Documents\Visual Studio 2012\Projects\OS3CS\OS3Server\OS3Server.vcxproj" (Build target(s)).
+         OS3Server.vcxproj -> C:\Users\Martijn\Documents\GitHub\OS3CS\Debug\OS3Server.exe
+     1>Done Building Project "C:\Users\Martijn\Documents\GitHub\OS3CS\OS3Server\OS3Server.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:01.04
+Time Elapsed 00:00:01.08

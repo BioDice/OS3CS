@@ -13,6 +13,6 @@ namespace OS3CS
 		~Server(void);
 
 		void handle(Socket *socket);
-		void listen(string adress, int port);
+		void listen(int port);
 	};
 }
