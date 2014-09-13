@@ -1,12 +1,11 @@
-#include "stdafx.h"
 #include "Client.h"
-#include "../shared/Socket.h"
+
+using namespace std;
 
 namespace OS3CS
 {
     Client::Client(void)
     {
-
     }
 
 
@@ -14,31 +13,45 @@ namespace OS3CS
     {
     }
 
-    void Client::connect(const char* adress, int port)
+	void Client::listenToSocket(Socket* socket)
     {
-        Socket * s = NULL;
+        char line[256 + 1];
 
-        try
-        {
-            s = new ClientSocket(adress,port);
-        }
-        catch (runtime_error& ex)
-        {
-            delete s;
-            throw(ex);
-        }
-        listenToSocket(s);
-        cout << "Created ClientSocket";
-        delete s;
-    }
-
-    void Client::listenToSocket(Socket* socket)
-    {
-        char line[30 + 1];
-
-        while (socket->readline(line, 30) > 0)
+        while (socket->readline(line, 256) > 0 )
         {
             cout << line << endl;
         }
+    }
+
+    void Client::connect(const char* adress, int port)
+    {
+        Socket * socket = NULL;
+
+        try
+        {
+            socket = new ClientSocket(adress,port);
+        }
+        catch (runtime_error& ex)
+        {
+            delete socket;
+            throw(ex);
+        }
+
+        listenToSocket(socket);
+
+		string socketLine;
+
+		while(getline(cin,socketLine))
+		{
+			if(socketLine.size()==0)
+				continue;
+			
+			socket->writeline(socketLine);
+			
+			//cout << socketLine << endl;
+		}
+        cout << "Created ClientSocket";
+		socket->close();
+        delete socket;
     }
 }

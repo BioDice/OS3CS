@@ -25,8 +25,6 @@ namespace OS3CS
 				vector<string> command = vector<string>();
 				cout << response;
 				StrSplit(response, " ", command);
-
-
 			}
 		}
 		catch (SocketException& ex)
