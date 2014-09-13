@@ -17,21 +17,35 @@ namespace OS3CS
 	{
 		char response[257];
 		cout << "Client connected!\r\n";
-		socket->write("Yo");
+		socket->writeline("Welcome to this ultra pro *cough* Server");
+		socket->write("\n");
 		try
 		{
 			while (socket->readline(response, 256) > 0)
 			{
-				vector<string> command = vector<string>();
+				vector<string> input = vector<string>();
 				cout << response;
-				StrSplit(response, " ", command);
+				StrSplit(response, input, ' ');
 
+				// Converts the characters to lower case
+				for (int i = 0; i < input[0].length(); i++)
+						input[0][i] = tolower(input[0][i]);
 
+				if (input[0] == "info")
+				{
+					socket->writeline("Craptastic Server\r\nVersion: -0.1\r\n");
+				}
+				else if (input[0] == "exit")
+				{
+					socket->writeline("Thank you for using Craptastic Server\r\nWe hope we never see you again. BYE!");
+					socket->close();
+					break;
+				}
 			}
 		}
 		catch (SocketException& ex)
 		{
-			cout << "Socket exception occured" << endl;
+			cout << "Socket exception occured: " << endl;
 		}
 	}
 
