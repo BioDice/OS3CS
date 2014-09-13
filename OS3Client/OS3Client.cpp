@@ -12,8 +12,8 @@ void getConnectionDetails(Client& client)
 	string str = "84.105.106.236";
 	char *adress = (char*)str.c_str();
 	client.connect(adress,100);
-}
 
+}
 int main()
 {
 	Client client = Client();
