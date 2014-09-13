@@ -3,8 +3,7 @@
 #include <string>
 #include "../Shared/Socket.h"
 #include "Globals.h"
-#include "../Shared/SocketException.h"
-
+#include "SocketException.h"
 using namespace std;
 
 namespace OS3CS

@@ -213,3 +213,22 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
+*.filters
+*.vcxproj
+*.pdb
+*.idb
+*.obj
+*.pch
+*.log
+*.lastbuildstate
+*.log
+*.tlog
+*.suo
+*.sdf
+*.pdb
+*.idb
+*.pch
+*.exe
+*.ilk
+*.ilk
+*.exe
