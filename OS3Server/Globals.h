@@ -2,11 +2,12 @@
 
 #include <string>
 #include <vector>
-#include <iostream>
+#include <sstream>
 
 using namespace std;
 
 namespace OS3CS
 {
-	void StrSplit(string value, string del, vector<string> &arr);
+	void StrSplit(string str, vector<string> &tokens, char delim);
+	void StrSplit(string str, vector<string> &tokens, char delim, int iLimit);
 }

@@ -3,18 +3,36 @@
 
 namespace OS3CS
 {
-	void StrSplit(string value, string del, vector<string> &arr)
+	void StrSplit(string str, vector<string> &tokens, char delim)
 	{
-		string delimiter = del;
+		string buf;
+		stringstream ss(str); // Insert the string into a stream
 
-		size_t pos = 0;
-		string token;
-		while ((pos = value.find(delimiter)) != string::npos) {
-			token = value.substr(0, pos);
-			cout << token << endl;
-			value.erase(0, pos + delimiter.length());
-			arr.push_back(token);
+		while (getline(ss, buf, delim))
+			tokens.push_back(buf);
+	}
+
+
+	void StrSplit(string str, vector<string> &tokens, char delim, int iLimit)
+	{
+		string buf;
+		stringstream ss(str); // Insert the string into a stream
+		
+		int iCount = 0;
+		
+		while (getline(ss, buf, delim))
+		{
+			tokens.push_back(buf);
+			iCount++;
+
+			if (iCount == iLimit - 1)
+			{
+				getline(ss, buf, '\0');
+				tokens.push_back(buf);
+				break;
+			}
+
+			
 		}
-		cout << value << endl;
 	}
 }
