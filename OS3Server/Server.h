@@ -2,6 +2,8 @@
 
 #include <string>
 #include "../Shared/Socket.h"
+#include "Globals.h"
+#include "SocketException.h"
 using namespace std;
 
 namespace OS3CS

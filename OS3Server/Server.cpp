@@ -16,12 +16,22 @@ namespace OS3CS
 	void Server::handle(Socket *socket)
 	{
 		char response[257];
-		cout << "Client connected!";
+		cout << "Client connected!\r\n";
 		socket->write("Yo");
-
-		while (socket->readline(response, 256) > 0)
+		try
 		{
-			cout << response;
+			while (socket->readline(response, 256) > 0)
+			{
+				vector<string> command = vector<string>();
+				cout << response;
+				StrSplit(response, " ", command);
+
+
+			}
+		}
+		catch (SocketException& ex)
+		{
+			cout << "Socket exception occured" << endl;
 		}
 	}
 
@@ -29,17 +39,17 @@ namespace OS3CS
 	{
 		ServerSocket serverSocket(port);
 
-		cout << "Server is listening..";
+		cout << "Server is listening..\r\n";
 
 		while (Socket *socket = serverSocket.accept())
 		{
-			cout << "New connection established..";
+			cout << "New connection established..\r\n";
 
 			this->handle(socket);
 
 			delete socket;
 
-			cout << "Server is listening..";
+			cout << "Server is listening..\r\n";
 		}
 	}
 }
