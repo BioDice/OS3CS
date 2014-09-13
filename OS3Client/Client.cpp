@@ -34,9 +34,9 @@ namespace OS3CS
 
     void Client::listenToSocket(Socket* socket)
     {
-        char line[256 + 1];
+        char line[30 + 1];
 
-        while (socket->readline(line, 256) > 0)
+        while (socket->readline(line, 30) > 0)
         {
             cout << line << endl;
         }
