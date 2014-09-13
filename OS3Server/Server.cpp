@@ -26,7 +26,6 @@ namespace OS3CS
 				cout << response;
 				StrSplit(response, " ", command);
 
-
 			}
 		}
 		catch (SocketException& ex)
