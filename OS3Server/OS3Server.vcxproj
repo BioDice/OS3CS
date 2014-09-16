@@ -19,7 +19,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v110</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -82,6 +82,7 @@
     <ClInclude Include="..\Shared\InfoInputHandler.h" />
     <ClInclude Include="..\Shared\InputFactory.h" />
     <ClInclude Include="..\Shared\InputHandler.h" />
+    <ClInclude Include="..\Shared\QuitInputHandler.h" />
     <ClInclude Include="..\Shared\Socket.h" />
     <ClInclude Include="..\Shared\SocketException.h" />
     <ClInclude Include="Globals.h" />
@@ -93,6 +94,7 @@
     <ClCompile Include="..\Shared\InfoInputHandler.cpp" />
     <ClCompile Include="..\Shared\InputFactory.cpp" />
     <ClCompile Include="..\Shared\InputHandler.cpp" />
+    <ClCompile Include="..\Shared\QuitInputHandler.cpp" />
     <ClCompile Include="..\Shared\Socket.cpp" />
     <ClCompile Include="Globals.cpp" />
     <ClCompile Include="OS3Server.cpp" />

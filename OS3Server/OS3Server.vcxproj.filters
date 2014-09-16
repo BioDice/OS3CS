@@ -63,6 +63,9 @@
     <ClInclude Include="..\Shared\InfoInputHandler.h">
       <Filter>Header Files\Shared\Commands\Handlers</Filter>
     </ClInclude>
+    <ClInclude Include="..\Shared\QuitInputHandler.h">
+      <Filter>Header Files\Shared\Commands\Handlers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -85,6 +88,9 @@
       <Filter>Source Files\Shared\Commands</Filter>
     </ClCompile>
     <ClCompile Include="..\Shared\InfoInputHandler.cpp">
+      <Filter>Source Files\Shared\Commands\Handlers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Shared\QuitInputHandler.cpp">
       <Filter>Source Files\Shared\Commands\Handlers</Filter>
     </ClCompile>
   </ItemGroup>

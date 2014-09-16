@@ -4,6 +4,7 @@
 #include <string>
 #include "InputHandler.h"
 #include "InfoInputHandler.h"
+#include "QuitInputHandler.h"
 
 using namespace std;
 

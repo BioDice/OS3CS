@@ -75,7 +75,7 @@ namespace OS3CS
 			this->handle(socket);
 
 			delete socket;
-
+			cout << "Client is disconnected\r\n";
 			cout << "Server is listening..\r\n";
 		}
 	}

@@ -17,7 +17,9 @@ namespace OS3CS
 	void InputFactory::Initialize()
 	{
 		InfoInputHandler *info = new InfoInputHandler();
+		QuitInputHandler *quit = new QuitInputHandler();
 		commands["info"] = info;
+		commands["quit"] = quit;
 	}
 
 	InputHandler* InputFactory::CreateHandler(string input)
