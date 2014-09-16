@@ -5,7 +5,8 @@ namespace OS3CS
 {
 	Server::Server(void)
 	{
-
+		inputFactory = InputFactory();
+		inputFactory.Initialize();
 	}
 
 	Server::~Server(void)
@@ -30,7 +31,7 @@ namespace OS3CS
 				// Converts the characters to lower case
 				for (int i = 0; i < input[0].length(); i++)
 						input[0][i] = tolower(input[0][i]);
-
+				
 				InputHandler *inputHandler = InputFactory::CreateHandler(input[0]);
 				if (inputHandler != NULL)
 				{
@@ -38,8 +39,8 @@ namespace OS3CS
 				}
 				else
 				{
-					cout << "Unknown Command";
-					socket->writeline("Unknown Command");
+					cout << " - Unknown Command\r\n";
+					socket->writeline("Unknown Command\r\n");
 				}
 				/*
 				if (input[0] == "info")
@@ -51,7 +52,8 @@ namespace OS3CS
 					socket->writeline("Thank you for using Craptastic Server\r\nWe hope we never see you again. BYE!");
 					socket->close();
 					break;
-				}*/
+				}
+				*/
 			}
 		}
 		catch (SocketException& ex)

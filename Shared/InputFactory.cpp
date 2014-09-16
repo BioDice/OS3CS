@@ -4,7 +4,6 @@ namespace OS3CS
 {
 	InputFactory::InputFactory()
 	{
-		
 
 	}
 

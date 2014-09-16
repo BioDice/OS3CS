@@ -21,22 +21,35 @@ namespace OS3CS
         try
         {
             s = new ClientSocket(adress,port);
-        }
-        catch (runtime_error& ex)
-        {
-            delete s;
-            throw(ex);
-        }
-        listenToSocket(s);
-        cout << "Created ClientSocket";
-        delete s;
+			cout << "Created ClientSocket\r\n";
+		
+			listenToSocket(s);
+        
+			string szLine;
+			char response[256];
+			while (getline(cin, szLine))
+			{
+				s->writeline(szLine);
+				while (s->readline(response, 256) > 0)
+				{
+					cout << response << endl;
+				}
+			}
+
+			delete s;
+		}
+		catch (runtime_error& ex)
+		{
+			delete s;
+			throw(ex);
+		}
     }
 
     void Client::listenToSocket(Socket* socket)
     {
-        char line[30 + 1];
+        char line[256 + 1];
 
-        while (socket->readline(line, 30) > 0)
+        while (socket->readline(line, 257) > 0)
         {
             cout << line << endl;
         }

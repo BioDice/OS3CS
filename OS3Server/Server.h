@@ -12,11 +12,15 @@ namespace OS3CS
 {
 	class Server
 	{
+	private:
+		InputFactory inputFactory;
+
 	public:
 		Server(void);
 		~Server(void);
 
 		void handle(Socket *socket);
 		void listen(int port);
+
 	};
 }

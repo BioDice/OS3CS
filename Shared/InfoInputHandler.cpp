@@ -13,7 +13,7 @@ namespace OS3CS
 
 	void InfoInputHandler::Process(Socket* socket)
 	{
-		socket->writeline("Test");
+		socket->write("Test");
 		socket->writeline("");
 	}
 
