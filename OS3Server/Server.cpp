@@ -31,6 +31,17 @@ namespace OS3CS
 				for (int i = 0; i < input[0].length(); i++)
 						input[0][i] = tolower(input[0][i]);
 
+				InputHandler *inputHandler = InputFactory::CreateHandler(input[0]);
+				if (inputHandler != NULL)
+				{
+					inputHandler->Process(socket);
+				}
+				else
+				{
+					cout << "Unknown Command";
+					socket->writeline("Unknown Command");
+				}
+				/*
 				if (input[0] == "info")
 				{
 					socket->writeline("Craptastic Server\r\nVersion: -0.1\r\n");
@@ -40,7 +51,7 @@ namespace OS3CS
 					socket->writeline("Thank you for using Craptastic Server\r\nWe hope we never see you again. BYE!");
 					socket->close();
 					break;
-				}
+				}*/
 			}
 		}
 		catch (SocketException& ex)
