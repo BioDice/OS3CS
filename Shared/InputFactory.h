@@ -11,7 +11,7 @@
 #include "QuitInputHandler.h"
 #include "RenInputHandler.h"
 #include "SyncInputHandler.h"
-#include "ResponseInputHandler.h"
+#include "RespInputHandler.h"
 
 using namespace std;
 

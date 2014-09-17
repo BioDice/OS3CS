@@ -22,7 +22,7 @@ namespace OS3CS
 		QuitInputHandler *quit = new QuitInputHandler();
 		RenInputHandler *ren = new RenInputHandler();
 		SyncInputHandler *sync = new SyncInputHandler();
-		ResponseInputHandler *resp = new ResponseInputHandler();
+		RespInputHandler *resp = new RespInputHandler();
 		commands["dir"] = dir;
 		commands["get"] = get;
 		commands["put"] = put;
@@ -46,6 +46,7 @@ namespace OS3CS
 		commands["get"] = get;
 		commands["info"] = info;
 		commands["put"] = put;
+		commands["quit"] = quit;
 		commands["ren"] = ren;
 		commands["sync"] = sync;
 	}

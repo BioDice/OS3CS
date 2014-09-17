@@ -89,6 +89,7 @@
     <ClInclude Include="..\Shared\PutInputHandler.h" />
     <ClInclude Include="..\Shared\QuitInputHandler.h" />
     <ClInclude Include="..\Shared\RenInputHandler.h" />
+    <ClInclude Include="..\Shared\RespInputHandler.h" />
     <ClInclude Include="..\Shared\Socket.h" />
     <ClInclude Include="..\Shared\SocketException.h" />
     <ClInclude Include="..\Shared\SyncInputHandler.h" />
@@ -107,6 +108,7 @@
     <ClCompile Include="..\Shared\PutInputHandler.cpp" />
     <ClCompile Include="..\Shared\QuitInputHandler.cpp" />
     <ClCompile Include="..\Shared\RenInputHandler.cpp" />
+    <ClCompile Include="..\Shared\RespInputHandler.cpp" />
     <ClCompile Include="..\Shared\Socket.cpp" />
     <ClCompile Include="..\Shared\SyncInputHandler.cpp" />
     <ClCompile Include="Client.cpp" />

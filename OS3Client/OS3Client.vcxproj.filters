@@ -84,6 +84,9 @@
     <ClInclude Include="..\Shared\SyncInputHandler.h">
       <Filter>Header Files\Shared\Commands\Handlers</Filter>
     </ClInclude>
+    <ClInclude Include="..\Shared\RespInputHandler.h">
+      <Filter>Header Files\Shared\Commands\Handlers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -127,6 +130,9 @@
       <Filter>Source Files\Shared\Commands\Handlers</Filter>
     </ClCompile>
     <ClCompile Include="..\Shared\SyncInputHandler.cpp">
+      <Filter>Source Files\Shared\Commands\Handlers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Shared\RespInputHandler.cpp">
       <Filter>Source Files\Shared\Commands\Handlers</Filter>
     </ClCompile>
   </ItemGroup>
