@@ -66,6 +66,24 @@
     <ClInclude Include="..\Shared\QuitInputHandler.h">
       <Filter>Header Files\Shared\Commands\Handlers</Filter>
     </ClInclude>
+    <ClInclude Include="..\Shared\DelInputHandler.h">
+      <Filter>Header Files\Shared\Commands\Handlers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Shared\DirInputHandler.h">
+      <Filter>Header Files\Shared\Commands\Handlers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Shared\GetInputHandler.h">
+      <Filter>Header Files\Shared\Commands\Handlers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Shared\PutInputHandler.h">
+      <Filter>Header Files\Shared\Commands\Handlers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Shared\RenInputHandler.h">
+      <Filter>Header Files\Shared\Commands\Handlers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Shared\SyncInputHandler.h">
+      <Filter>Header Files\Shared\Commands\Handlers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -91,6 +109,24 @@
       <Filter>Source Files\Shared\Commands\Handlers</Filter>
     </ClCompile>
     <ClCompile Include="..\Shared\QuitInputHandler.cpp">
+      <Filter>Source Files\Shared\Commands\Handlers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Shared\DelInputHandler.cpp">
+      <Filter>Source Files\Shared\Commands\Handlers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Shared\DirInputHandler.cpp">
+      <Filter>Source Files\Shared\Commands\Handlers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Shared\GetInputHandler.cpp">
+      <Filter>Source Files\Shared\Commands\Handlers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Shared\PutInputHandler.cpp">
+      <Filter>Source Files\Shared\Commands\Handlers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Shared\RenInputHandler.cpp">
+      <Filter>Source Files\Shared\Commands\Handlers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Shared\SyncInputHandler.cpp">
       <Filter>Source Files\Shared\Commands\Handlers</Filter>
     </ClCompile>
   </ItemGroup>
