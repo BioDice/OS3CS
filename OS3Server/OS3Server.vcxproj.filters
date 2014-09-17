@@ -51,9 +51,6 @@
     <ClInclude Include="Server.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Globals.h">
-      <Filter>Header Files\Shared</Filter>
-    </ClInclude>
     <ClInclude Include="..\Shared\InputFactory.h">
       <Filter>Header Files\Shared\Commands</Filter>
     </ClInclude>
@@ -84,6 +81,9 @@
     <ClInclude Include="..\Shared\SyncInputHandler.h">
       <Filter>Header Files\Shared\Commands\Handlers</Filter>
     </ClInclude>
+    <ClInclude Include="..\Shared\Globals.h">
+      <Filter>Header Files\Shared</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -95,9 +95,6 @@
     <ClCompile Include="OS3Server.cpp" />
     <ClCompile Include="Server.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Globals.cpp">
-      <Filter>Source Files\Shared</Filter>
     </ClCompile>
     <ClCompile Include="..\Shared\InputFactory.cpp">
       <Filter>Source Files\Shared\Commands</Filter>
@@ -128,6 +125,9 @@
     </ClCompile>
     <ClCompile Include="..\Shared\SyncInputHandler.cpp">
       <Filter>Source Files\Shared\Commands\Handlers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Shared\Globals.cpp">
+      <Filter>Source Files\Shared</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

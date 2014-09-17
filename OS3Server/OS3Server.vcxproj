@@ -19,7 +19,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v110</PlatformToolset>
+    <PlatformToolset>v120</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -82,6 +82,7 @@
     <ClInclude Include="..\Shared\DelInputHandler.h" />
     <ClInclude Include="..\Shared\DirInputHandler.h" />
     <ClInclude Include="..\Shared\GetInputHandler.h" />
+    <ClInclude Include="..\Shared\Globals.h" />
     <ClInclude Include="..\Shared\InfoInputHandler.h" />
     <ClInclude Include="..\Shared\InputFactory.h" />
     <ClInclude Include="..\Shared\InputHandler.h" />
@@ -91,7 +92,6 @@
     <ClInclude Include="..\Shared\Socket.h" />
     <ClInclude Include="..\Shared\SocketException.h" />
     <ClInclude Include="..\Shared\SyncInputHandler.h" />
-    <ClInclude Include="Globals.h" />
     <ClInclude Include="Server.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
@@ -100,6 +100,7 @@
     <ClCompile Include="..\Shared\DelInputHandler.cpp" />
     <ClCompile Include="..\Shared\DirInputHandler.cpp" />
     <ClCompile Include="..\Shared\GetInputHandler.cpp" />
+    <ClCompile Include="..\Shared\Globals.cpp" />
     <ClCompile Include="..\Shared\InfoInputHandler.cpp" />
     <ClCompile Include="..\Shared\InputFactory.cpp" />
     <ClCompile Include="..\Shared\InputHandler.cpp" />
@@ -108,7 +109,6 @@
     <ClCompile Include="..\Shared\RenInputHandler.cpp" />
     <ClCompile Include="..\Shared\Socket.cpp" />
     <ClCompile Include="..\Shared\SyncInputHandler.cpp" />
-    <ClCompile Include="Globals.cpp" />
     <ClCompile Include="OS3Server.cpp" />
     <ClCompile Include="Server.cpp" />
     <ClCompile Include="stdafx.cpp">

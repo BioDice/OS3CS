@@ -14,12 +14,40 @@ namespace OS3CS
 
 	InputFactory::ShizzleMap InputFactory::commands;
 
-	void InputFactory::Initialize()
+	void InputFactory::InitializeClient()
 	{
-		InfoInputHandler *info = new InfoInputHandler();
+		DirInputHandler *dir = new DirInputHandler();
+		GetInputHandler *get = new GetInputHandler();
+		PutInputHandler *put = new PutInputHandler();
 		QuitInputHandler *quit = new QuitInputHandler();
+		RenInputHandler *ren = new RenInputHandler();
+		SyncInputHandler *sync = new SyncInputHandler();
+		ResponseInputHandler *resp = new ResponseInputHandler();
+		commands["dir"] = dir;
+		commands["get"] = get;
+		commands["put"] = put;
+		commands["ren"] = ren;
+		commands["sync"] = sync;
+		commands["resp"] = resp;
+	}
+
+	void InputFactory::InitializeServer()
+	{
+		DelInputHandler *del = new DelInputHandler();
+		DirInputHandler *dir = new DirInputHandler();
+		GetInputHandler *get = new GetInputHandler();
+		InfoInputHandler *info = new InfoInputHandler();
+		PutInputHandler *put = new PutInputHandler();
+		QuitInputHandler *quit = new QuitInputHandler();
+		RenInputHandler *ren = new RenInputHandler();
+		SyncInputHandler *sync = new SyncInputHandler();
+		commands["del"] = del;
+		commands["dir"] = dir;
+		commands["get"] = get;
 		commands["info"] = info;
-		commands["quit"] = quit;
+		commands["put"] = put;
+		commands["ren"] = ren;
+		commands["sync"] = sync;
 	}
 
 	InputHandler* InputFactory::CreateHandler(string input)

@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "Client.h"
 #include "../shared/Socket.h"
 
@@ -6,7 +5,8 @@ namespace OS3CS
 {
     Client::Client(void)
     {
-
+		inputFactory = InputFactory();
+		inputFactory.InitializeClient();
     }
 
 
@@ -25,15 +25,30 @@ namespace OS3CS
 		
 			listenToSocket(s);
         
-			string szLine;
+			string input;
 			char response[256];
-			while (getline(cin, szLine))
+			while (getline(cin, input))
 			{
-				s->writeline(szLine);
+				vector<string> segments = vector<string>();
+				cout << response << endl;
+				StrSplit(response, segments, ' ');
+
+				// Converts the characters to lower case
+				for (int i = 0; i < segments[0].length(); i++)
+					segments[0][i] = tolower(segments[0][i]);
+
+				InputHandler *inputHandler = InputFactory::CreateHandler(segments[0]);
+				if (inputHandler != NULL)
+					inputHandler->Process(s);
+				else
+					InputFactory::CreateHandler("resp")->Process(s);
+				delete inputHandler;
+				/*
+				s->writeline(input);
 				while (s->readline(response, 256) > 0)
 				{
 					cout << response << endl;
-				}
+				}*/
 			}
 
 			delete s;

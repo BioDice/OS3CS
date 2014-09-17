@@ -6,7 +6,7 @@ namespace OS3CS
 	Server::Server(void)
 	{
 		inputFactory = InputFactory();
-		inputFactory.Initialize();
+		inputFactory.InitializeServer();
 	}
 
 	Server::~Server(void)
@@ -24,15 +24,15 @@ namespace OS3CS
 		{
 			while (socket->readline(response, 256) > 0)
 			{
-				vector<string> input = vector<string>();
-				cout << response;
-				StrSplit(response, input, ' ');
+				vector<string> segments = vector<string>();
+				cout << response << endl;
+				StrSplit(response, segments, ' ');
 
 				// Converts the characters to lower case
-				for (int i = 0; i < input[0].length(); i++)
-						input[0][i] = tolower(input[0][i]);
+				for (int i = 0; i < segments[0].length(); i++)
+					segments[0][i] = tolower(segments[0][i]);
 				
-				InputHandler *inputHandler = InputFactory::CreateHandler(input[0]);
+				InputHandler *inputHandler = InputFactory::CreateHandler(segments[0]);
 				if (inputHandler != NULL)
 				{
 					inputHandler->Process(socket);
@@ -42,18 +42,7 @@ namespace OS3CS
 					cout << " - Unknown Command\r\n";
 					socket->writeline("Unknown Command\r\n");
 				}
-				/*
-				if (input[0] == "info")
-				{
-					socket->writeline("Craptastic Server\r\nVersion: -0.1\r\n");
-				}
-				else if (input[0] == "exit")
-				{
-					socket->writeline("Thank you for using Craptastic Server\r\nWe hope we never see you again. BYE!");
-					socket->close();
-					break;
-				}
-				*/
+				delete inputHandler;
 			}
 		}
 		catch (SocketException& ex)

@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "Globals.h"
 
 namespace OS3CS

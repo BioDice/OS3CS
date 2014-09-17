@@ -2,7 +2,7 @@
 
 #include <string>
 #include "../Shared/Socket.h"
-#include "Globals.h"
+#include "../Shared/Globals.h"
 #include "../Shared/SocketException.h"
 #include "../Shared/InputHandler.h"
 #include "../Shared/InputFactory.h"
