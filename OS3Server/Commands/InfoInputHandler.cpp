@@ -13,7 +13,7 @@ namespace OS3CS
 
 	void InfoInputHandler::Process(Socket* socket, string response)
 	{
-		socket->writeline("Craptastic Server\r\nVersion: -0.1\r\n");
+		socket->writeline("Craptastic Server\r\nVersion: -0.1");
 		socket->writeline("");
 	}
 

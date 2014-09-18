@@ -29,7 +29,6 @@ namespace OS3CS
 			while (getline(cin, response))
 			{
 				vector<string> segments = vector<string>();
-				cout << response << endl;
 				StrSplit(response, segments, ' ');
 
 				// Converts the characters to lower case

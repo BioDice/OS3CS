@@ -25,7 +25,7 @@ namespace OS3CS
 			while (socket->readline(response, 256) > 0)
 			{
 				vector<string> segments = vector<string>();
-				cout << response << endl;
+				
 				StrSplit(response, segments, ' ');
 
 				// Converts the characters to lower case
@@ -34,11 +34,16 @@ namespace OS3CS
 				
 				InputHandler *inputHandler = inputFactory->CreateHandler(segments[0]);
 				if (inputHandler != NULL)
+				{
+					cout << response << endl;
 					inputHandler->Process(socket, response);
+				}
 				else
 				{
-					cout << " - Unknown Command\r\n";
-					socket->writeline("Unknown Command\r\n");
+					ostringstream resp;
+					resp << response << " - Unknown Command\r\n";
+					cout << resp.str();
+					socket->writeline(resp.str());
 				}
 				delete inputHandler;
 			}
