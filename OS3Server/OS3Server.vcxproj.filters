@@ -19,17 +19,11 @@
     <Filter Include="Source Files\Shared">
       <UniqueIdentifier>{f02e1514-bec1-4ce3-8428-f7320aca7a65}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Shared\Commands">
+    <Filter Include="Header Files\Shared\Handlers">
       <UniqueIdentifier>{33787180-22bb-49f3-b46b-e5535177e5ab}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Shared\Commands">
+    <Filter Include="Source Files\Shared\Handlers">
       <UniqueIdentifier>{49f726dc-93a4-432a-9ed9-3f72a55e5ad7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Shared\Commands\Handlers">
-      <UniqueIdentifier>{55698e68-caaa-4ebc-94a9-2a95c2ccb71a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Shared\Commands\Handlers">
-      <UniqueIdentifier>{6b131b3c-18a9-4513-9cf8-9151f4869fa4}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -51,41 +45,41 @@
     <ClInclude Include="Server.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\Shared\InputFactory.h">
-      <Filter>Header Files\Shared\Commands</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Shared\InputHandler.h">
-      <Filter>Header Files\Shared\Commands</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Shared\InfoInputHandler.h">
-      <Filter>Header Files\Shared\Commands\Handlers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Shared\QuitInputHandler.h">
-      <Filter>Header Files\Shared\Commands\Handlers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Shared\DelInputHandler.h">
-      <Filter>Header Files\Shared\Commands\Handlers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Shared\DirInputHandler.h">
-      <Filter>Header Files\Shared\Commands\Handlers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Shared\GetInputHandler.h">
-      <Filter>Header Files\Shared\Commands\Handlers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Shared\PutInputHandler.h">
-      <Filter>Header Files\Shared\Commands\Handlers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Shared\RenInputHandler.h">
-      <Filter>Header Files\Shared\Commands\Handlers</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Shared\SyncInputHandler.h">
-      <Filter>Header Files\Shared\Commands\Handlers</Filter>
-    </ClInclude>
     <ClInclude Include="..\Shared\Globals.h">
       <Filter>Header Files\Shared</Filter>
     </ClInclude>
-    <ClInclude Include="..\Shared\RespInputHandler.h">
-      <Filter>Header Files\Shared\Commands\Handlers</Filter>
+    <ClInclude Include="ServerFactory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Shared\InputHandler.h">
+      <Filter>Header Files\Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Shared\InputFactory.h">
+      <Filter>Header Files\Shared</Filter>
+    </ClInclude>
+    <ClInclude Include="Commands\DelInputHandler.h">
+      <Filter>Header Files\Shared\Handlers</Filter>
+    </ClInclude>
+    <ClInclude Include="Commands\DirInputHandler.h">
+      <Filter>Header Files\Shared\Handlers</Filter>
+    </ClInclude>
+    <ClInclude Include="Commands\GetInputHandler.h">
+      <Filter>Header Files\Shared\Handlers</Filter>
+    </ClInclude>
+    <ClInclude Include="Commands\InfoInputHandler.h">
+      <Filter>Header Files\Shared\Handlers</Filter>
+    </ClInclude>
+    <ClInclude Include="Commands\PutInputHandler.h">
+      <Filter>Header Files\Shared\Handlers</Filter>
+    </ClInclude>
+    <ClInclude Include="Commands\QuitInputHandler.h">
+      <Filter>Header Files\Shared\Handlers</Filter>
+    </ClInclude>
+    <ClInclude Include="Commands\RenFInputHandler.h">
+      <Filter>Header Files\Shared\Handlers</Filter>
+    </ClInclude>
+    <ClInclude Include="Commands\SyncInputHandler.h">
+      <Filter>Header Files\Shared\Handlers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -99,41 +93,41 @@
     <ClCompile Include="Server.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\Shared\InputFactory.cpp">
-      <Filter>Source Files\Shared\Commands</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Shared\InputHandler.cpp">
-      <Filter>Source Files\Shared\Commands</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Shared\InfoInputHandler.cpp">
-      <Filter>Source Files\Shared\Commands\Handlers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Shared\QuitInputHandler.cpp">
-      <Filter>Source Files\Shared\Commands\Handlers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Shared\DelInputHandler.cpp">
-      <Filter>Source Files\Shared\Commands\Handlers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Shared\DirInputHandler.cpp">
-      <Filter>Source Files\Shared\Commands\Handlers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Shared\GetInputHandler.cpp">
-      <Filter>Source Files\Shared\Commands\Handlers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Shared\PutInputHandler.cpp">
-      <Filter>Source Files\Shared\Commands\Handlers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Shared\RenInputHandler.cpp">
-      <Filter>Source Files\Shared\Commands\Handlers</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Shared\SyncInputHandler.cpp">
-      <Filter>Source Files\Shared\Commands\Handlers</Filter>
-    </ClCompile>
     <ClCompile Include="..\Shared\Globals.cpp">
       <Filter>Source Files\Shared</Filter>
     </ClCompile>
-    <ClCompile Include="..\Shared\RespInputHandler.cpp">
-      <Filter>Source Files\Shared\Commands\Handlers</Filter>
+    <ClCompile Include="ServerFactory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Shared\InputFactory.cpp">
+      <Filter>Source Files\Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Shared\InputHandler.cpp">
+      <Filter>Source Files\Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="Commands\DelInputHandler.cpp">
+      <Filter>Source Files\Shared\Handlers</Filter>
+    </ClCompile>
+    <ClCompile Include="Commands\DirInputHandler.cpp">
+      <Filter>Source Files\Shared\Handlers</Filter>
+    </ClCompile>
+    <ClCompile Include="Commands\GetInputHandler.cpp">
+      <Filter>Source Files\Shared\Handlers</Filter>
+    </ClCompile>
+    <ClCompile Include="Commands\InfoInputHandler.cpp">
+      <Filter>Source Files\Shared\Handlers</Filter>
+    </ClCompile>
+    <ClCompile Include="Commands\PutInputHandler.cpp">
+      <Filter>Source Files\Shared\Handlers</Filter>
+    </ClCompile>
+    <ClCompile Include="Commands\QuitInputHandler.cpp">
+      <Filter>Source Files\Shared\Handlers</Filter>
+    </ClCompile>
+    <ClCompile Include="Commands\RenFInputHandler.cpp">
+      <Filter>Source Files\Shared\Handlers</Filter>
+    </ClCompile>
+    <ClCompile Include="Commands\SyncInputHandler.cpp">
+      <Filter>Source Files\Shared\Handlers</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

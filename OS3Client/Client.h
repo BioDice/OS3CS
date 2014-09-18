@@ -6,6 +6,7 @@
 #include "../Shared/SocketException.h"
 #include "../Shared/InputHandler.h"
 #include "../Shared/InputFactory.h"
+#include "ClientFactory.h"
 using namespace std;
 
 namespace OS3CS
@@ -13,7 +14,7 @@ namespace OS3CS
     class Client
     {
 	private:
-		InputFactory inputFactory;
+		InputFactory *inputFactory;
 
     public:
         Client(void);

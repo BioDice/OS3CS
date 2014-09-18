@@ -5,8 +5,8 @@ namespace OS3CS
 {
     Client::Client(void)
     {
-		inputFactory = InputFactory();
-		inputFactory.InitializeClient();
+		inputFactory = new ClientFactory();
+		inputFactory->Initialize();
     }
 
 
@@ -25,9 +25,8 @@ namespace OS3CS
 		
 			listenToSocket(s);
         
-			string input;
-			char response[256];
-			while (getline(cin, input))
+			string response;
+			while (getline(cin, response))
 			{
 				vector<string> segments = vector<string>();
 				cout << response << endl;
@@ -37,18 +36,12 @@ namespace OS3CS
 				for (int i = 0; i < segments[0].length(); i++)
 					segments[0][i] = tolower(segments[0][i]);
 
-				InputHandler *inputHandler = InputFactory::CreateHandler(segments[0]);
+				InputHandler *inputHandler = inputFactory->CreateHandler(segments[0]);
 				if (inputHandler != NULL)
-					inputHandler->Process(s);
+					inputHandler->Process(s, response);
 				else
-					InputFactory::CreateHandler("resp")->Process(s);
+					inputFactory->CreateHandler("resp")->Process(s, response);
 				delete inputHandler;
-				/*
-				s->writeline(input);
-				while (s->readline(response, 256) > 0)
-				{
-					cout << response << endl;
-				}*/
 			}
 
 			delete s;

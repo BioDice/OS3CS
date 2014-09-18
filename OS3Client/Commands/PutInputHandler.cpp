@@ -11,7 +11,7 @@ namespace OS3CS
 	{
 	}
 
-	void PutInputHandler::Process(Socket* socket)
+	void PutInputHandler::Process(Socket* socket, string response)
 	{
 	}
 

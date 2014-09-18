@@ -10,7 +10,7 @@ namespace OS3CS
 		InputHandler();
 		~InputHandler();
 
-		virtual void Process(Socket*) = 0;
+		virtual void Process(Socket*, string) = 0;
 		virtual InputHandler* Clone() = 0;
 	};
 }

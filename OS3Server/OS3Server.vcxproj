@@ -19,7 +19,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v110</PlatformToolset>
+    <PlatformToolset>v120</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -79,40 +79,40 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Shared\DelInputHandler.h" />
-    <ClInclude Include="..\Shared\DirInputHandler.h" />
-    <ClInclude Include="..\Shared\GetInputHandler.h" />
     <ClInclude Include="..\Shared\Globals.h" />
-    <ClInclude Include="..\Shared\InfoInputHandler.h" />
     <ClInclude Include="..\Shared\InputFactory.h" />
     <ClInclude Include="..\Shared\InputHandler.h" />
-    <ClInclude Include="..\Shared\PutInputHandler.h" />
-    <ClInclude Include="..\Shared\QuitInputHandler.h" />
-    <ClInclude Include="..\Shared\RenInputHandler.h" />
-    <ClInclude Include="..\Shared\RespInputHandler.h" />
     <ClInclude Include="..\Shared\Socket.h" />
     <ClInclude Include="..\Shared\SocketException.h" />
-    <ClInclude Include="..\Shared\SyncInputHandler.h" />
+    <ClInclude Include="Commands\DelInputHandler.h" />
+    <ClInclude Include="Commands\DirInputHandler.h" />
+    <ClInclude Include="Commands\GetInputHandler.h" />
+    <ClInclude Include="Commands\InfoInputHandler.h" />
+    <ClInclude Include="Commands\PutInputHandler.h" />
+    <ClInclude Include="Commands\QuitInputHandler.h" />
+    <ClInclude Include="Commands\RenFInputHandler.h" />
+    <ClInclude Include="Commands\SyncInputHandler.h" />
     <ClInclude Include="Server.h" />
+    <ClInclude Include="ServerFactory.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\Shared\DelInputHandler.cpp" />
-    <ClCompile Include="..\Shared\DirInputHandler.cpp" />
-    <ClCompile Include="..\Shared\GetInputHandler.cpp" />
     <ClCompile Include="..\Shared\Globals.cpp" />
-    <ClCompile Include="..\Shared\InfoInputHandler.cpp" />
     <ClCompile Include="..\Shared\InputFactory.cpp" />
     <ClCompile Include="..\Shared\InputHandler.cpp" />
-    <ClCompile Include="..\Shared\PutInputHandler.cpp" />
-    <ClCompile Include="..\Shared\QuitInputHandler.cpp" />
-    <ClCompile Include="..\Shared\RenInputHandler.cpp" />
-    <ClCompile Include="..\Shared\RespInputHandler.cpp" />
     <ClCompile Include="..\Shared\Socket.cpp" />
-    <ClCompile Include="..\Shared\SyncInputHandler.cpp" />
+    <ClCompile Include="Commands\DelInputHandler.cpp" />
+    <ClCompile Include="Commands\DirInputHandler.cpp" />
+    <ClCompile Include="Commands\GetInputHandler.cpp" />
+    <ClCompile Include="Commands\InfoInputHandler.cpp" />
+    <ClCompile Include="Commands\PutInputHandler.cpp" />
+    <ClCompile Include="Commands\QuitInputHandler.cpp" />
+    <ClCompile Include="Commands\RenFInputHandler.cpp" />
+    <ClCompile Include="Commands\SyncInputHandler.cpp" />
     <ClCompile Include="OS3Server.cpp" />
     <ClCompile Include="Server.cpp" />
+    <ClCompile Include="ServerFactory.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>

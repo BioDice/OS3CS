@@ -11,7 +11,7 @@ namespace OS3CS
 	{
 	}
 
-	void DelInputHandler::Process(Socket* socket)
+	void DelInputHandler::Process(Socket* socket, string response)
 	{
 	}
 

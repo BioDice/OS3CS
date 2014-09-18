@@ -5,8 +5,8 @@ namespace OS3CS
 {
 	Server::Server(void)
 	{
-		inputFactory = InputFactory();
-		inputFactory.InitializeServer();
+		inputFactory = new ServerFactory();
+		inputFactory->Initialize();
 	}
 
 	Server::~Server(void)
@@ -32,11 +32,9 @@ namespace OS3CS
 				for (int i = 0; i < segments[0].length(); i++)
 					segments[0][i] = tolower(segments[0][i]);
 				
-				InputHandler *inputHandler = InputFactory::CreateHandler(segments[0]);
+				InputHandler *inputHandler = inputFactory->CreateHandler(segments[0]);
 				if (inputHandler != NULL)
-				{
-					inputHandler->Process(socket);
-				}
+					inputHandler->Process(socket, response);
 				else
 				{
 					cout << " - Unknown Command\r\n";

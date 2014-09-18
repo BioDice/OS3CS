@@ -11,8 +11,15 @@ namespace OS3CS
 	{
 	}
 
-	void RespInputHandler::Process(Socket* socket)
+	void RespInputHandler::Process(Socket* socket, string response)
 	{
+		socket->writeline(response);
+
+		char line[257];
+		while (socket->readline(line, 256) > 0)
+		{
+			cout << line << endl;
+		}
 	}
 
 	InputHandler* RespInputHandler::Clone()

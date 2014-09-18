@@ -11,7 +11,7 @@ namespace OS3CS
 	{
 	}
 
-	void SyncInputHandler::Process(Socket* socket)
+	void SyncInputHandler::Process(Socket* socket, string response)
 	{
 	}
 

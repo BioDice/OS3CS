@@ -1,7 +1,7 @@
 #pragma once
 
-#include "InputHandler.h"
-#include "Socket.h"
+#include "../../Shared/InputHandler.h"
+#include "../../Shared/Socket.h"
 
 namespace OS3CS
 {
@@ -11,7 +11,7 @@ namespace OS3CS
 		RespInputHandler(void);
 		~RespInputHandler(void);
 
-		virtual void Process(Socket*);
+		virtual void Process(Socket*, string);
 		virtual InputHandler* Clone();
 	};
 }
