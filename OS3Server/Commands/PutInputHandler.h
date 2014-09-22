@@ -1,5 +1,6 @@
 #pragma once
 
+#include <fstream>
 #include "../../Shared/InputHandler.h"
 #include "../../Shared/Socket.h"
 #include "../../Shared/Globals.h"

@@ -21,7 +21,7 @@ namespace OS3CS
         try
         {
             s = new ClientSocket(adress,port);
-			cout << "Created ClientSocket\r\n";
+			cout << "Created ClientSocket\n";
 		
 			listenToSocket(s);
         
