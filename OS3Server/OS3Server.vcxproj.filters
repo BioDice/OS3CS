@@ -81,6 +81,9 @@
     <ClInclude Include="Commands\SyncInputHandler.h">
       <Filter>Header Files\Shared\Handlers</Filter>
     </ClInclude>
+    <ClInclude Include="..\Shared\dirent.h">
+      <Filter>Header Files\Shared</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "Server.h"
 
 namespace OS3CS
@@ -17,7 +16,7 @@ namespace OS3CS
 	void Server::handle(Socket *socket)
 	{
 		char response[257];
-		cout << "Client connected!\r\n";
+		cout << "Client connected!\n";
 		socket->writeline("Welcome to this ultra pro *cough* Server");
 		socket->write("\n");
 		try
@@ -41,7 +40,7 @@ namespace OS3CS
 				else
 				{
 					ostringstream resp;
-					resp << response << " - Unknown Command\r\n";
+					resp << response << " - Unknown Command\n";
 					cout << resp.str();
 					socket->writeline(resp.str());
 				}
@@ -58,17 +57,17 @@ namespace OS3CS
 	{
 		ServerSocket serverSocket(port);
 
-		cout << "Server is listening..\r\n";
+		cout << "Server is listening..\n";
 
 		while (Socket *socket = serverSocket.accept())
 		{
-			cout << "New connection established..\r\n";
+			cout << "New connection established..\n";
 
 			this->handle(socket);
 
 			delete socket;
-			cout << "Client is disconnected\r\n";
-			cout << "Server is listening..\r\n";
+			cout << "Client is disconnected\n";
+			cout << "Server is listening..\n";
 		}
 	}
 }

@@ -14,13 +14,13 @@ namespace OS3CS
 
 	void ClientFactory::Initialize()
 	{
-		DirInputHandler *dir = new DirInputHandler();
+		/*DirInputHandler *dir = new DirInputHandler();*/
 		GetInputHandler *get = new GetInputHandler();
 		PutInputHandler *put = new PutInputHandler();
 		RenFInputHandler *ren = new RenFInputHandler();
 		SyncInputHandler *sync = new SyncInputHandler();
 		RespInputHandler *resp = new RespInputHandler();
-		commands["dir"] = dir;
+		/*commands["dir"] = dir;*/
 		commands["get"] = get;
 		commands["put"] = put;
 		commands["ren"] = ren;
