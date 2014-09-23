@@ -19,20 +19,37 @@ namespace OS3CS
 		StrSplit(response, segments, ' ');
 		if (segments.size() != 3)
 		{
-			cout << "Syntaxt error: use put [remote dir] [local file]\n";
+			cout << "Syntaxt error: use put [remote dir] [local file]" << endl;
 			return;
 		}
 		socket->writeline(response);
 		char buffer[MAXBUFFERSIZE];
 		int bytesToRead, bytesRead, fileSize;
-		ifstream myfile (segments[2].c_str(), ios::out | ios::app | ios::binary);
+		ifstream myfile (segments[2].c_str(), ifstream::binary);
+		
+		if (!myfile.is_open())
+		{
+			myfile.close();
+			throw("Cannot open file");
+		}
 		
 		// goes to end of file to determine the size then sets the iterator back
-		myfile.seekg(0, myfile.end);
+		myfile.seekg(0, std::ios::end);
 		fileSize = myfile.tellg();
-		myfile.seekg(0, myfile.beg);
+		myfile.seekg(0);
 
 		bytesToRead = fileSize;
+		// send filesize to server
+		socket->writeline(to_string(fileSize));
+		char line[MAXPATH];
+
+		// asking (waiting) if server is ready
+		socket->readline(line, MAXPATH);
+		if (strcmp(line, "READY") != 0)
+		{
+			throw("Server is not ready...");
+			return;
+		}
 
 		while (bytesToRead > 0)
 		{
@@ -44,9 +61,11 @@ namespace OS3CS
 
 			bytesToRead -= myfile.gcount();
 
-			cout << bytesRead << " bytes sent\n";
+			cout << bytesRead << " bytes sent" << endl;
 		}
-		cout << "File is sent\n";
+		myfile.close();
+		cout << "File is sent" << endl;
+		socket->writeline("");
 
 	}
 

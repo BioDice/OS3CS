@@ -15,21 +15,29 @@ namespace OS3CS
 	{
 		vector<string> segments = vector<string>();
 		StrSplit(response, segments, ' ');
-
-		char buffer[MAXBUFFERSIZE];
+		if (segments.size() != 3)
+		{
+			cout << "Syntaxt error: use put [remote file] [local dir]" << endl;
+			return;
+		}
+		char buffer[MAXBUFFERSIZE + 1];
 		int bytesToRead, bytesRead, fileSize;
-		ofstream myfile (segments[2].c_str(), ios::out | ios::app | ios::binary);
+		ofstream myfile(segments[1].c_str(), ofstream::binary | ofstream::trunc);
 
+		socket->readline(buffer, MAXBUFFERSIZE);
 		fileSize = stoi(buffer);
 		bytesToRead = fileSize;
-		
-		while(bytesToRead > 0)
+
+		// tell the client the server is ready to receive
+		socket->writeline("READY");
+
+		while (bytesToRead > 0)
 		{
 			try
 			{
 				bytesRead = socket->read(buffer, bytesToRead > MAXBUFFERSIZE ? MAXBUFFERSIZE : bytesToRead);
 			}
-			catch (exception ex) 
+			catch (exception ex)
 			{
 				cout << "Error occured while reading file..." << endl;
 				throw ex;

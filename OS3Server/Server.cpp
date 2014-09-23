@@ -15,13 +15,13 @@ namespace OS3CS
 
 	void Server::handle(Socket *socket)
 	{
-		char response[257];
+		char response[MAXPATH +1];
 		cout << "Client connected!\n";
 		socket->writeline("Welcome to this ultra pro *cough* Server");
 		socket->write("\n");
 		try
 		{
-			while (socket->readline(response, 256) > 0)
+			while (socket->readline(response, MAXPATH) > 0)
 			{
 				vector<string> segments = vector<string>();
 				
