@@ -20,15 +20,16 @@ namespace OS3CS
 			cout << "Syntaxt error: use put [remote file] [local dir]" << endl;
 			return;
 		}
+		socket->writeline(response);
 		char buffer[MAXBUFFERSIZE + 1];
 		int bytesToRead, bytesRead, fileSize;
-		ofstream myfile(segments[1].c_str(), ofstream::binary | ofstream::trunc);
+		ofstream myfile(segments[2].c_str(), ofstream::binary | ofstream::trunc);
 
 		socket->readline(buffer, MAXBUFFERSIZE);
 		fileSize = stoi(buffer);
 		bytesToRead = fileSize;
 
-		// tell the client the server is ready to receive
+		// tell the server the client is ready to receive
 		socket->writeline("READY");
 
 		while (bytesToRead > 0)

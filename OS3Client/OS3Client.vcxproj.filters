@@ -75,6 +75,9 @@
     <ClInclude Include="Commands\RenFInputHandler.h">
       <Filter>Header Files\Shared\Handlers</Filter>
     </ClInclude>
+    <ClInclude Include="FileReader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -116,6 +119,9 @@
     </ClCompile>
     <ClCompile Include="Commands\SyncInputHandler.cpp">
       <Filter>Source Files\Shared\Handlers</Filter>
+    </ClCompile>
+    <ClCompile Include="FileReader.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

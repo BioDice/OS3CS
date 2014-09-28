@@ -19,7 +19,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v110</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -92,6 +92,7 @@
     <ClInclude Include="Commands\RenFInputHandler.h" />
     <ClInclude Include="Commands\RespInputHandler.h" />
     <ClInclude Include="Commands\SyncInputHandler.h" />
+    <ClInclude Include="FileReader.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
@@ -108,6 +109,7 @@
     <ClCompile Include="Commands\RenFInputHandler.cpp" />
     <ClCompile Include="Commands\RespInputHandler.cpp" />
     <ClCompile Include="Commands\SyncInputHandler.cpp" />
+    <ClCompile Include="FileReader.cpp" />
     <ClCompile Include="OS3Client.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
