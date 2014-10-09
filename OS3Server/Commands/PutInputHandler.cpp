@@ -22,7 +22,9 @@ namespace OS3CS
 		}
 		char buffer[MAXBUFFERSIZE + 1];
 		int bytesToRead, bytesRead, fileSize;
-		ofstream myfile(segments[1].c_str(), ofstream::binary | ofstream::trunc);
+		// merge path with filename
+		string path = ConvertPath(segments[1]) + "/" + GetFileName(segments[2]);
+		ofstream myfile(path, ofstream::binary | ofstream::trunc);
 
 		socket->readline(buffer, MAXBUFFERSIZE);
 		fileSize = stoi(buffer);

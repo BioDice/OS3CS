@@ -23,13 +23,16 @@ namespace OS3CS
 		socket->writeline(response);
 		char buffer[MAXBUFFERSIZE + 1];
 		int bytesToRead, bytesRead, fileSize;
-		ofstream myfile(segments[2].c_str(), ofstream::binary | ofstream::trunc);
+		string path = ConvertPath(segments[2]) + "/" + GetFileName(segments[1]);
+		ofstream myfile(path, ofstream::binary | ofstream::trunc);
 
 		socket->readline(buffer, MAXBUFFERSIZE);
 		fileSize = stoi(buffer);
+		socket->readline(buffer, MAXBUFFERSIZE);
 		bytesToRead = fileSize;
 
 		// tell the server the client is ready to receive
+		cout << "Ready to receive content" << endl;
 		socket->writeline("READY");
 
 		while (bytesToRead > 0)

@@ -30,8 +30,20 @@ namespace OS3CS
 				tokens.push_back(buf);
 				break;
 			}
-
-			
 		}
+	}
+
+	string GetFileName(string path)
+	{
+		vector<string> segments = vector<string>();
+		StrSplit(ConvertPath(path), segments, '/');
+		return segments[segments.size()-1];
+	}
+
+	string ConvertPath(string path)
+	{
+		string temp = path;
+		std::replace(temp.begin(), temp.end(), '\\', '/');
+		return temp;
 	}
 }

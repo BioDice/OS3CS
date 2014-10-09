@@ -44,6 +44,7 @@ namespace OS3CS
 			bytesToRead = fileSize;
 			// send filesize to server
 			socket->writeline(to_string(fileSize));
+			cout << "Sending file size: " << fileSize << endl;
 			char line[MAXPATH];
 
 			// asking (waiting) if server is ready
@@ -53,7 +54,7 @@ namespace OS3CS
 				throw("Server is not ready...");
 				return;
 			}
-
+			cout << "Server is ready. Start sending content..." << endl;
 			// send bytes to socket
 			while (bytesToRead > 0)
 			{
