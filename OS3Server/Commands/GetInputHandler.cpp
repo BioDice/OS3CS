@@ -13,18 +13,41 @@ namespace OS3CS
 
 	void GetInputHandler::Process(Socket* socket, string response)
 	{
+		string temp = response;
+		temp = temp.erase(0, 4);
 		vector<string> segments = vector<string>();
-		StrSplit(response, segments, ' ');
-		if (segments.size() != 3)
+		vector<string> resp = vector<string>();
+		StrSplit(temp, resp, '"');
+		if (resp.size() == 1)
 		{
-			cout << "Syntaxt error: use put [remote file] [local dir]" << endl;
+			StrSplit(resp[0], segments, ' ');
+		}
+		else if (resp.size() == 2)
+		{
+			StripWhiteSpaces(resp);
+			segments = resp;
+		}
+		else if (resp.size() == 3)
+		{
+			StripWhiteSpaces(resp);
+			segments = resp;
+		}
+		else if (resp.size() == 4)
+		{
+			StripWhiteSpaces(resp);
+			segments.push_back(resp[0]);
+			segments.push_back(resp[1]);
+		}
+		else
+		{
+			cout << "Syntax error: use put [remote file] [local dir]" << endl;
 			return;
 		}
 		try
 		{
 			char buffer[MAXBUFFERSIZE+1];
 			int bytesToRead, bytesRead, fileSize;
-			ifstream myfile(segments[1].c_str(), ifstream::binary);
+			ifstream myfile(segments[0].c_str(), ifstream::binary);
 
 			if (!myfile.is_open())
 			{

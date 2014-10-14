@@ -13,17 +13,40 @@ namespace OS3CS
 
 	void PutInputHandler::Process(Socket* socket, string response)
 	{
+		string temp = response;
+		temp = temp.erase(0, 4);
 		vector<string> segments = vector<string>();
-		StrSplit(response, segments, ' ');
-		if (segments.size() != 3)
+		vector<string> resp = vector<string>();
+		StrSplit(temp, resp, '"');
+		if (resp.size() == 1)
 		{
-			cout << "Syntaxt error: use put [remote dir] [local file]" << endl;
+			StrSplit(resp[0], segments, ' ');
+		}
+		else if (resp.size() == 2)
+		{
+			StripWhiteSpaces(resp);
+			segments = resp;
+		}
+		else if (resp.size() == 3)
+		{
+			StripWhiteSpaces(resp);
+			segments = resp;
+		}
+		else if (resp.size() == 4)
+		{
+			StripWhiteSpaces(resp);
+			segments.push_back(resp[0]);
+			segments.push_back(resp[1]);
+		}
+		else
+		{
+			cout << "Syntax error: use put [remote file] [local dir]" << endl;
 			return;
 		}
 		char buffer[MAXBUFFERSIZE + 1];
 		int bytesToRead, bytesRead, fileSize;
 		// merge path with filename
-		string path = ConvertPath(segments[1]) + "/" + GetFileName(segments[2]);
+		string path = ConvertPath(segments[0]) + "/" + GetFileName(segments[1]);
 		ofstream myfile(path, ofstream::binary | ofstream::trunc);
 
 		socket->readline(buffer, MAXBUFFERSIZE);
@@ -53,6 +76,10 @@ namespace OS3CS
 
 		myfile.close();
 		cout << "File transfer complete!" << endl;
+		while (socket->readline(buffer, MAXPATH) > 0)
+		{
+			cout << buffer << endl;
+		}
 	}
 
 	InputHandler* PutInputHandler::Clone()

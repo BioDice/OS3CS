@@ -17,6 +17,7 @@ void getConnectionDetails(Client& client)
 }
 int main()
 {
+	setlocale(LC_ALL, "");
 	Client client = Client();
 	getConnectionDetails(client);
 	

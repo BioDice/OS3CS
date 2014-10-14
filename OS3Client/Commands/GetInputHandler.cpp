@@ -13,22 +13,44 @@ namespace OS3CS
 
 	void GetInputHandler::Process(Socket* socket, string response)
 	{
+		string temp = response;
+		temp = temp.erase(0, 4);
 		vector<string> segments = vector<string>();
-		StrSplit(response, segments, ' ');
-		if (segments.size() != 3)
+		vector<string> resp = vector<string>();
+		StrSplit(temp, resp, '"');
+		if (resp.size() == 1)
 		{
-			cout << "Syntaxt error: use put [remote file] [local dir]" << endl;
+			StrSplit(resp[0], segments, ' ');
+		}
+		else if (resp.size() == 2)
+		{
+			StripWhiteSpaces(resp);
+			segments = resp;
+		}
+		else if (resp.size() == 3)
+		{
+			StripWhiteSpaces(resp);
+			segments = resp;
+		}
+		else if (resp.size() == 4)
+		{
+			StripWhiteSpaces(resp);
+			segments.push_back(resp[0]);
+			segments.push_back(resp[1]);
+		}
+		else
+		{
+			cout << "Syntax error: use put [remote file] [local dir]" << endl;
 			return;
 		}
 		socket->writeline(response);
 		char buffer[MAXBUFFERSIZE + 1];
 		int bytesToRead, bytesRead, fileSize;
-		string path = ConvertPath(segments[2]) + "/" + GetFileName(segments[1]);
+		string path = ConvertPath(segments[1]) + "/" + GetFileName(segments[0]);
 		ofstream myfile(path, ofstream::binary | ofstream::trunc);
 
 		socket->readline(buffer, MAXBUFFERSIZE);
 		fileSize = stoi(buffer);
-		socket->readline(buffer, MAXBUFFERSIZE);
 		bytesToRead = fileSize;
 
 		// tell the server the client is ready to receive
@@ -55,6 +77,10 @@ namespace OS3CS
 
 		myfile.close();
 		cout << "File transfer complete!" << endl;
+		while (socket->readline(buffer, MAXPATH) > 0)
+		{
+			cout << buffer << endl;
+		}
 	}
 
 	InputHandler* GetInputHandler::Clone()

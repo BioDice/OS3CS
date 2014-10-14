@@ -33,6 +33,25 @@ namespace OS3CS
 		}
 	}
 
+	void StripWhiteSpaces(vector<string> &tokens)
+	{
+		for (int i = 0; i < tokens.size(); i++)
+		{
+			string str = tokens[i];
+			if (str.size() > 0 && str[0] == ' ')
+				str.erase(0, 1);
+			if (str.size() > 0 && str[str.length()-1] == ' ')
+				str.erase(str.length()-1);
+			if (str.size() == 0)
+			{
+				tokens.erase(tokens.begin()+i);
+				i--;
+			}
+			else
+				tokens[i] = str;
+		}
+	}
+
 	string GetFileName(string path)
 	{
 		vector<string> segments = vector<string>();

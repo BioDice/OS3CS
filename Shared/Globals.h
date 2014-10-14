@@ -14,6 +14,7 @@ namespace OS3CS
 
 	void StrSplit(string str, vector<string> &tokens, char delim);
 	void StrSplit(string str, vector<string> &tokens, char delim, int iLimit);
+	void StripWhiteSpaces(vector<string> &tokens);
 	string GetFileName(string path);
 	string ConvertPath(string path);
 }
