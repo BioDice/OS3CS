@@ -15,8 +15,8 @@ namespace OS3CS
 	{
 		socket->writeline(response);
 
-		char line[257];
-		while (socket->readline(line, 256) > 0)
+		char line[MAXPATH+1];
+		while (socket->readline(line, MAXPATH) > 0)
 		{
 			cout << line << endl;
 		}

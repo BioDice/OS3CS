@@ -28,19 +28,35 @@ namespace OS3CS
 			string response;
 			while (getline(cin, response))
 			{
+				if (response.size() == 0)
+				continue;
+
 				vector<string> segments = vector<string>();
 				StrSplit(response, segments, ' ');
 
-				// Converts the characters to lower case
-				for (int i = 0; i < segments[0].length(); i++)
-					segments[0][i] = tolower(segments[0][i]);
+				if (segments.size() > 0)
+				{
+					// Converts the characters to lower case
+					for (int i = 0; i < segments[0].length(); i++)
+						segments[0][i] = tolower(segments[0][i]);
 
-				InputHandler *inputHandler = inputFactory->CreateHandler(segments[0]);
-				if (inputHandler != NULL)
-					inputHandler->Process(s, response);
-				else
-					inputFactory->CreateHandler("resp")->Process(s, response);
-				delete inputHandler;
+					InputHandler *inputHandler = inputFactory->CreateHandler(segments[0]);
+					if (inputHandler != NULL)
+					{
+						try
+						{
+							inputHandler->Process(s, response);
+						}
+						catch (const char* ex)
+						{
+							cout << ex << endl;
+						}
+					}
+					
+					else
+						inputFactory->CreateHandler("resp")->Process(s, response);
+					delete inputHandler;
+				}
 			}
 
 			delete s;
@@ -54,9 +70,9 @@ namespace OS3CS
 
     void Client::listenToSocket(Socket* socket)
     {
-        char line[256 + 1];
+		char line[MAXPATH + 1];
 
-        while (socket->readline(line, 257) > 0)
+        while (socket->readline(line, MAXPATH) > 0)
         {
             cout << line << endl;
         }

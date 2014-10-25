@@ -2,6 +2,7 @@
 
 #include "../../Shared/InputHandler.h"
 #include "../../Shared/Socket.h"
+#include "../../Shared/Globals.h"
 
 namespace OS3CS
 {
