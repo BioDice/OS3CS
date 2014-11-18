@@ -256,7 +256,6 @@
 			if (t == -1) throw runtime_error("error in accept");
 			return new Socket(t);
 		}
-
 		//=============================================================================
 		ClientSocket::ClientSocket(const char *host, int port)
 			//=============================================================================
@@ -271,7 +270,10 @@
 			dest.sin_family = AF_INET;
 
 			hostent *hp;
+#pragma warning(push)
+#pragma warning(disable: 4996)
 			hp = ::gethostbyname(host);
+#pragma warning(pop)
 			if (hp != NULL)
 				::memcpy(&dest.sin_addr, hp->h_addr, hp->h_length);
 			else

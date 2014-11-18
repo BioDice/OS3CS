@@ -4,9 +4,10 @@
 #include "Server.h"
 
 using namespace OS3CS;
-
 int main()
 {
+	
+
 	setlocale(LC_ALL, "");
 	Server *server = new Server();
 	server->listen(100);

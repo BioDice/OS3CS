@@ -25,6 +25,12 @@
     <Filter Include="Header Files\Shared\Handlers">
       <UniqueIdentifier>{9b76f263-5d40-4a1b-8c35-805381c9703d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\tinyxml">
+      <UniqueIdentifier>{711883cc-bccc-41a4-851f-1f4e35c9323e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\tinyxml">
+      <UniqueIdentifier>{8d9232bc-8e30-4d97-b128-a5f6b30fce23}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -78,6 +84,15 @@
     <ClInclude Include="FileReader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="DirectoryWriter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\tinyxml_2_6_2 (1)\tinyxml\tinystr.h">
+      <Filter>Header Files\tinyxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\tinyxml_2_6_2 (1)\tinyxml\tinyxml.h">
+      <Filter>Header Files\tinyxml</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -122,6 +137,21 @@
     </ClCompile>
     <ClCompile Include="FileReader.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectoryWriter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\tinyxml_2_6_2 (1)\tinyxml\tinystr.cpp">
+      <Filter>Source Files\tinyxml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\tinyxml_2_6_2 (1)\tinyxml\tinyxml.cpp">
+      <Filter>Source Files\tinyxml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\tinyxml_2_6_2 (1)\tinyxml\tinyxmlerror.cpp">
+      <Filter>Source Files\tinyxml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Downloads\tinyxml_2_6_2 (1)\tinyxml\tinyxmlparser.cpp">
+      <Filter>Source Files\tinyxml</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -19,7 +19,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v110</PlatformToolset>
+    <PlatformToolset>v120</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -80,6 +80,8 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\..\Downloads\tinyxml_2_6_2 (1)\tinyxml\tinystr.h" />
+    <ClInclude Include="..\..\..\..\Downloads\tinyxml_2_6_2 (1)\tinyxml\tinyxml.h" />
     <ClInclude Include="..\Shared\Globals.h" />
     <ClInclude Include="..\Shared\InputFactory.h" />
     <ClInclude Include="..\Shared\InputHandler.h" />
@@ -93,11 +95,16 @@
     <ClInclude Include="Commands\RenFInputHandler.h" />
     <ClInclude Include="Commands\RespInputHandler.h" />
     <ClInclude Include="Commands\SyncInputHandler.h" />
+    <ClInclude Include="DirectoryWriter.h" />
     <ClInclude Include="FileReader.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\..\Downloads\tinyxml_2_6_2 (1)\tinyxml\tinystr.cpp" />
+    <ClCompile Include="..\..\..\..\Downloads\tinyxml_2_6_2 (1)\tinyxml\tinyxml.cpp" />
+    <ClCompile Include="..\..\..\..\Downloads\tinyxml_2_6_2 (1)\tinyxml\tinyxmlerror.cpp" />
+    <ClCompile Include="..\..\..\..\Downloads\tinyxml_2_6_2 (1)\tinyxml\tinyxmlparser.cpp" />
     <ClCompile Include="..\Shared\Globals.cpp" />
     <ClCompile Include="..\Shared\InputFactory.cpp" />
     <ClCompile Include="..\Shared\InputHandler.cpp" />
@@ -110,6 +117,7 @@
     <ClCompile Include="Commands\RenFInputHandler.cpp" />
     <ClCompile Include="Commands\RespInputHandler.cpp" />
     <ClCompile Include="Commands\SyncInputHandler.cpp" />
+    <ClCompile Include="DirectoryWriter.cpp" />
     <ClCompile Include="FileReader.cpp" />
     <ClCompile Include="OS3Client.cpp" />
     <ClCompile Include="stdafx.cpp">

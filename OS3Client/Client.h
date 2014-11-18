@@ -7,6 +7,8 @@
 #include "../Shared/InputHandler.h"
 #include "../Shared/InputFactory.h"
 #include "ClientFactory.h"
+#include "DirectoryWriter.h"
+
 using namespace std;
 
 namespace OS3CS
