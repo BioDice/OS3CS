@@ -3,6 +3,9 @@
 #include "../../Shared/InputHandler.h"
 #include "../../Shared/Socket.h"
 #include "../../Shared/DirectoryWriter.h"
+#include <fstream>
+#include "../../Shared/Globals.h"
+
 namespace OS3CS
 {
 	class SyncInputHandler : public InputHandler
@@ -11,7 +14,7 @@ namespace OS3CS
 		SyncInputHandler(void);
 		~SyncInputHandler(void);
 		void SetXML(Socket*socket);
-		virtual void Process(Socket*, string);
+		virtual void Process(Socket*,string response);
 		virtual InputHandler* Clone();
 	};
 }

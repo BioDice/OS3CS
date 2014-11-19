@@ -26,7 +26,7 @@ namespace OS3CS
 		if (version > serverversion)
 		{
 			cout << "Sync started";
-
+			SetXML(socket);
 		}
 		else if (version==serverversion)
 		{
@@ -39,74 +39,50 @@ namespace OS3CS
 
 	void SyncInputHandler::SetXML(Socket *socket)
 	{
-		//string temp = ;
-		//temp = temp.erase(0, 4);
-		//vector<string> segments = vector<string>();
-		//vector<string> resp = vector<string>();
-		//StrSplit(temp, resp, '"');
-		//if (resp.size() == 1)
-		//{
-		//	StrSplit(resp[0], segments, ' ');
-		//}
-		//else if (resp.size() == 2)
-		//{
-		//	StripWhiteSpaces(resp);
-		//	segments = resp;
-		//}
-		//else if (resp.size() == 3)
-		//{
-		//	StripWhiteSpaces(resp);
-		//	segments = resp;
-		//}
-		//else if (resp.size() == 4)
-		//{
-		//	StripWhiteSpaces(resp);
-		//	segments.push_back(resp[0]);
-		//	segments.push_back(resp[1]);
-		//}
-		//else
-		//{
-		//	cout << "Syntax error: use put [remote file] [local dir]" << endl;
-		//	return;
-		//}
-		//socket->writeline(response);
-		//char buffer[MAXBUFFERSIZE + 1];
-		//int bytesToRead, bytesRead, fileSize;
-		//string path = ConvertPath(segments[1]) + "/" + GetFileName(segments[0]);
-		//ofstream myfile(path, ofstream::binary | ofstream::trunc);
+		try
+		{
+			char buffer[MAXBUFFERSIZE + 1];
+			int bytesToRead, bytesRead, fileSize;
 
-		//socket->readline(buffer, MAXBUFFERSIZE);
-		//fileSize = stoi(buffer);
-		//bytesToRead = fileSize;
+			ofstream myfile("C:/Users/dev/Documents/GitHub/OS3CS/OS3Client/serverxml/config.xml", ofstream::binary | ofstream::trunc);
 
-		//// tell the server the client is ready to receive
-		//cout << "Ready to receive content" << endl;
-		//socket->writeline("READY");
+			socket->readline(buffer, MAXBUFFERSIZE);
+			fileSize = stoi(buffer);
+			bytesToRead = fileSize;
 
-		//while (bytesToRead > 0)
-		//{
-		//	try
-		//	{
-		//		bytesRead = socket->read(buffer, bytesToRead > MAXBUFFERSIZE ? MAXBUFFERSIZE : bytesToRead);
-		//	}
-		//	catch (exception ex)
-		//	{
-		//		cout << "Error occured while reading file..." << endl;
-		//		throw ex;
-		//	}
+			// tell the server the client is ready to receive
+			cout << "Ready to receive content" << endl;
+			socket->writeline("READY");
 
-		//	myfile.write(buffer, bytesRead);
+			while (bytesToRead > 0)
+			{
+				try
+				{
+					bytesRead = socket->read(buffer, bytesToRead > MAXBUFFERSIZE ? MAXBUFFERSIZE : bytesToRead);
+				}
+				catch (exception ex)
+				{
+					cout << "Error occured while reading file..." << endl;
+					throw ex;
+				}
 
-		//	bytesToRead -= bytesRead;
-		//	cout << "Bytes Read: " << bytesRead << ". Bytes left: " << bytesToRead << endl;
-		//}
+				myfile.write(buffer, bytesRead);
 
-		//myfile.close();
-		//cout << "File transfer complete!" << endl;
-		//while (socket->readline(buffer, MAXPATH) > 0)
-		//{
-		//	cout << buffer << endl;
-		//}
+				bytesToRead -= bytesRead;
+				cout << "Bytes Read: " << bytesRead << ". Bytes left: " << bytesToRead << endl;
+			}
+
+			myfile.close();
+			cout << "File transfer complete!" << endl;
+			while (socket->readline(buffer, MAXPATH) > 0)
+			{
+				cout << buffer << endl;
+			}
+		}
+		catch (exception ex)
+		{
+			cout << "Something went wrong..." << endl;
+		}
 	}
 
 	InputHandler* SyncInputHandler::Clone()
