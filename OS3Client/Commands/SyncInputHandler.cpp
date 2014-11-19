@@ -27,6 +27,8 @@ namespace OS3CS
 		{
 			cout << "Sync started";
 			SetXML(socket);
+			writer->Sync(socket);
+			socket->writeline("");
 		}
 		else if (version==serverversion)
 		{
@@ -44,7 +46,7 @@ namespace OS3CS
 			char buffer[MAXBUFFERSIZE + 1];
 			int bytesToRead, bytesRead, fileSize;
 
-			ofstream myfile("C:/Users/dev/Documents/GitHub/OS3CS/OS3Client/serverxml/config.xml", ofstream::binary | ofstream::trunc);
+			ofstream myfile(Currentpath()+"/serverxml/config.xml", ofstream::binary | ofstream::trunc);
 
 			socket->readline(buffer, MAXBUFFERSIZE);
 			fileSize = stoi(buffer);

@@ -1,16 +1,21 @@
 #pragma once
-#include "../../OS3CS/Shared/tinyxml/tinyxml/tinyxml.h"
+#include "tinyxml/tinyxml/tinyxml.h"
 #include <stdlib.h>
-class DirectoryWriter
-{
-public:
-	DirectoryWriter(void);
-	~DirectoryWriter(void);
+#include "Socket.h"
+#include "TransferManager.h"
 
-	void InitList();
-	void DeleteNode(char *nodeName);
-	void WriteNode(char *nodeName,char*directory);
-	void UpdateNode(char*nodeName,char*renamename);
-	int isLeading();
-};
+namespace OS3CS{
+	class DirectoryWriter
+	{
+	public:
+		DirectoryWriter(void);
+		~DirectoryWriter(void);
 
+		void Sync(Socket *socket);
+		void InitList();
+		void DeleteNode(char *nodeName);
+		void WriteNode(char *nodeName, char*directory);
+		void UpdateNode(char*nodeName, char*renamename);
+		int isLeading();
+	};
+}

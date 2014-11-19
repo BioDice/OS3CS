@@ -26,39 +26,17 @@ namespace OS3CS
 			int bytesToRead, bytesRead, fileSize;
 			// merge path with filename
 			string path = ConvertPath(segments[0]) + "/" + GetFileName(segments[1]);
-			ofstream myfile(path, ofstream::binary | ofstream::trunc);
+			TransferManager *manager = new TransferManager();
 
-			socket->readline(buffer, MAXBUFFERSIZE);
-			fileSize = stoi(buffer);
-			bytesToRead = fileSize;
-			
-			// tell the client the server is ready to receive
-			socket->writeline("READY");
+			manager->ReceiveFile(socket,path);
+			DirectoryWriter *writer = new DirectoryWriter();
+			std::string str = GetFileName(segments[1]);
+			char*filename = &str[0];
 
-			while(bytesToRead > 0)
-			{
-				try
-				{
-					bytesRead = socket->read(buffer, bytesToRead > MAXBUFFERSIZE ? MAXBUFFERSIZE : bytesToRead);
-				}
-				catch (exception ex) 
-				{
-					cout << "Error occured while reading file..." << endl;
-					throw ex;
-				}
+			std::string directory = FindAndReplace(Currentpath(), path, "");
+			char*directoryname = &directory[0];
 
-				myfile.write(buffer, bytesRead);
-
-				bytesToRead -= bytesRead;
-				cout << "Bytes Read: " << bytesRead << ". Bytes left: " << bytesToRead << endl;
-			}
-
-			myfile.close();
-			cout << "File transfer complete!" << endl;
-			while (socket->readline(buffer, MAXPATH) > 0)
-			{
-				cout << buffer << endl;
-			}
+			writer->WriteNode(filename,directoryname);
 		}
 		catch (exception ex)
 		{

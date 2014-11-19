@@ -4,7 +4,7 @@
 #include "../../Shared/InputHandler.h"
 #include "../../Shared/Socket.h"
 #include "../../Shared/Globals.h"
-
+#include "../../Shared/TransferManager.h"
 namespace OS3CS
 {
 	class PutInputHandler : public InputHandler

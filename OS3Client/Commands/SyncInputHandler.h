@@ -14,6 +14,7 @@ namespace OS3CS
 		SyncInputHandler(void);
 		~SyncInputHandler(void);
 		void SetXML(Socket*socket);
+		void GetXML(Socket*socket);
 		virtual void Process(Socket*,string response);
 		virtual InputHandler* Clone();
 	};

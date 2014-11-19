@@ -19,20 +19,14 @@ namespace OS3CS
 		socket->writeline(std::to_string(version));
 		socket->writeline("");
 		GetXML(socket);
-		char line[256 + 1];
-		while (socket->readline(line, 256) > 0)
-		{
-			//wachten
-		}
-
+		socket->writeline("");
 	}
-
 	void SyncInputHandler::GetXML(Socket *socket)
 	{
 		char buffer[MAXBUFFERSIZE + 1];
 		int bytesToRead, bytesRead, fileSize;
-		ifstream myfile("C:/Users/dev/Documents/GitHub/OS3CS/OS3Server/config.xml", ifstream::binary);
 
+		ifstream myfile(Currentpath()+"/config.xml", ifstream::binary);
 		if (!myfile.is_open())
 		{
 			myfile.close();

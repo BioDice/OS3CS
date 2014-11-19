@@ -90,6 +90,9 @@
     <ClInclude Include="..\Shared\DirectoryWriter.h">
       <Filter>Header Files\Shared</Filter>
     </ClInclude>
+    <ClInclude Include="..\Shared\TransferManager.h">
+      <Filter>Header Files\Shared</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Shared\Socket.cpp">
@@ -146,6 +149,9 @@
     </ClCompile>
     <ClCompile Include="..\Shared\DirectoryWriter.cpp">
       <Filter>Source Files\Shared</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Shared\TransferManager.cpp">
+      <Filter>Source Files\Shared\Handlers</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

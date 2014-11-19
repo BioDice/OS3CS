@@ -1,7 +1,31 @@
 #include "Globals.h"
+#include <stdio.h>
+
+#ifdef WIN32
+#include <direct.h>
+#define GetCurrentDir _getcwd
+#else
+#include <unistd.h>
+#define GetCurrentDir getcwd
+#endif
 
 namespace OS3CS
 {
+
+	string Currentpath()
+	{
+		char cCurrentPath[FILENAME_MAX];
+
+		if (!GetCurrentDir(cCurrentPath, sizeof(cCurrentPath)))
+		{
+			
+		}
+
+		cCurrentPath[sizeof(cCurrentPath) - 1] = '/0'; /* not really required */
+
+		return cCurrentPath;
+	}
+
 	void StrSplit(string str, vector<string> &tokens, char delim)
 	{
 		string buf;
@@ -84,5 +108,10 @@ namespace OS3CS
 		string temp = path;
 		std::replace(temp.begin(), temp.end(), '\\', '/');
 		return temp;
+	}
+
+	string FindAndReplace(string &s, string toReplace, string replaceWith)
+	{
+		return(s.replace(s.find(toReplace), toReplace.length(), replaceWith));
 	}
 }

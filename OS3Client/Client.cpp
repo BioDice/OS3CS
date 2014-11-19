@@ -12,6 +12,7 @@ namespace OS3CS
 
     Client::~Client(void)
     {
+		delete inputFactory;
     }
 
     void Client::connect(const char* adress, int port)

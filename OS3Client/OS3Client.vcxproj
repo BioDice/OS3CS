@@ -91,6 +91,7 @@
     <ClInclude Include="..\Shared\InputHandler.h" />
     <ClInclude Include="..\Shared\Socket.h" />
     <ClInclude Include="..\Shared\SocketException.h" />
+    <ClInclude Include="..\Shared\TransferManager.h" />
     <ClInclude Include="Client.h" />
     <ClInclude Include="ClientFactory.h" />
     <ClInclude Include="Commands\DirInputHandler.h" />
@@ -112,6 +113,7 @@
     <ClCompile Include="..\Shared\InputFactory.cpp" />
     <ClCompile Include="..\Shared\InputHandler.cpp" />
     <ClCompile Include="..\Shared\Socket.cpp" />
+    <ClCompile Include="..\Shared\TransferManager.cpp" />
     <ClCompile Include="Client.cpp" />
     <ClCompile Include="ClientFactory.cpp" />
     <ClCompile Include="Commands\DirInputHandler.cpp" />

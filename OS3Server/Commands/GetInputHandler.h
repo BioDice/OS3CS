@@ -4,6 +4,7 @@
 #include "../../Shared/InputHandler.h"
 #include "../../Shared/Socket.h"
 #include "../../Shared/Globals.h"
+#include "../../Shared/TransferManager.h"
 #include <string>
 using namespace std;
 
