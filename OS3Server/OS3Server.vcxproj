@@ -97,7 +97,6 @@
     <ClInclude Include="Commands\SyncInputHandler.h" />
     <ClInclude Include="Server.h" />
     <ClInclude Include="ServerFactory.h" />
-    <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="tinyxml\tinyxml\tinystr.h" />
     <ClInclude Include="tinyxml\tinyxml\tinyxml.h" />
@@ -119,10 +118,6 @@
     <ClCompile Include="OS3Server.cpp" />
     <ClCompile Include="Server.cpp" />
     <ClCompile Include="ServerFactory.cpp" />
-    <ClCompile Include="stdafx.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
-    </ClCompile>
     <ClCompile Include="tinyxml\tinyxml\tinystr.cpp" />
     <ClCompile Include="tinyxml\tinyxml\tinyxml.cpp" />
     <ClCompile Include="tinyxml\tinyxml\tinyxmlerror.cpp" />

@@ -13,7 +13,7 @@ namespace OS3CS
 
 	void DirInputHandler::Process(Socket* socket, string response)
 	{
-
+		// not used anymore
 	}
 
 	InputHandler* DirInputHandler::Clone()

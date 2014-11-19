@@ -16,11 +16,9 @@ namespace OS3CS
 		char buffer[MAXBUFFERSIZE + 1];
 
 		vector<string> segments = vector<string>();
-		StrSplit(response, segments, ' ');
-		if (segments.size() != 3)
+		if (!FormatCommandPath(response, segments, 2))
 		{
-			cout << "Syntax error..." << endl;
-			socket->writeline("");
+			cout << "Syntax error: use ren [remote file] [local file]" << endl;
 			return;
 		}
 		

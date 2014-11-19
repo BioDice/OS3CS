@@ -14,17 +14,15 @@ namespace OS3CS
 	void RenFInputHandler::Process(Socket* socket, string response)
 	{
 		vector<string> segments = vector<string>();
-		StrSplit(response, segments, ' ');
-		if (segments.size() != 3)
+		if (!FormatCommandPath(response, segments, 2))
 		{
-			cout << "Syntaxt error: ren [oldfile] [newfile]" << endl;
+			cout << "Syntax error: use ren [remote file] [local file]" << endl;
 			return;
 		}
-
 		socket->writeline(response);
 
-		char line[257];
-		while (socket->readline(line, 256) > 0)
+		char line[MAXPATH+1];
+		while (socket->readline(line, MAXPATH) > 0)
 		{
 			cout << line << endl;
 		}

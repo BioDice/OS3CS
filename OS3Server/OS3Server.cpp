@@ -6,9 +6,11 @@
 using namespace OS3CS;
 int main()
 {
-	
+	//wcin.imbue(std::locale("English_United States.437"));
+	//wcout.imbue(std::locale("English_United States.437"));
+	//setlocale(LC_ALL, "");
+	//SetConsoleOutputCP(CP_UTF8);
 
-	setlocale(LC_ALL, "");
 	Server *server = new Server();
 	server->listen(100);
 
