@@ -84,14 +84,14 @@
     <ClInclude Include="FileReader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="DirectoryWriter.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\OS3Server\tinyxml\tinyxml\tinystr.h">
       <Filter>Header Files\tinyxml</Filter>
     </ClInclude>
     <ClInclude Include="..\OS3Server\tinyxml\tinyxml\tinyxml.h">
       <Filter>Header Files\tinyxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Shared\DirectoryWriter.h">
+      <Filter>Header Files\Shared</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -138,9 +138,6 @@
     <ClCompile Include="FileReader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="DirectoryWriter.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\OS3Server\tinyxml\tinyxml\tinystr.cpp">
       <Filter>Source Files\tinyxml</Filter>
     </ClCompile>
@@ -152,6 +149,9 @@
     </ClCompile>
     <ClCompile Include="..\OS3Server\tinyxml\tinyxml\tinyxmlparser.cpp">
       <Filter>Source Files\tinyxml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Shared\DirectoryWriter.cpp">
+      <Filter>Source Files\Shared</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

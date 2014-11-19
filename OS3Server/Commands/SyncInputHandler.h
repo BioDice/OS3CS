@@ -3,6 +3,7 @@
 #include "../../Shared/InputHandler.h"
 #include "../../Shared/Socket.h"
 #include "../../Shared/Globals.h"
+#include "../../Shared/DirectoryWriter.h"
 #include <string>
 using namespace std;
 

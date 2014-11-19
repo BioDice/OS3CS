@@ -96,6 +96,9 @@
     <ClInclude Include="tinyxml\tinyxml\tinyxml.h">
       <Filter>Header Files\tinyxml</Filter>
     </ClInclude>
+    <ClInclude Include="..\Shared\DirectoryWriter.h">
+      <Filter>Header Files\Shared</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -155,6 +158,9 @@
     </ClCompile>
     <ClCompile Include="tinyxml\tinyxml\tinyxmlparser.cpp">
       <Filter>Source Files\tinyxml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Shared\DirectoryWriter.cpp">
+      <Filter>Source Files\Shared</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -7,7 +7,7 @@
 #include "../Shared/InputHandler.h"
 #include "../Shared/InputFactory.h"
 #include "ClientFactory.h"
-#include "DirectoryWriter.h"
+#include "../shared/DirectoryWriter.h"
 
 using namespace std;
 

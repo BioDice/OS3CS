@@ -22,6 +22,7 @@ int main()
 	writer->InitList();
 
 	writer->WriteNode("newfile","randomdir");
+	writer->WriteNode("file23490", "woopdir");
 	writer->UpdateNode("newfile","renamedlol");
 	writer->DeleteNode("renamedlol");
 

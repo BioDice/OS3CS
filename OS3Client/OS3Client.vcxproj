@@ -85,6 +85,7 @@
   <ItemGroup>
     <ClInclude Include="..\OS3Server\tinyxml\tinyxml\tinystr.h" />
     <ClInclude Include="..\OS3Server\tinyxml\tinyxml\tinyxml.h" />
+    <ClInclude Include="..\Shared\DirectoryWriter.h" />
     <ClInclude Include="..\Shared\Globals.h" />
     <ClInclude Include="..\Shared\InputFactory.h" />
     <ClInclude Include="..\Shared\InputHandler.h" />
@@ -98,7 +99,6 @@
     <ClInclude Include="Commands\RenFInputHandler.h" />
     <ClInclude Include="Commands\RespInputHandler.h" />
     <ClInclude Include="Commands\SyncInputHandler.h" />
-    <ClInclude Include="DirectoryWriter.h" />
     <ClInclude Include="FileReader.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
@@ -108,6 +108,7 @@
     <ClCompile Include="..\OS3Server\tinyxml\tinyxml\tinyxml.cpp" />
     <ClCompile Include="..\OS3Server\tinyxml\tinyxml\tinyxmlerror.cpp" />
     <ClCompile Include="..\OS3Server\tinyxml\tinyxml\tinyxmlparser.cpp" />
+    <ClCompile Include="..\Shared\DirectoryWriter.cpp" />
     <ClCompile Include="..\Shared\Globals.cpp" />
     <ClCompile Include="..\Shared\InputFactory.cpp" />
     <ClCompile Include="..\Shared\InputHandler.cpp" />
@@ -120,7 +121,6 @@
     <ClCompile Include="Commands\RenFInputHandler.cpp" />
     <ClCompile Include="Commands\RespInputHandler.cpp" />
     <ClCompile Include="Commands\SyncInputHandler.cpp" />
-    <ClCompile Include="DirectoryWriter.cpp" />
     <ClCompile Include="FileReader.cpp" />
     <ClCompile Include="OS3Client.cpp" />
     <ClCompile Include="stdafx.cpp">

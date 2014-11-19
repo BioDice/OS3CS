@@ -1,6 +1,5 @@
 #pragma once
-#include "tinyxml\tinyxml\tinyxml.h"
-#include "stdafx.h"
+#include "../../OS3CS/Shared/tinyxml/tinyxml/tinyxml.h"
 #include <stdlib.h>
 class DirectoryWriter
 {
@@ -12,6 +11,6 @@ public:
 	void DeleteNode(char *nodeName);
 	void WriteNode(char *nodeName,char*directory);
 	void UpdateNode(char*nodeName,char*renamename);
-	
+	int isLeading();
 };
 

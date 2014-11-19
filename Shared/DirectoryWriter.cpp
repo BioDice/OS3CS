@@ -1,4 +1,4 @@
-#include "../shared/DirectoryWriter.h"
+#include "../Shared/DirectoryWriter.h"
 #include <iostream>    
 
 DirectoryWriter::DirectoryWriter(void)
@@ -8,7 +8,7 @@ DirectoryWriter::DirectoryWriter(void)
 DirectoryWriter::~DirectoryWriter(void)
 {
 }
-int DirectoryWriter::isLeading(int fileversion)
+int DirectoryWriter::isLeading()
 {
 	TiXmlDocument doc("config.xml");
 	bool loadOkay = doc.LoadFile();
