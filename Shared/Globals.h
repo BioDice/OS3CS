@@ -17,4 +17,5 @@ namespace OS3CS
 	void StripWhiteSpaces(vector<string> &tokens);
 	string GetFileName(string path);
 	string ConvertPath(string path);
+	bool FormatCommandPath(string commandLine, vector<string> &tokens, int outputNumber);
 }

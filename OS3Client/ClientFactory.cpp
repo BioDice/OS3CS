@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "ClientFactory.h"
 
 namespace OS3CS

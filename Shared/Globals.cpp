@@ -8,30 +8,33 @@ namespace OS3CS
 		stringstream ss(str); // Insert the string into a stream
 
 		while (getline(ss, buf, delim))
-			tokens.push_back(buf);
-	}
-
-
-	void StrSplit(string str, vector<string> &tokens, char delim, int iLimit)
-	{
-		string buf;
-		stringstream ss(str); // Insert the string into a stream
-		
-		int iCount = 0;
-		
-		while (getline(ss, buf, delim))
 		{
-			tokens.push_back(buf);
-			iCount++;
-
-			if (iCount == iLimit - 1)
-			{
-				getline(ss, buf, '\0');
+			if (buf != " ")
 				tokens.push_back(buf);
-				break;
-			}
 		}
 	}
+
+
+	//void StrSplit(string str, vector<string> &tokens, char delim, int iLimit)
+	//{
+	//	string buf;
+	//	stringstream ss(str); // Insert the string into a stream
+	//	
+	//	int iCount = 0;
+	//	
+	//	while (getline(ss, buf, delim))
+	//	{
+	//		tokens.push_back(buf);
+	//		iCount++;
+
+	//		if (iCount == iLimit - 1)
+	//		{
+	//			getline(ss, buf, '\0');
+	//			tokens.push_back(buf);
+	//			break;
+	//		}
+	//	}
+	//}
 
 	void StripWhiteSpaces(vector<string> &tokens)
 	{
@@ -50,6 +53,23 @@ namespace OS3CS
 			else
 				tokens[i] = str;
 		}
+	}
+
+	bool FormatCommandPath(string commandLine, vector<string> &tokens, int outputNumber)
+	{
+		commandLine = commandLine.erase(0, 4);
+		StrSplit(commandLine, tokens, '"');
+		if (tokens.size() == 1)
+		{
+			tokens.clear();
+			StrSplit(commandLine, tokens, ' ');
+		}
+
+		StripWhiteSpaces(tokens);
+		if (tokens.size() == outputNumber)
+			return true;
+		else
+			return false;
 	}
 
 	string GetFileName(string path)

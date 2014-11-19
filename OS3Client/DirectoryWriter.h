@@ -1,6 +1,5 @@
 #pragma once
 #include "tinyxml\tinyxml\tinyxml.h"
-#include "stdafx.h"
 #include <stdlib.h>
 class DirectoryWriter
 {

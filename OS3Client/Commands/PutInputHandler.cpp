@@ -2,8 +2,6 @@
 
 namespace OS3CS
 {
-	const int BUFFERSIZE = 1024;
-
 	PutInputHandler::PutInputHandler(void)
 	{
 	}
@@ -15,37 +13,15 @@ namespace OS3CS
 
 	void PutInputHandler::Process(Socket* socket, string response)
 	{
-		string temp = response;
-		temp = temp.erase(0, 4);
-		vector<string> segments = vector<string>();
-		vector<string> resp = vector<string>();
-		StrSplit(temp, resp, '"');
-		if (resp.size() == 1)
-		{
-			StrSplit(resp[0], segments, ' ');
-		}
-		else if (resp.size() == 2)
-		{
-			segments = resp;
-		}
-		else if (resp.size() == 3)
-		{
-			StripWhiteSpaces(resp);
-			segments = resp;
-		}
-		else if (resp.size() == 4)
-		{
-			StripWhiteSpaces(resp);
-			segments.push_back(resp[0]);
-			segments.push_back(resp[1]);
-		}
-		else
-		{
-			cout << "Syntax error: use put [remote file] [local dir]" << endl;
-			return;
-		}
 		try
 		{
+			vector<string> segments = vector<string>();
+			if (!FormatCommandPath(response, segments, 2))
+			{
+				cout << "Syntax error: use put [remote dir] [local file]" << endl;
+				return;
+			}
+
 			socket->writeline(response);
 			char buffer[MAXBUFFERSIZE+1];
 			int bytesToRead, bytesRead, fileSize;
@@ -65,7 +41,7 @@ namespace OS3CS
 			bytesToRead = fileSize;
 			// send filesize to server
 			socket->writeline(to_string(fileSize));
-			cout << "Sending file size: " << fileSize << endl;
+			cout << "Sending file size: " << fileSize << " bytes" << endl;
 			char line[MAXPATH];
 
 			// asking (waiting) if server is ready

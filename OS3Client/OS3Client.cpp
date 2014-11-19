@@ -4,7 +4,6 @@
 #include <string>
 #include "Client.h"
 
-
 using namespace OS3CS;
 
 void getConnectionDetails(Client& client)
@@ -18,6 +17,9 @@ void getConnectionDetails(Client& client)
 
 int main()
 {
+	//wcin.imbue(std::locale("English_United States.437"));
+	//wcout.imbue(std::locale("English_United States.437"));
+	//SetConsoleOutputCP(CP_UTF8);
 	DirectoryWriter * writer = new DirectoryWriter();
 	writer->InitList();
 
@@ -25,7 +27,7 @@ int main()
 	writer->UpdateNode("newfile","renamedlol");
 	writer->DeleteNode("renamedlol");
 
-	setlocale(LC_ALL, "");
+	//setlocale(LC_ALL, "");
 	Client client = Client();
 	getConnectionDetails(client);
 	
