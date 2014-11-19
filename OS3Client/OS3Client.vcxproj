@@ -53,10 +53,13 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Users\dev\Documents\boost\boost_1_57_0;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <PerUserRedirection>true</PerUserRedirection>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -80,8 +83,8 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\Downloads\tinyxml_2_6_2 (1)\tinyxml\tinystr.h" />
-    <ClInclude Include="..\..\..\..\Downloads\tinyxml_2_6_2 (1)\tinyxml\tinyxml.h" />
+    <ClInclude Include="..\OS3Server\tinyxml\tinyxml\tinystr.h" />
+    <ClInclude Include="..\OS3Server\tinyxml\tinyxml\tinyxml.h" />
     <ClInclude Include="..\Shared\Globals.h" />
     <ClInclude Include="..\Shared\InputFactory.h" />
     <ClInclude Include="..\Shared\InputHandler.h" />
@@ -101,10 +104,10 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\Downloads\tinyxml_2_6_2 (1)\tinyxml\tinystr.cpp" />
-    <ClCompile Include="..\..\..\..\Downloads\tinyxml_2_6_2 (1)\tinyxml\tinyxml.cpp" />
-    <ClCompile Include="..\..\..\..\Downloads\tinyxml_2_6_2 (1)\tinyxml\tinyxmlerror.cpp" />
-    <ClCompile Include="..\..\..\..\Downloads\tinyxml_2_6_2 (1)\tinyxml\tinyxmlparser.cpp" />
+    <ClCompile Include="..\OS3Server\tinyxml\tinyxml\tinystr.cpp" />
+    <ClCompile Include="..\OS3Server\tinyxml\tinyxml\tinyxml.cpp" />
+    <ClCompile Include="..\OS3Server\tinyxml\tinyxml\tinyxmlerror.cpp" />
+    <ClCompile Include="..\OS3Server\tinyxml\tinyxml\tinyxmlparser.cpp" />
     <ClCompile Include="..\Shared\Globals.cpp" />
     <ClCompile Include="..\Shared\InputFactory.cpp" />
     <ClCompile Include="..\Shared\InputHandler.cpp" />

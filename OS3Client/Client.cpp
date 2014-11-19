@@ -51,7 +51,7 @@ namespace OS3CS
 						{
 							cout << ex << endl;
 						}
-					}
+					 }
 					
 					else
 						inputFactory->CreateHandler("resp")->Process(s, response);

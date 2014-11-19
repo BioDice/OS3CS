@@ -90,10 +90,10 @@
     <ClInclude Include="..\Shared\dirent.h">
       <Filter>Header Files\Shared</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\Downloads\tinyxml_2_6_2 (1)\tinyxml\tinystr.h">
+    <ClInclude Include="tinyxml\tinyxml\tinystr.h">
       <Filter>Header Files\tinyxml</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\Downloads\tinyxml_2_6_2 (1)\tinyxml\tinyxml.h">
+    <ClInclude Include="tinyxml\tinyxml\tinyxml.h">
       <Filter>Header Files\tinyxml</Filter>
     </ClInclude>
   </ItemGroup>
@@ -144,16 +144,16 @@
     <ClCompile Include="Commands\SyncInputHandler.cpp">
       <Filter>Source Files\Shared\Handlers</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\Downloads\tinyxml_2_6_2 (1)\tinyxml\tinystr.cpp">
+    <ClCompile Include="tinyxml\tinyxml\tinystr.cpp">
       <Filter>Source Files\tinyxml</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\Downloads\tinyxml_2_6_2 (1)\tinyxml\tinyxml.cpp">
+    <ClCompile Include="tinyxml\tinyxml\tinyxml.cpp">
       <Filter>Source Files\tinyxml</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\Downloads\tinyxml_2_6_2 (1)\tinyxml\tinyxmlerror.cpp">
+    <ClCompile Include="tinyxml\tinyxml\tinyxmlerror.cpp">
       <Filter>Source Files\tinyxml</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\Downloads\tinyxml_2_6_2 (1)\tinyxml\tinyxmlparser.cpp">
+    <ClCompile Include="tinyxml\tinyxml\tinyxmlparser.cpp">
       <Filter>Source Files\tinyxml</Filter>
     </ClCompile>
   </ItemGroup>

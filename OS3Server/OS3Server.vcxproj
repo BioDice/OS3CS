@@ -80,8 +80,6 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\Downloads\tinyxml_2_6_2 (1)\tinyxml\tinystr.h" />
-    <ClInclude Include="..\..\..\..\Downloads\tinyxml_2_6_2 (1)\tinyxml\tinyxml.h" />
     <ClInclude Include="..\Shared\dirent.h" />
     <ClInclude Include="..\Shared\Globals.h" />
     <ClInclude Include="..\Shared\InputFactory.h" />
@@ -100,12 +98,10 @@
     <ClInclude Include="ServerFactory.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="tinyxml\tinyxml\tinystr.h" />
+    <ClInclude Include="tinyxml\tinyxml\tinyxml.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\Downloads\tinyxml_2_6_2 (1)\tinyxml\tinystr.cpp" />
-    <ClCompile Include="..\..\..\..\Downloads\tinyxml_2_6_2 (1)\tinyxml\tinyxml.cpp" />
-    <ClCompile Include="..\..\..\..\Downloads\tinyxml_2_6_2 (1)\tinyxml\tinyxmlerror.cpp" />
-    <ClCompile Include="..\..\..\..\Downloads\tinyxml_2_6_2 (1)\tinyxml\tinyxmlparser.cpp" />
     <ClCompile Include="..\Shared\Globals.cpp" />
     <ClCompile Include="..\Shared\InputFactory.cpp" />
     <ClCompile Include="..\Shared\InputHandler.cpp" />
@@ -125,6 +121,10 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="tinyxml\tinyxml\tinystr.cpp" />
+    <ClCompile Include="tinyxml\tinyxml\tinyxml.cpp" />
+    <ClCompile Include="tinyxml\tinyxml\tinyxmlerror.cpp" />
+    <ClCompile Include="tinyxml\tinyxml\tinyxmlparser.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

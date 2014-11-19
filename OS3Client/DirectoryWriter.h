@@ -1,16 +1,17 @@
 #pragma once
-
+#include "tinyxml\tinyxml\tinyxml.h"
+#include "stdafx.h"
+#include <stdlib.h>
 class DirectoryWriter
 {
 public:
 	DirectoryWriter(void);
 	~DirectoryWriter(void);
 
-	//void InitList();
-	//bool CheckNodeExists(const std::string key, const std::string value);
-	//void traverseTree(const boost::property_tree::ptree& pt, std::string key,std::string node);
-	//void DeleteNode(const std::string key, const std::string value);
-	//void WriteNode(char *nodeName,char*directory);
-	//void UpdateNode(char*nodeName,char*renamename);
+	void InitList();
+	void DeleteNode(char *nodeName);
+	void WriteNode(char *nodeName,char*directory);
+	void UpdateNode(char*nodeName,char*renamename);
+	
 };
 

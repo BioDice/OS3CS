@@ -19,10 +19,11 @@ void getConnectionDetails(Client& client)
 int main()
 {
 	DirectoryWriter * writer = new DirectoryWriter();
-	//writer->InitList();
+	writer->InitList();
 
-	//writer->WriteNode("newfile","randomdir");
-	//writer->DeleteNode("filename","newfile");
+	writer->WriteNode("newfile","randomdir");
+	writer->UpdateNode("newfile","renamedlol");
+	writer->DeleteNode("renamedlol");
 
 	setlocale(LC_ALL, "");
 	Client client = Client();

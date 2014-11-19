@@ -87,10 +87,10 @@
     <ClInclude Include="DirectoryWriter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\Downloads\tinyxml_2_6_2 (1)\tinyxml\tinystr.h">
+    <ClInclude Include="..\OS3Server\tinyxml\tinyxml\tinystr.h">
       <Filter>Header Files\tinyxml</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\Downloads\tinyxml_2_6_2 (1)\tinyxml\tinyxml.h">
+    <ClInclude Include="..\OS3Server\tinyxml\tinyxml\tinyxml.h">
       <Filter>Header Files\tinyxml</Filter>
     </ClInclude>
   </ItemGroup>
@@ -141,16 +141,16 @@
     <ClCompile Include="DirectoryWriter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\Downloads\tinyxml_2_6_2 (1)\tinyxml\tinystr.cpp">
+    <ClCompile Include="..\OS3Server\tinyxml\tinyxml\tinystr.cpp">
       <Filter>Source Files\tinyxml</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\Downloads\tinyxml_2_6_2 (1)\tinyxml\tinyxml.cpp">
+    <ClCompile Include="..\OS3Server\tinyxml\tinyxml\tinyxml.cpp">
       <Filter>Source Files\tinyxml</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\Downloads\tinyxml_2_6_2 (1)\tinyxml\tinyxmlerror.cpp">
+    <ClCompile Include="..\OS3Server\tinyxml\tinyxml\tinyxmlerror.cpp">
       <Filter>Source Files\tinyxml</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\Downloads\tinyxml_2_6_2 (1)\tinyxml\tinyxmlparser.cpp">
+    <ClCompile Include="..\OS3Server\tinyxml\tinyxml\tinyxmlparser.cpp">
       <Filter>Source Files\tinyxml</Filter>
     </ClCompile>
   </ItemGroup>
