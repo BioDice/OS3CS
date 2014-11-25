@@ -3,7 +3,8 @@
 #include <stdlib.h>
 #include "Socket.h"
 #include "TransferManager.h"
-
+#include "DirectoryReader.h"
+#include "Globals.h"
 namespace OS3CS{
 	class DirectoryWriter
 	{
@@ -14,7 +15,7 @@ namespace OS3CS{
 		void Sync(Socket *socket);
 		void InitList();
 		void DeleteNode(char *nodeName);
-		void WriteNode(char *nodeName, char*directory);
+		void WriteNode(string name, string directory);
 		void UpdateNode(char*nodeName, char*renamename);
 		int isLeading();
 	};

@@ -23,10 +23,10 @@ int main()
 	DirectoryWriter * writer = new DirectoryWriter();
 	writer->InitList();
 
-	writer->WriteNode("newfile","randomdir");
-	writer->WriteNode("file23490", "woopdir");
-	writer->UpdateNode("newfile","renamedlol");
-	writer->DeleteNode("renamedlol");
+	//writer->WriteNode("newfile","randomdir");
+	//writer->WriteNode("file23490", "woopdir");
+	//writer->UpdateNode("newfile","renamedlol");
+	//writer->DeleteNode("renamedlol");
 
 	//setlocale(LC_ALL, "");
 	Client client = Client();

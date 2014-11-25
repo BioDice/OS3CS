@@ -10,7 +10,8 @@ int main()
 	//wcout.imbue(std::locale("English_United States.437"));
 	//setlocale(LC_ALL, "");
 	//SetConsoleOutputCP(CP_UTF8);
-
+	DirectoryWriter *writer = new DirectoryWriter();
+	writer->InitList();
 	Server *server = new Server();
 	server->listen(100);
 

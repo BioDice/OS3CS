@@ -1,3 +1,6 @@
 <?xml version="1.0" ?>
-<Version Number="1" />
-<Filesystem />
+<Version Number="3" />
+<Filesystem>
+    <File filename="D3Prefs.txt" Originalname="D3Prefs.txt" directory="C:\Users\Leonvw\Documents\GitHub\OS3CS\OS3Server/mapje\D3Prefs.txt" />
+    <File filename="Nieuw tekstdocument - kopie (2).txt" Originalname="Nieuw tekstdocument - kopie (2).txt" directory="C:\Users\Leonvw\Documents\GitHub\OS3CS\OS3Server/mapje\Nieuw tekstdocument - kopie (2).txt" />
+</Filesystem>

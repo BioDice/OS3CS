@@ -93,6 +93,12 @@
     <ClInclude Include="..\Shared\TransferManager.h">
       <Filter>Header Files\Shared</Filter>
     </ClInclude>
+    <ClInclude Include="..\Shared\dirent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Shared\DirectoryReader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Shared\Socket.cpp">
@@ -152,6 +158,9 @@
     </ClCompile>
     <ClCompile Include="..\Shared\TransferManager.cpp">
       <Filter>Source Files\Shared\Handlers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Shared\DirectoryReader.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

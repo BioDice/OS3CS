@@ -28,7 +28,7 @@ namespace OS3CS
 			cout << "Sync started";
 			SetXML(socket);
 			writer->Sync(socket);
-			socket->writeline("");
+			/*socket->writeline("READY");*/
 		}
 		else if (version==serverversion)
 		{

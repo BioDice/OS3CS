@@ -51,20 +51,44 @@ namespace OS3CS
 
 		TiXmlNode *serverNode = 0;
 		serverNode = serverDoc.FirstChild("Filesystem");
+		bool found = false;
+		for (TiXmlElement* server = serverNode->FirstChildElement("File"); server != NULL; server = server->NextSiblingElement("File"))
+		{
+			found = false;
+			const char *serverAttribute = server->Attribute("Originalname");
+			for (TiXmlElement* client = clientNode->FirstChildElement("File"); client != NULL; client = client->NextSiblingElement("File"))
+			{
+				found = true;
+			}
+			if (!found)
+			{
+				//delete server node
+			}
+		}
 
 		for (TiXmlElement* client = clientNode->FirstChildElement("File"); client != NULL; client = client->NextSiblingElement("File"))
 		{
-			const char *clientAttribute = client->Attribute("Originalname");
+			const char *serverAttribute = client->Attribute("Originalname");
 			for (TiXmlElement* server = serverNode->FirstChildElement("File"); server != NULL; server = server->NextSiblingElement("File"))
 			{
-				const char *serverAttribute = server->Attribute("Originalname");
+				const char *clientAttribute = server->Attribute("Originalname");
 				if (strcmp(clientAttribute, serverAttribute) != 0)
 				{
 					const char *clientDirectory = client->Attribute("directory");
-					manager->SendFile(socket,clientDirectory);
+					const char *serverDirectory = server->Attribute("directory");
+					//vector<string> segments = vector<string>();
+					//socket->writeline(response);
+					//string response = "put "+
+					//TransferManager* manager = new TransferManager();
+					////manager->SendFile(socket, segments[1]);
+					//socket->writeline(r);
+					manager->SendFile(socket, clientDirectory);
 				}
 			}
 		}
+
+		delete manager;
+		delete clientNode;
 	}
 
 	void DirectoryWriter::InitList()
@@ -78,10 +102,41 @@ namespace OS3CS
 
 		TiXmlElement *filesystem = new TiXmlElement("Filesystem");
 		doc.LinkEndChild(filesystem);
+		doc.SaveFile("Config.xml");
+		DirectoryReader * reader = new DirectoryReader();
+		DIR* pDir = reader->open(Currentpath() + PATHSEPERATOR + "mapje");
 
+		struct dirent* pEnt = NULL;
+
+		int count = 0;
+		while (pEnt = readdir(pDir))
+		{
+			if (strcmp(pEnt->d_name, ".") == 0 || strcmp(pEnt->d_name, "..") == 0)
+				continue;
+
+			string szCurrent(Currentpath()+PATHSEPERATOR+"mapje");
+			szCurrent.append(PATHSEPERATOR);
+			szCurrent.append(pEnt->d_name);
+
+			//if (reader->isDir(szCurrent))
+			//{
+			//	vListing.push_back(szCurrent);
+			//}
+
+			if (reader->isFile(szCurrent))
+			{
+				//time_t iLastModified = reader->getLastModifiedTime(szCurrent);
+				//szCurrent.append("|");
+				//szCurrent.append(to_string(iLastModified));
+				WriteNode(pEnt->d_name, szCurrent);
+			}
+
+			count++;
+		}
+
+		delete pEnt;
+		delete pDir;
 		//TODO:Loop directory
-
-		doc.SaveFile("config.xml");
 	}
 
 	void DirectoryWriter::UpdateNode(char*nodeName, char*renamename)
@@ -119,7 +174,7 @@ namespace OS3CS
 		doc.SaveFile();
 	}
 
-	void DirectoryWriter::WriteNode(char *nodeName, char*directory)
+	void DirectoryWriter::WriteNode(string nodeName, string directory)
 	{
 		TiXmlDocument doc("config.xml");
 		bool loadOkay = doc.LoadFile();
@@ -131,9 +186,9 @@ namespace OS3CS
 		}
 
 		TiXmlElement newFile("File");
-		newFile.SetAttribute("filename", nodeName);
-		newFile.SetAttribute("Originalname", nodeName);
-		newFile.SetAttribute("directory", directory);
+		newFile.SetAttribute("filename", nodeName.c_str());
+		newFile.SetAttribute("Originalname", nodeName.c_str());
+		newFile.SetAttribute("directory", directory.c_str());
 
 		TiXmlNode *versionNode = 0;
 		versionNode = doc.FirstChild("Version");

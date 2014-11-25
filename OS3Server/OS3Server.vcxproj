@@ -80,6 +80,7 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Shared\DirectoryReader.h" />
     <ClInclude Include="..\Shared\DirectoryWriter.h" />
     <ClInclude Include="..\Shared\dirent.h" />
     <ClInclude Include="..\Shared\Globals.h" />
@@ -103,6 +104,7 @@
     <ClInclude Include="tinyxml\tinyxml\tinyxml.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\Shared\DirectoryReader.cpp" />
     <ClCompile Include="..\Shared\DirectoryWriter.cpp" />
     <ClCompile Include="..\Shared\Globals.cpp" />
     <ClCompile Include="..\Shared\InputFactory.cpp" />
