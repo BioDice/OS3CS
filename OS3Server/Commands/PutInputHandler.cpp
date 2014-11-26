@@ -30,6 +30,9 @@ namespace OS3CS
 			{
 				path = ConvertPath(Currentpath()+"/mapje") + "/" + GetFileName(segments[1]);
 			}
+
+			DirectoryReader::createSubDirectories(segments[0], false);
+
 			TransferManager *manager = new TransferManager();
 			socket->writeline("READY");
 			manager->ReceiveFile(socket,path);

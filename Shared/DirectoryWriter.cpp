@@ -33,28 +33,10 @@ namespace OS3CS
 		
 	}
 
-	void DirectoryWriter::InitList()
+	void DirectoryWriter::RecursiveList(string szPath, map<string, string> &directoryMap, bool bRecursive)
 	{
-		TiXmlDocument doc;
-		TiXmlDeclaration *declaration = new TiXmlDeclaration("1.0", "", "");
-		TiXmlElement *version = new TiXmlElement("Version");
-		version->SetAttribute("Number", 1);
-
-		TiXmlElement *rootpath = new TiXmlElement("rootPath");
-		string path = Currentpath().c_str() + PATHSEPERATOR + "mapje";
-		rootpath->SetAttribute("path", path.c_str());
-		doc.LinkEndChild(declaration);
-		doc.LinkEndChild(version);
-		doc.LinkEndChild(rootpath);
-
-
-
-
-		TiXmlElement *filesystem = new TiXmlElement("Filesystem");
-		doc.LinkEndChild(filesystem);
-		doc.SaveFile("Config.xml");
 		DirectoryReader * reader = new DirectoryReader();
-		DIR* pDir = reader->open(Currentpath() + PATHSEPERATOR + "mapje");
+		DIR* pDir = reader->open(szPath);
 
 		struct dirent* pEnt = NULL;
 
@@ -64,21 +46,46 @@ namespace OS3CS
 			if (strcmp(pEnt->d_name, ".") == 0 || strcmp(pEnt->d_name, "..") == 0)
 				continue;
 
-			string szCurrent(Currentpath()+PATHSEPERATOR+"mapje");
+			string szCurrent(szPath);
 			szCurrent.append(PATHSEPERATOR);
 			szCurrent.append(pEnt->d_name);
-
-			//if (reader->isDir(szCurrent))
-			//{
-			//	vListing.push_back(szCurrent);
-			//}
-
+			
+			if (reader->isDir(szCurrent))
+			{
+				if (bRecursive)
+					RecursiveList(szCurrent, directoryMap, true);
+			}
 			if (reader->isFile(szCurrent))
 			{
+				vector<string> segments = vector<string>();
+				StrSplit(szCurrent, segments, '\\');
+
+				string path = "";
+				vector<string>temp = segments;
+				for each (string var in temp)
+				{
+					if (strcmp(var.c_str(),"mapje")==0)
+					{
+						break;
+					}
+					else
+					{
+						segments.erase(segments.begin());
+					}
+				}
+
+				for (size_t i = 0; i < segments.size(); i++)
+				{
+					path.append(segments[i]);
+					if (i!=segments.size()-1)
+					{
+						path.append(PATHSEPERATOR);
+					}
+				}
+
 				time_t iLastModified = reader->getLastModifiedTime(szCurrent);
-				////szCurrent.append("|");
-				//szCurrent.append(t);
-				WriteNode(pEnt->d_name, szCurrent, to_string(iLastModified));
+				directoryMap[pEnt->d_name] = szCurrent;
+				WriteNode(pEnt->d_name, path, to_string(iLastModified));
 			}
 
 			count++;
@@ -86,10 +93,33 @@ namespace OS3CS
 
 		delete pEnt;
 		delete pDir;
+	}
+
+	void DirectoryWriter::InitList()
+	{
+		TiXmlDocument doc;
+		TiXmlDeclaration *declaration = new TiXmlDeclaration("1.0", "", "");
+		TiXmlElement *version = new TiXmlElement("Version");
+		version->SetAttribute("Number", 1);
+
+		TiXmlElement *rootpath = new TiXmlElement("rootPath");
+		string path = Currentpath().c_str();
+		rootpath->SetAttribute("path", path.c_str());
+		doc.LinkEndChild(declaration);
+		doc.LinkEndChild(version);
+		doc.LinkEndChild(rootpath);
+
+		TiXmlElement *filesystem = new TiXmlElement("Filesystem");
+		doc.LinkEndChild(filesystem);
+		doc.SaveFile("Config.xml");
+
+		map<string, string> directoryMap = map<string,string>();
+		RecursiveList(path+PATHSEPERATOR+"mapje", directoryMap,true);
+		
 		//TODO:Loop directory
 	}
 
-	void DirectoryWriter::UpdateNode(char*nodeName, char*renamename)
+	void DirectoryWriter::UpdateNode(string nodeName, string renamename)
 	{
 		TiXmlDocument doc("config.xml");
 		bool loadOkay = doc.LoadFile();
@@ -115,9 +145,26 @@ namespace OS3CS
 		for (TiXmlElement* e = node->FirstChildElement("File"); e != NULL; e = e->NextSiblingElement("File"))
 		{
 			const char *attribute = e->Attribute("Originalname");
-			if (strcmp(attribute, nodeName) == 0)
+			if (strcmp(attribute, nodeName.c_str()) == 0)
 			{
-				e->SetAttribute("filename", renamename);
+				e->SetAttribute("filename", renamename.c_str());
+				
+				vector<string> segments = vector<string>();
+				StrSplit(e->Attribute("directory"), segments, '\\');
+
+				segments.pop_back();
+				segments.push_back(renamename);
+				string directory = "";
+				for (size_t i = 0; i < segments.size(); i++)
+				{
+					directory.append(segments[i]);
+					if (i != segments.size() - 1)
+					{
+						directory.append(PATHSEPERATOR);
+					}
+				}
+
+				e->SetAttribute("directory", directory.c_str());
 			}
 		}
 

@@ -25,8 +25,8 @@ namespace OS3CS
 	}
 	void SyncInputHandler::Put(Socket *socket, string local,string remote)
 	{
-		socket->write("put null ");
-		socket->writeline(remote);
+		socket->write("put "+remote+" ");
+		socket->writeline(local);
 		char line[MAXPATH + 1];
 
 		socket->readline(line, MAXPATH);
@@ -104,7 +104,6 @@ namespace OS3CS
 				{
 					found = true;
 				}
-				
 			}
 			if (!found)
 			{
@@ -122,25 +121,47 @@ namespace OS3CS
 				const char *serverAttribute = server->Attribute("Originalname");
 				if (strcmp(clientAttribute, serverAttribute) == 0)
 				{
+					//int serverDate = atoi(server->Attribute("Editdate"));
+					//int clientDate = atoi(client->Attribute("Editdate"));
+					//if (clientDate > serverDate)
+					//{
+					//	found = false;
+					//}
+					//else
+					//{
+					//	found = true;
+					//}
 					found = true;
 				}
 			}
 			if (!found)
 			{
 				const char *local = client->Attribute("directory");
-				string filename = clientAttribute;
-					
 				TiXmlNode *versionNode = 0;
 				versionNode = serverDoc.FirstChild("rootPath");
 				TiXmlElement *versionelement = versionNode->ToElement();
-				std::string path = versionelement->Attribute("path");
-				//C:\\Users\\dev\\Documents\\GitHub\\OS3CS\\OS3Server\\mapje"
-				Put(socket, local,path+PATHSEPERATOR+filename);
+
+				string remotepath = versionelement->Attribute("path") + PATHSEPERATOR + local;
+				vector<string> segments = vector<string>();
+
+				std::string path = "";
+				StrSplit(remotepath, segments, '\\');
+				segments.pop_back();
+				for (size_t i = 0; i < segments.size(); i++)
+				{
+					path.append(segments[i]);
+					if (i != segments.size() - 1)
+					{
+						path.append(PATHSEPERATOR);
+					}
+				}
+				Put(socket, Currentpath().c_str() + PATHSEPERATOR + string(local), path);
 			}
 		}
 
 		delete manager;
 		cout << "Syncing completed!" << endl;
+		socket->writeline("");
 	}
 
 	void SyncInputHandler::SetXML(Socket *socket)

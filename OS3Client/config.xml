@@ -1,11 +1,12 @@
 <?xml version="1.0" ?>
-<Version Number="7" />
-<rootPath path="C:\Users\dev\Documents\GitHub\OS3CS\OS3Client\mapje" />
+<Version Number="8" />
+<rootPath path="C:\Users\Leonvw\Documents\GitHub\OS3CS\OS3Client" />
 <Filesystem>
-    <File filename="fdsfdsfsd.txt" Originalname="fdsfdsfsd.txt" directory="C:\Users\dev\Documents\GitHub\OS3CS\OS3Client\mapje\fdsfdsfsd.txt" Editdate="1417011405" />
-    <File filename="gitignore_global.txt" Originalname="gitignore_global.txt" directory="C:\Users\dev\Documents\GitHub\OS3CS\OS3Client\mapje\gitignore_global.txt" Editdate="1382115864" />
-    <File filename="hai.txt" Originalname="hai.txt" directory="C:\Users\dev\Documents\GitHub\OS3CS\OS3Client\mapje\hai.txt" Editdate="1417011405" />
-    <File filename="hgignore_global.txt" Originalname="hgignore_global.txt" directory="C:\Users\dev\Documents\GitHub\OS3CS\OS3Client\mapje\hgignore_global.txt" Editdate="1382115864" />
-    <File filename="SO.COM.IApplication.chm" Originalname="SO.COM.IApplication.chm" directory="C:\Users\dev\Documents\GitHub\OS3CS\OS3Client\mapje\SO.COM.IApplication.chm" Editdate="1392027408" />
-    <File filename="SO.COM.IDatabase.chm" Originalname="SO.COM.IDatabase.chm" directory="C:\Users\dev\Documents\GitHub\OS3CS\OS3Client\mapje\SO.COM.IDatabase.chm" Editdate="1392027284" />
+    <File filename="fdsfdsfsd.txt" Originalname="fdsfdsfsd.txt" directory="mapje\fdsfdsfsd.txt" Editdate="1417025686" />
+    <File filename="gitignore_global.txt" Originalname="gitignore_global.txt" directory="mapje\gitignore_global.txt" Editdate="1417025686" />
+    <File filename="hai.txt" Originalname="hai.txt" directory="mapje\hai.txt" Editdate="1417025686" />
+    <File filename="hgignore_global.txt" Originalname="hgignore_global.txt" directory="mapje\hgignore_global.txt" Editdate="1417025686" />
+    <File filename="NewMicrosofWord-document.docx" Originalname="NewMicrosofWord-document.docx" directory="mapje\map1\NewMicrosofWord-document.docx" Editdate="1416419265" />
+    <File filename="SO.COM.IApplication.chm" Originalname="SO.COM.IApplication.chm" directory="mapje\SO.COM.IApplication.chm" Editdate="1417025686" />
+    <File filename="SO.COM.IDatabase.chm" Originalname="SO.COM.IDatabase.chm" directory="mapje\SO.COM.IDatabase.chm" Editdate="1417025686" />
 </Filesystem>
