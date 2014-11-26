@@ -13,23 +13,20 @@ namespace OS3CS
 
 	void SyncInputHandler::Process(Socket* socket,string response)
 	{
-		DirectoryWriter *writer = new DirectoryWriter();
-		int version = writer->isLeading();
-		socket->writeline(std::to_string(version));
-		socket->writeline("");
+		//DirectoryWriter *writer = new DirectoryWriter();
+		//int version = writer->isLeading();
+		//socket->writeline(std::to_string(version));
+		//socket->writeline("");
 		GetXML(socket);
-		//char line[256 + 1];
-		//while (socket->readline(line, 256) > 0)
-		//{
-		//	
-		//}
+		//socket->writeline("READY");
+		socket->writeline("READY");
 	}
 	void SyncInputHandler::GetXML(Socket *socket)
 	{
 		char buffer[MAXBUFFERSIZE + 1];
 		int bytesToRead, bytesRead, fileSize;
 
-		ifstream myfile(Currentpath()+"/config.xml", ifstream::binary);
+		ifstream myfile(Currentpath()+PATHSEPERATOR+"config.xml", ifstream::binary);
 		if (!myfile.is_open())
 		{
 			myfile.close();

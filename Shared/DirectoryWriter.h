@@ -15,7 +15,7 @@ namespace OS3CS{
 		void Sync(Socket *socket);
 		void InitList();
 		void DeleteNode(char *nodeName);
-		void WriteNode(string name, string directory);
+		void WriteNode(string name, string directory,string editDate);
 		void UpdateNode(char*nodeName, char*renamename);
 		int isLeading();
 	};

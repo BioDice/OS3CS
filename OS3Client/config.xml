@@ -1,12 +1,10 @@
 <?xml version="1.0" ?>
-<Version Number="9" />
+<Version Number="7" />
 <Filesystem>
-    <File filename="Nieuw tekstdocument - kopie (2).txt" Originalname="Nieuw tekstdocument - kopie (2).txt" directory="C:\Users\Leonvw\Documents\GitHub\OS3CS\OS3Client/mapje\Nieuw tekstdocument - kopie (2).txt" />
-    <File filename="Nieuw tekstdocument - kopie (3).txt" Originalname="Nieuw tekstdocument - kopie (3).txt" directory="C:\Users\Leonvw\Documents\GitHub\OS3CS\OS3Client/mapje\Nieuw tekstdocument - kopie (3).txt" />
-    <File filename="Nieuw tekstdocument - kopie (4).txt" Originalname="Nieuw tekstdocument - kopie (4).txt" directory="C:\Users\Leonvw\Documents\GitHub\OS3CS\OS3Client/mapje\Nieuw tekstdocument - kopie (4).txt" />
-    <File filename="Nieuw tekstdocument - kopie (5).txt" Originalname="Nieuw tekstdocument - kopie (5).txt" directory="C:\Users\Leonvw\Documents\GitHub\OS3CS\OS3Client/mapje\Nieuw tekstdocument - kopie (5).txt" />
-    <File filename="Nieuw tekstdocument - kopie (6).txt" Originalname="Nieuw tekstdocument - kopie (6).txt" directory="C:\Users\Leonvw\Documents\GitHub\OS3CS\OS3Client/mapje\Nieuw tekstdocument - kopie (6).txt" />
-    <File filename="Nieuw tekstdocument - kopie (7).txt" Originalname="Nieuw tekstdocument - kopie (7).txt" directory="C:\Users\Leonvw\Documents\GitHub\OS3CS\OS3Client/mapje\Nieuw tekstdocument - kopie (7).txt" />
-    <File filename="Nieuw tekstdocument - kopie.txt" Originalname="Nieuw tekstdocument - kopie.txt" directory="C:\Users\Leonvw\Documents\GitHub\OS3CS\OS3Client/mapje\Nieuw tekstdocument - kopie.txt" />
-    <File filename="Nieuw tekstdocument.txt" Originalname="Nieuw tekstdocument.txt" directory="C:\Users\Leonvw\Documents\GitHub\OS3CS\OS3Client/mapje\Nieuw tekstdocument.txt" />
+    <File filename="fdsfdsfsd.txt" Originalname="fdsfdsfsd.txt" directory="C:\Users\dev\Documents\GitHub\OS3CS\OS3Client\mapje\fdsfdsfsd.txt" Editdate="1417011405" />
+    <File filename="gitignore_global.txt" Originalname="gitignore_global.txt" directory="C:\Users\dev\Documents\GitHub\OS3CS\OS3Client\mapje\gitignore_global.txt" Editdate="1382115864" />
+    <File filename="hai.txt" Originalname="hai.txt" directory="C:\Users\dev\Documents\GitHub\OS3CS\OS3Client\mapje\hai.txt" Editdate="1417011405" />
+    <File filename="hgignore_global.txt" Originalname="hgignore_global.txt" directory="C:\Users\dev\Documents\GitHub\OS3CS\OS3Client\mapje\hgignore_global.txt" Editdate="1382115864" />
+    <File filename="SO.COM.IApplication.chm" Originalname="SO.COM.IApplication.chm" directory="C:\Users\dev\Documents\GitHub\OS3CS\OS3Client\mapje\SO.COM.IApplication.chm" Editdate="1392027408" />
+    <File filename="SO.COM.IDatabase.chm" Originalname="SO.COM.IDatabase.chm" directory="C:\Users\dev\Documents\GitHub\OS3CS\OS3Client\mapje\SO.COM.IDatabase.chm" Editdate="1392027284" />
 </Filesystem>

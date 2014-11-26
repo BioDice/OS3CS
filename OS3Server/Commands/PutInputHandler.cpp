@@ -26,17 +26,26 @@ namespace OS3CS
 			int bytesToRead, bytesRead, fileSize;
 			// merge path with filename
 			string path = ConvertPath(segments[0]) + "/" + GetFileName(segments[1]);
+			if (strcmp(segments[0].c_str(), "null") == 0)
+			{
+				path = ConvertPath(Currentpath()+"/mapje") + "/" + GetFileName(segments[1]);
+			}
 			TransferManager *manager = new TransferManager();
-
+			socket->writeline("READY");
 			manager->ReceiveFile(socket,path);
+
+			delete manager;
+
+			socket->writeline("");
+
 			DirectoryWriter *writer = new DirectoryWriter();
 			std::string str = GetFileName(segments[1]);
 			char*filename = &str[0];
 
-			std::string directory = FindAndReplace(Currentpath(), path, "");
-			char*directoryname = &directory[0];
-
-			writer->WriteNode(filename,directoryname);
+			DirectoryReader * reader = new DirectoryReader();
+			DIR* pDir = reader->open(Currentpath() + PATHSEPERATOR + "mapje");
+			time_t iLastModified = reader->getLastModifiedTime(path);
+			writer->WriteNode(filename, path, to_string(iLastModified));
 		}
 		catch (exception ex)
 		{

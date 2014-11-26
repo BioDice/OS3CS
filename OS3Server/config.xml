@@ -1,6 +1,10 @@
 <?xml version="1.0" ?>
-<Version Number="3" />
+<Version Number="7" />
 <Filesystem>
-    <File filename="D3Prefs.txt" Originalname="D3Prefs.txt" directory="C:\Users\Leonvw\Documents\GitHub\OS3CS\OS3Server/mapje\D3Prefs.txt" />
-    <File filename="Nieuw tekstdocument - kopie (2).txt" Originalname="Nieuw tekstdocument - kopie (2).txt" directory="C:\Users\Leonvw\Documents\GitHub\OS3CS\OS3Server/mapje\Nieuw tekstdocument - kopie (2).txt" />
+    <File filename="SO.COM.IApplication.chm" Originalname="SO.COM.IApplication.chm" directory="C:\Users\dev\Documents\GitHub\OS3CS\OS3Server\mapje\SO.COM.IApplication.chm" Editdate="1417013156" />
+    <File filename="SO.COM.IDatabase.chm" Originalname="SO.COM.IDatabase.chm" directory="C:\Users\dev\Documents\GitHub\OS3CS\OS3Server\mapje\SO.COM.IDatabase.chm" Editdate="1417013184" />
+    <File filename="fdsfdsfsd.txt" Originalname="fdsfdsfsd.txt" directory="C:/Users/dev/Documents/GitHub/OS3CS/OS3Server/mapje/fdsfdsfsd.txt" Editdate="1417016003" />
+    <File filename="gitignore_global.txt" Originalname="gitignore_global.txt" directory="C:/Users/dev/Documents/GitHub/OS3CS/OS3Server/mapje/gitignore_global.txt" Editdate="1417016003" />
+    <File filename="hai.txt" Originalname="hai.txt" directory="C:/Users/dev/Documents/GitHub/OS3CS/OS3Server/mapje/hai.txt" Editdate="1417016003" />
+    <File filename="hgignore_global.txt" Originalname="hgignore_global.txt" directory="C:/Users/dev/Documents/GitHub/OS3CS/OS3Server/mapje/hgignore_global.txt" Editdate="1417016003" />
 </Filesystem>
