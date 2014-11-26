@@ -39,8 +39,16 @@ namespace OS3CS
 		TiXmlDeclaration *declaration = new TiXmlDeclaration("1.0", "", "");
 		TiXmlElement *version = new TiXmlElement("Version");
 		version->SetAttribute("Number", 1);
+
+		TiXmlElement *rootpath = new TiXmlElement("rootPath");
+		string path = Currentpath().c_str() + PATHSEPERATOR + "mapje";
+		rootpath->SetAttribute("path", path.c_str());
 		doc.LinkEndChild(declaration);
 		doc.LinkEndChild(version);
+		doc.LinkEndChild(rootpath);
+
+
+
 
 		TiXmlElement *filesystem = new TiXmlElement("Filesystem");
 		doc.LinkEndChild(filesystem);

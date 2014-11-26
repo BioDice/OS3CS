@@ -129,7 +129,13 @@ namespace OS3CS
 			{
 				const char *local = client->Attribute("directory");
 				string filename = clientAttribute;
-				Put(socket, local,"C:\\Users\\dev\\Documents\\GitHub\\OS3CS\\OS3Server\\mapje"+PATHSEPERATOR+filename);
+					
+				TiXmlNode *versionNode = 0;
+				versionNode = serverDoc.FirstChild("rootPath");
+				TiXmlElement *versionelement = versionNode->ToElement();
+				std::string path = versionelement->Attribute("path");
+				//C:\\Users\\dev\\Documents\\GitHub\\OS3CS\\OS3Server\\mapje"
+				Put(socket, local,path+PATHSEPERATOR+filename);
 			}
 		}
 

@@ -44,10 +44,10 @@ namespace OS3CS {
 
 		myfile.close();
 		cout << "File transfer complete!" << endl;
-		while (socket->readline(buffer, MAXPATH) > 0)
-		{
-			cout << buffer << endl;
-		}
+		//while (socket->readline(buffer, MAXPATH) > 0)
+		//{
+		//	cout << buffer << endl;
+		//}
 	}
 	void TransferManager::SendFile(Socket*socket,string response)
 	{
@@ -55,6 +55,7 @@ namespace OS3CS {
 		{
 			char buffer[MAXBUFFERSIZE + 1];
 			int bytesToRead, bytesRead, fileSize;
+
 			ifstream myfile(response, ifstream::binary);
 
 			if (!myfile.is_open())
@@ -97,7 +98,6 @@ namespace OS3CS {
 			}
 			myfile.close();
 			cout << "File is sent" << endl;
-			socket->writeline("");
 		}
 		catch (exception ex)
 		{

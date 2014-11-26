@@ -30,10 +30,9 @@ namespace OS3CS
 		else
 		{
 			puts( "File successfully deleted" );
-			socket->writeline("File succesfully deleted");
+			//cout << "File succesfully deleted" ;
 			socket->writeline("");
 		}
-
 	}
 
 	InputHandler* DelInputHandler::Clone()

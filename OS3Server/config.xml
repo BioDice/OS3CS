@@ -1,10 +1,11 @@
 <?xml version="1.0" ?>
 <Version Number="7" />
+<rootPath path="C:\Users\dev\Documents\GitHub\OS3CS\OS3Server\mapje" />
 <Filesystem>
     <File filename="SO.COM.IApplication.chm" Originalname="SO.COM.IApplication.chm" directory="C:\Users\dev\Documents\GitHub\OS3CS\OS3Server\mapje\SO.COM.IApplication.chm" Editdate="1417013156" />
     <File filename="SO.COM.IDatabase.chm" Originalname="SO.COM.IDatabase.chm" directory="C:\Users\dev\Documents\GitHub\OS3CS\OS3Server\mapje\SO.COM.IDatabase.chm" Editdate="1417013184" />
-    <File filename="fdsfdsfsd.txt" Originalname="fdsfdsfsd.txt" directory="C:/Users/dev/Documents/GitHub/OS3CS/OS3Server/mapje/fdsfdsfsd.txt" Editdate="1417016003" />
-    <File filename="gitignore_global.txt" Originalname="gitignore_global.txt" directory="C:/Users/dev/Documents/GitHub/OS3CS/OS3Server/mapje/gitignore_global.txt" Editdate="1417016003" />
-    <File filename="hai.txt" Originalname="hai.txt" directory="C:/Users/dev/Documents/GitHub/OS3CS/OS3Server/mapje/hai.txt" Editdate="1417016003" />
-    <File filename="hgignore_global.txt" Originalname="hgignore_global.txt" directory="C:/Users/dev/Documents/GitHub/OS3CS/OS3Server/mapje/hgignore_global.txt" Editdate="1417016003" />
+    <File filename="fdsfdsfsd.txt" Originalname="fdsfdsfsd.txt" directory="C:/Users/dev/Documents/GitHub/OS3CS/OS3Server/mapje/fdsfdsfsd.txt" Editdate="1417016869" />
+    <File filename="gitignore_global.txt" Originalname="gitignore_global.txt" directory="C:/Users/dev/Documents/GitHub/OS3CS/OS3Server/mapje/gitignore_global.txt" Editdate="1417016869" />
+    <File filename="hai.txt" Originalname="hai.txt" directory="C:/Users/dev/Documents/GitHub/OS3CS/OS3Server/mapje/hai.txt" Editdate="1417016869" />
+    <File filename="hgignore_global.txt" Originalname="hgignore_global.txt" directory="C:/Users/dev/Documents/GitHub/OS3CS/OS3Server/mapje/hgignore_global.txt" Editdate="1417016869" />
 </Filesystem>
