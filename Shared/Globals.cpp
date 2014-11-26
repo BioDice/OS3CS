@@ -96,6 +96,22 @@ namespace OS3CS
 			return false;
 	}
 
+	bool FormatConnectionString(string commandLine, vector<string> &tokens, int outputNumber)
+	{
+		StrSplit(commandLine, tokens, '"');
+		if (tokens.size() == 1)
+		{
+			tokens.clear();
+			StrSplit(commandLine, tokens, ' ');
+		}
+
+		StripWhiteSpaces(tokens);
+		if (tokens.size() == outputNumber)
+			return true;
+		else
+			return false;
+	}
+
 	string GetFileName(string path)
 	{
 		vector<string> segments = vector<string>();

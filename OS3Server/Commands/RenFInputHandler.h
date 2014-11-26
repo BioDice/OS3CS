@@ -4,6 +4,7 @@
 #include "../../Shared/Socket.h"
 #include "../../Shared/Globals.h"
 #include <string>
+#include "../../Shared/DirectoryWriter.h"
 using namespace std;
 
 namespace OS3CS

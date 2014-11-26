@@ -35,5 +35,6 @@ namespace OS3CS
 	string GetFileName(string path);
 	string ConvertPath(string path);
 	bool FormatCommandPath(string commandLine, vector<string> &tokens, int outputNumber);
+	bool FormatConnectionString(string commandLine, vector<string> &tokens, int outputNumber);
 	string FindAndReplace(string &s, string toReplace, string replaceWith);
 }

@@ -23,7 +23,10 @@ namespace OS3CS
 		}
 		
 		int result;
-		result= rename(segments[1].c_str(), segments[2].c_str());
+		result= rename(segments[0].c_str(), segments[1].c_str());
+		DirectoryWriter* writer = new DirectoryWriter();
+		writer->UpdateNode(GetFileName(segments[0]), GetFileName(segments[1]));
+		delete writer;
 		if ( result == 0 )
 		{
 			puts ( "File successfully renamed" );
