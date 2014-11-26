@@ -8,11 +8,29 @@ using namespace OS3CS;
 
 void getConnectionDetails(Client& client)
 {
-	//cout << "enter host port" << endl;
-	string str = "localhost";
-	//string str = "84.105.106.236";
-	char *adress = (char*)str.c_str();
-	client.connect(adress,100);
+	cout << "Please enter an IPaddress and a port in the following syntax:" << endl;
+	cout << "[host] [port]" << endl;
+	string response;
+	getline(cin, response);
+
+	if (response != "")
+	{
+		vector<string> segments = vector<string>();
+		FormatConnectionString(response, segments, 2);
+		
+		if (segments.size() != 2)
+		{
+			cout << "Syntax error..." << endl;
+			cout << "Please use [host] [port]" << endl;
+			return;
+		}
+		//string str = "localhost";
+		////string str = "84.105.106.236";
+		//char *adress = (char*)str.c_str();
+		client.connect(segments[0].c_str(), stoi(segments[1]));
+	}
+
+	return;
 }
 
 int main()
@@ -30,7 +48,31 @@ int main()
 
 	//setlocale(LC_ALL, "");
 	Client client = Client();
-	getConnectionDetails(client);
+
+	while (1)
+	{
+		try
+		{
+			getConnectionDetails(client);
+		}
+		catch (SocketException& ex)
+		{
+			std::cout << "Connection lost..." << endl;
+		}
+		catch (invalid_argument& ex)
+		{
+			std::cout << "Invalid argument" << endl;
+		}
+		catch (out_of_range& ex)
+		{
+			std::cout << "Port out of range" << endl;
+		}
+		catch (runtime_error& ex)
+		{
+			std::cout << ex.what() << endl;
+		}
+	}
+	
 	
 	return 0;
 }

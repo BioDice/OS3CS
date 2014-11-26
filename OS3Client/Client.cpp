@@ -22,10 +22,11 @@ namespace OS3CS
         try
         {
             s = new ClientSocket(adress,port);
+
 			cout << "Created ClientSocket" << endl;
 		
 			listenToSocket(s);
-        
+			
 			string response;
 			while (getline(cin, response))
 			{
