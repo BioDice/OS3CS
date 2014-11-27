@@ -19,7 +19,8 @@ namespace OS3CS{
 		void RecursiveList(string szPath, map<string, string> &value_type, bool bRecursive);
 		void DeleteNode(char *nodeName);
 		void WriteNode(string name, string directory,string editDate);
-		void UpdateNode(string nodeName, string renamename);
+		void UpdateNode(string name, string directory, string editDate);
+		void RenameNode(string nodeName, string renamename);
 		int isLeading();
 	};
 }

@@ -25,7 +25,7 @@ namespace OS3CS
 		int result;
 		result= rename(segments[0].c_str(), segments[1].c_str());
 		DirectoryWriter* writer = new DirectoryWriter();
-		writer->UpdateNode(GetFileName(segments[0]), GetFileName(segments[1]));
+		writer->RenameNode(GetFileName(segments[0]), GetFileName(segments[1]));
 		delete writer;
 		if ( result == 0 )
 		{
