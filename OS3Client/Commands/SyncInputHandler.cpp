@@ -85,7 +85,7 @@ namespace OS3CS
 		serverNode = serverDoc.FirstChild("Filesystem");
 		bool found = false;
 
-		char line[MAX_PATH + 1];
+		char line[MAXPATH + 1];
 		socket->readline(line, MAXPATH);
 		if (strcmp(line, "READY") != 0)
 		{

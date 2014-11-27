@@ -7,7 +7,7 @@
 #include "../Shared/InputHandler.h"
 #include "../Shared/InputFactory.h"
 #include "ClientFactory.h"
-#include "../shared/DirectoryWriter.h"
+#include "../Shared/DirectoryWriter.h"
 
 using namespace std;
 
@@ -24,6 +24,6 @@ namespace OS3CS
 
         void handle(Socket *socket);
         void connect(const char* adress, int port);
-        void Client::listenToSocket(Socket* socket);
+        void listenToSocket(Socket* socket);
     };
 }

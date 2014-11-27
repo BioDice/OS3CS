@@ -9,7 +9,9 @@ namespace OS3CS
 
 	DirectoryWriter::~DirectoryWriter(void)
 	{
+
 	}
+
 	int DirectoryWriter::isLeading()
 	{
 		TiXmlDocument doc("config.xml");
@@ -62,9 +64,10 @@ namespace OS3CS
 
 				string path = "";
 				vector<string>temp = segments;
-				for each (string var in temp)
+				for (size_t i = 0; i < temp.size(); i++)
+				//for each (string var in temp)
 				{
-					if (strcmp(var.c_str(),"mapje")==0)
+					if (strcmp(temp[i].c_str(),"mapje")==0)
 					{
 						break;
 					}

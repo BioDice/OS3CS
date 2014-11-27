@@ -1,5 +1,4 @@
 #include "Client.h"
-#include "../shared/Socket.h"
 
 namespace OS3CS
 {
