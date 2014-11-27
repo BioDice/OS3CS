@@ -121,17 +121,16 @@ namespace OS3CS
 				const char *serverAttribute = server->Attribute("Originalname");
 				if (strcmp(clientAttribute, serverAttribute) == 0)
 				{
-					//int serverDate = atoi(server->Attribute("Editdate"));
-					//int clientDate = atoi(client->Attribute("Editdate"));
-					//if (clientDate > serverDate)
-					//{
-					//	found = false;
-					//}
-					//else
-					//{
-					//	found = true;
-					//}
-					found = true;
+					int serverDate = atoi(server->Attribute("Editdate"));
+					int clientDate = atoi(client->Attribute("Editdate"));
+					if (clientDate > serverDate)
+					{
+						found = false;
+					}
+					else
+					{
+						found = true;
+					}
 				}
 			}
 			if (!found)
@@ -161,7 +160,7 @@ namespace OS3CS
 
 		delete manager;
 		cout << "Syncing completed!" << endl;
-		socket->writeline("");
+		//socket->writeline("");
 	}
 
 	void SyncInputHandler::SetXML(Socket *socket)

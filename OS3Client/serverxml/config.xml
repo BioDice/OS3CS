@@ -1,70 +1,10 @@
 <?xml version="1.0" ?>
-<Version Number="66" />
-<rootPath path="C:\Users\dev\Documents\OS3CS\OS3Server" />
+<Version Number="6" />
+<rootPath path="C:\Users\Leonvw\Documents\GitHub\OS3CS\OS3Server" />
 <Filesystem>
-    <File filename="gitignore_global.txt" Originalname="gitignore_global.txt" directory="mapje\gitignore_global.txt" Editdate="1417096923" />
-    <File filename="hai.txt" Originalname="hai.txt" directory="mapje\hai.txt" Editdate="1417096923" />
-    <File filename="hgignore_global.txt" Originalname="hgignore_global.txt" directory="mapje\hgignore_global.txt" Editdate="1417096923" />
-    <File filename="NewMicrosofWord-document.docx" Originalname="NewMicrosofWord-document.docx" directory="mapje\map1\NewMicrosofWord-document.docx" Editdate="1417096463" />
-    <File filename="SO.COM.IApplication.chm" Originalname="SO.COM.IApplication.chm" directory="mapje\SO.COM.IApplication.chm" Editdate="1417096494" />
-    <File filename="SO.COM.IDatabase.chm" Originalname="SO.COM.IDatabase.chm" directory="mapje\SO.COM.IDatabase.chm" Editdate="1417097886" />
-    <File filename="hai t.txt" Originalname="hai t.txt" directory="" Editdate="1417077201" />
-    <File filename="fdsfdsfsd.txt" Originalname="fdsfdsfsd.txt" directory="" Editdate="1417077201" />
-    <File filename="hai.txt" Originalname="hai.txt" directory="" Editdate="1417096923" />
-    <File filename="SO.COM.IDatabase.chm" Originalname="SO.COM.IDatabase.chm" directory="" Editdate="1417097886" />
-    <File filename="hgignore_global.txt" Originalname="hgignore_global.txt" directory="" Editdate="1417096923" />
-    <File filename="gitignore_global.txt" Originalname="gitignore_global.txt" directory="" Editdate="1417096923" />
-    <File filename="NewMicrosofWord-document.docx" Originalname="NewMicrosofWord-document.docx" directory="" Editdate="1417096463" />
-    <File filename="SO.COM.IApplication.chm" Originalname="SO.COM.IApplication.chm" directory="" Editdate="1417096494" />
-    <File filename="hai t.txt" Originalname="hai t.txt" directory="" Editdate="1417077201" />
-    <File filename="test.txt" Originalname="test.txt" directory="" Editdate="1417077201" />
-    <File filename="hai.txt" Originalname="hai.txt" directory="" Editdate="1417096923" />
-    <File filename="SO.COM.IDatabase.chm" Originalname="SO.COM.IDatabase.chm" directory="" Editdate="1417097886" />
-    <File filename="hgignore_global.txt" Originalname="hgignore_global.txt" directory="" Editdate="1417096923" />
-    <File filename="gitignore_global.txt" Originalname="gitignore_global.txt" directory="" Editdate="1417096923" />
-    <File filename="NewMicrosofWord-document.docx" Originalname="NewMicrosofWord-document.docx" directory="" Editdate="1417096463" />
-    <File filename="SO.COM.IApplication.chm" Originalname="SO.COM.IApplication.chm" directory="" Editdate="1417096494" />
-    <File filename="test.txt" Originalname="test.txt" directory="" Editdate="1417077201" />
-    <File filename="hai.txt" Originalname="hai.txt" directory="" Editdate="1417096923" />
-    <File filename="SO.COM.IDatabase.chm" Originalname="SO.COM.IDatabase.chm" directory="" Editdate="1417097886" />
-    <File filename="hgignore_global.txt" Originalname="hgignore_global.txt" directory="" Editdate="1417096923" />
-    <File filename="gitignore_global.txt" Originalname="gitignore_global.txt" directory="" Editdate="1417096923" />
-    <File filename="NewMicrosofWord-document.docx" Originalname="NewMicrosofWord-document.docx" directory="" Editdate="1417096463" />
-    <File filename="SO.COM.IApplication.chm" Originalname="SO.COM.IApplication.chm" directory="" Editdate="1417096494" />
-    <File filename="test.txt" Originalname="test.txt" directory="" Editdate="1417077201" />
-    <File filename="hai.txt" Originalname="hai.txt" directory="" Editdate="1417096923" />
-    <File filename="SO.COM.IDatabase.chm" Originalname="SO.COM.IDatabase.chm" directory="" Editdate="1417097886" />
-    <File filename="hgignore_global.txt" Originalname="hgignore_global.txt" directory="" Editdate="1417096923" />
-    <File filename="gitignore_global.txt" Originalname="gitignore_global.txt" directory="" Editdate="1417096923" />
-    <File filename="NewMicrosofWord-document.docx" Originalname="NewMicrosofWord-document.docx" directory="" Editdate="1417096463" />
-    <File filename="SO.COM.IApplication.chm" Originalname="SO.COM.IApplication.chm" directory="" Editdate="1417096494" />
-    <File filename="SO.COM.IDatabase.chm" Originalname="SO.COM.IDatabase.chm" directory="" Editdate="1417097886" />
-    <File filename="hgignore_global.txt" Originalname="hgignore_global.txt" directory="" Editdate="1417096923" />
-    <File filename="gitignore_global.txt" Originalname="gitignore_global.txt" directory="" Editdate="1417096923" />
-    <File filename="NewMicrosofWord-document.docx" Originalname="NewMicrosofWord-document.docx" directory="" Editdate="1417096463" />
-    <File filename="SO.COM.IApplication.chm" Originalname="SO.COM.IApplication.chm" directory="" Editdate="1417096494" />
-    <File filename="SO.COM.IDatabase.chm" Originalname="SO.COM.IDatabase.chm" directory="" Editdate="1417097886" />
-    <File filename="hgignore_global.txt" Originalname="hgignore_global.txt" directory="" Editdate="1417096923" />
-    <File filename="gitignore_global.txt" Originalname="gitignore_global.txt" directory="" Editdate="1417096923" />
-    <File filename="NewMicrosofWord-document.docx" Originalname="NewMicrosofWord-document.docx" directory="" Editdate="1417096463" />
-    <File filename="SO.COM.IApplication.chm" Originalname="SO.COM.IApplication.chm" directory="" Editdate="1417096494" />
-    <File filename="SO.COM.IDatabase.chm" Originalname="SO.COM.IDatabase.chm" directory="" Editdate="1417097886" />
-    <File filename="hgignore_global.txt" Originalname="hgignore_global.txt" directory="" Editdate="1417096923" />
-    <File filename="gitignore_global.txt" Originalname="gitignore_global.txt" directory="" Editdate="1417096923" />
-    <File filename="NewMicrosofWord-document.docx" Originalname="NewMicrosofWord-document.docx" directory="" Editdate="1417096463" />
-    <File filename="SO.COM.IApplication.chm" Originalname="SO.COM.IApplication.chm" directory="" Editdate="1417096494" />
-    <File filename="SO.COM.IDatabase.chm" Originalname="SO.COM.IDatabase.chm" directory="" Editdate="1417097886" />
-    <File filename="hgignore_global.txt" Originalname="hgignore_global.txt" directory="" Editdate="1417096923" />
-    <File filename="gitignore_global.txt" Originalname="gitignore_global.txt" directory="" Editdate="1417096923" />
-    <File filename="NewMicrosofWord-document.docx" Originalname="NewMicrosofWord-document.docx" directory="" Editdate="1417096463" />
-    <File filename="SO.COM.IApplication.chm" Originalname="SO.COM.IApplication.chm" directory="" Editdate="1417096494" />
-    <File filename="SO.COM.IDatabase.chm" Originalname="SO.COM.IDatabase.chm" directory="" Editdate="1417097886" />
-    <File filename="hgignore_global.txt" Originalname="hgignore_global.txt" directory="" Editdate="1417096923" />
-    <File filename="gitignore_global.txt" Originalname="gitignore_global.txt" directory="" Editdate="1417096923" />
-    <File filename="NewMicrosofWord-document.docx" Originalname="NewMicrosofWord-document.docx" directory="" Editdate="1417096463" />
-    <File filename="SO.COM.IApplication.chm" Originalname="SO.COM.IApplication.chm" directory="" Editdate="1417096494" />
-    <File filename="SO.COM.IDatabase.chm" Originalname="SO.COM.IDatabase.chm" directory="" Editdate="1417097886" />
-    <File filename="hgignore_global.txt" Originalname="hgignore_global.txt" directory="" Editdate="1417096923" />
-    <File filename="gitignore_global.txt" Originalname="gitignore_global.txt" directory="" Editdate="1417096923" />
-    <File filename="SO.COM.IApplication.chm" Originalname="SO.COM.IApplication.chm" directory="" Editdate="1417096494" />
+    <File filename="fdsfdsfsd.txt" Originalname="fdsfdsfsd.txt" directory="mapje\fdsfdsfsd.txt" Editdate="1417120282" />
+    <File filename="gitignore_global.txt" Originalname="gitignore_global.txt" directory="mapje\gitignore_global.txt" Editdate="1417119948" />
+    <File filename="hgignore_global.txt" Originalname="hgignore_global.txt" directory="mapje\hgignore_global.txt" Editdate="1417120556" />
+    <File filename="NewMicrosofWord-document.docx" Originalname="NewMicrosofWord-document.docx" directory="mapje\map1\NewMicrosofWord-document.docx" Editdate="1417119948" />
+    <File filename="noob.txt" Originalname="noob.txt" directory="mapje\noob.txt" Editdate="1417119948" />
 </Filesystem>
