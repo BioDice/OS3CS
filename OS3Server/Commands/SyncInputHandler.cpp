@@ -26,7 +26,7 @@ namespace OS3CS
 		char buffer[MAXBUFFERSIZE + 1];
 		int bytesToRead, bytesRead, fileSize;
 
-		ifstream myfile(Currentpath()+PATHSEPERATOR+"config.xml", ifstream::binary);
+		ifstream myfile(Currentpath()+PATHSEPERATOR+"Config.xml", ifstream::binary);
 		if (!myfile.is_open())
 		{
 			myfile.close();

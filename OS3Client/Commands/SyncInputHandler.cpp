@@ -62,18 +62,18 @@ namespace OS3CS
 
 	void SyncInputHandler::Sync(Socket *socket)
 	{
-		TiXmlDocument clientDoc("config.xml");
-		TiXmlDocument serverDoc("serverxml/config.xml");
+		TiXmlDocument clientDoc("Config.xml");
+		TiXmlDocument serverDoc("serverxml/Config.xml");
 		bool loadOkay = clientDoc.LoadFile();
 		if (!loadOkay)
 		{
-			printf("Could not load test file 'config.xml'. Error='%s'. Exiting.\n", clientDoc.ErrorDesc());
+			printf("Could not load test file 'Config.xml'. Error='%s'. Exiting.\n", clientDoc.ErrorDesc());
 			return;
 		}
 		loadOkay = serverDoc.LoadFile();
 		if (!loadOkay)
 		{
-			printf("Could not load test file 'config.xml'. Error='%s'. Exiting.\n", serverDoc.ErrorDesc());
+			printf("Could not load test file 'Config.xml'. Error='%s'. Exiting.\n", serverDoc.ErrorDesc());
 			return;
 		}
 
@@ -170,7 +170,7 @@ namespace OS3CS
 			char buffer[MAXBUFFERSIZE + 1];
 			int bytesToRead, bytesRead, fileSize;
 
-			ofstream myfile(Currentpath()+"/serverxml/config.xml", ofstream::binary | ofstream::trunc);
+			ofstream myfile(Currentpath()+"/serverxml/Config.xml", ofstream::binary | ofstream::trunc);
 
 			socket->readline(buffer, MAXBUFFERSIZE);
 			fileSize = stoi(buffer);

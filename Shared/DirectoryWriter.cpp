@@ -14,12 +14,12 @@ namespace OS3CS
 
 	int DirectoryWriter::isLeading()
 	{
-		TiXmlDocument doc("config.xml");
+		TiXmlDocument doc("Config.xml");
 		bool loadOkay = doc.LoadFile();
 
 		if (!loadOkay)
 		{
-			printf("Could not load test file 'config.xml'. Error='%s'. Exiting.\n", doc.ErrorDesc());
+			printf("Could not load test file 'Config.xml'. Error='%s'. Exiting.\n", doc.ErrorDesc());
 			exit(1);
 		}
 
@@ -124,12 +124,12 @@ namespace OS3CS
 
 	void DirectoryWriter::RenameNode(string nodeName, string renamename)
 	{
-		TiXmlDocument doc("config.xml");
+		TiXmlDocument doc("Config.xml");
 		bool loadOkay = doc.LoadFile();
 
 		if (!loadOkay)
 		{
-			printf("Could not load test file 'config.xml'. Error='%s'. Exiting.\n", doc.ErrorDesc());
+			printf("Could not load test file 'Config.xml'. Error='%s'. Exiting.\n", doc.ErrorDesc());
 			exit(1);
 		}
 
@@ -176,12 +176,12 @@ namespace OS3CS
 
 	void DirectoryWriter::UpdateNode(string nodeName, string directory, string editDate)
 	{
-		TiXmlDocument doc("config.xml");
+		TiXmlDocument doc("Config.xml");
 		bool loadOkay = doc.LoadFile();
 
 		if (!loadOkay)
 		{
-			printf("Could not load test file 'config.xml'. Error='%s'. Exiting.\n", doc.ErrorDesc());
+			printf("Could not load test file 'Config.xml'. Error='%s'. Exiting.\n", doc.ErrorDesc());
 			exit(1);
 		}
 
@@ -228,12 +228,12 @@ namespace OS3CS
 
 	void DirectoryWriter::WriteNode(string nodeName, string directory,string editDate)
 	{
-		TiXmlDocument doc("config.xml");
+		TiXmlDocument doc("Config.xml");
 		bool loadOkay = doc.LoadFile();
 
 		if (!loadOkay)
 		{
-			printf("Could not load test file 'config.xml'. Error='%s'. Exiting.\n", doc.ErrorDesc());
+			printf("Could not load test file 'Config.xml'. Error='%s'. Exiting.\n", doc.ErrorDesc());
 			exit(1);
 		}
 
@@ -300,12 +300,12 @@ namespace OS3CS
 
 	void DirectoryWriter::DeleteNode(char *nodeName)
 	{
-		TiXmlDocument doc("config.xml");
+		TiXmlDocument doc("Config.xml");
 		bool loadOkay = doc.LoadFile();
 
 		if (!loadOkay)
 		{
-			printf("Could not load test file 'config.xml'. Error='%s'. Exiting.\n", doc.ErrorDesc());
+			printf("Could not load test file 'Config.xml'. Error='%s'. Exiting.\n", doc.ErrorDesc());
 			exit(1);
 		}
 

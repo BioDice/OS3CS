@@ -30,7 +30,7 @@ namespace OS3CS
 			while (getline(cin, response))
 			{
 				if (response.size() == 0)
-				continue;
+					continue;
 
 				vector<string> segments = vector<string>();
 				StrSplit(response, segments, ' ');
