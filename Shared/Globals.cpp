@@ -82,7 +82,7 @@ namespace OS3CS
 	bool FormatCommandPath(string commandLine, vector<string> &tokens, int outputNumber)
 	{
 		commandLine = commandLine.erase(0, 4);
-		StrSplit(commandLine, tokens, '"');
+		StrSplit(commandLine, tokens, PATHQUOTES);
 		if (tokens.size() == 1)
 		{
 			tokens.clear();
@@ -98,7 +98,7 @@ namespace OS3CS
 
 	bool FormatConnectionString(string commandLine, vector<string> &tokens, int outputNumber)
 	{
-		StrSplit(commandLine, tokens, '"');
+		StrSplit(commandLine, tokens, PATHQUOTES);
 		if (tokens.size() == 1)
 		{
 			tokens.clear();

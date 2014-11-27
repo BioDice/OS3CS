@@ -17,15 +17,14 @@ namespace OS3CS
 		char buffer[MAXBUFFERSIZE + 1];
 
 		vector<string> segments = vector<string>();
-		StrSplit(response, segments, ' ');
-		if (segments.size() != 2)
+		if (!FormatCommandPath(response, segments, 1))
 		{
-			cout << "Syntax error..." << endl;
+			cout << "Syntax error... - use: del [remote file]" << endl;
 			socket->writeline("");
 			return;
 		}
 		
-		if( remove( segments[1].c_str() ) != 0 )
+		if( remove( segments[0].c_str() ) != 0 )
 			perror( "Error deleting file" );
 		else
 		{

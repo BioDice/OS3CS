@@ -13,20 +13,20 @@ namespace OS3CS
 
 	void DirInputHandler::Process(Socket* socket, string response)
 	{
-		vector<string> segments = vector<string>();
-		StrSplit(response, segments, ' ');
-
 		ostringstream resp;
 		struct stat info;
-		if (segments.size() != 2)
+		vector<string> segments = vector<string>();
+		if (!FormatCommandPath(response, segments, 1))
 		{
 			cout << "SyntaxError - use: dir [remote dir]";
 			socket->writeline("SyntaxError - use: dir [remote dir]");
 			socket->writeline("");
+			return;
+			
 		}
 		else
 		{
-			const char *pathname = segments[1].c_str();
+			const char *pathname = segments[0].c_str();
 			if (stat(pathname, &info) != 0)
 			{
 				resp << "Cannot access <" << pathname << ">";

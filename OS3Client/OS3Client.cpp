@@ -5,6 +5,25 @@
 #include "Client.h"
 
 using namespace OS3CS;
+volatile bool isRunning = true;
+#if defined(_WIN32)
+
+#include <windows.h>
+#include <stdio.h>
+
+BOOL WINAPI HandlerRoutine(_In_ DWORD dwCtrlType) {
+	switch (dwCtrlType)
+	{
+	case CTRL_C_EVENT:
+		isRunning = false;
+		// Signal is handled - don't pass it on to the next handler
+		return TRUE;
+	default:
+		// Pass signal on to the next handler
+		return FALSE;
+	}
+}
+#endif
 
 void getConnectionDetails(Client& client)
 {
@@ -35,6 +54,10 @@ void getConnectionDetails(Client& client)
 
 int main()
 {
+#if defined(_WIN32)
+	SetConsoleCtrlHandler(HandlerRoutine, TRUE);
+#endif
+
 	//wcin.imbue(std::locale("English_United States.437"));
 	//wcout.imbue(std::locale("English_United States.437"));
 	//SetConsoleOutputCP(CP_UTF8);
@@ -49,7 +72,7 @@ int main()
 	//setlocale(LC_ALL, "");
 	Client client = Client();
 
-	while (1)
+	while (isRunning)
 	{
 		try
 		{

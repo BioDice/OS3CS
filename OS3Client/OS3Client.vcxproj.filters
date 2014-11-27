@@ -104,7 +104,6 @@
     <ClCompile Include="..\Shared\Socket.cpp">
       <Filter>Source Files\Shared</Filter>
     </ClCompile>
-    <ClCompile Include="OS3Client.cpp" />
     <ClCompile Include="Client.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -162,5 +161,6 @@
     <ClCompile Include="..\Shared\DirectoryReader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="OS3Client.cpp" />
   </ItemGroup>
 </Project>

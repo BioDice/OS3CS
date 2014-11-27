@@ -10,7 +10,7 @@
 #else
 //windows
 
-#include "../../Shared/Models/dirent.h"
+#include "../../Shared/dirent.h"
 
 #endif
 #include <sys/types.h>
