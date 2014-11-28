@@ -37,7 +37,7 @@ namespace OS3CS
 	static const char DELIMITER = '|';
 	string Currentpath();
 	void StrSplit(string str, vector<string> &tokens, char delim);
-	void StrSplit(string str, vector<string> &tokens, char delim, int iLimit);
+	void StrSplit(string str, vector<string> &tokens);
 	void StripWhiteSpaces(vector<string> &tokens);
 	string GetFileName(string path);
 	string ConvertPath(string path);

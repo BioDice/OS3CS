@@ -37,9 +37,7 @@ namespace OS3CS
 	void DirectoryReader::createSubDirectories(string szPath, bool bIgnoreLastPart)
 	{
 		vector<string> vsSubDirectories = vector<string>();
-
-		//TODO Use PATHSEPERATOR value
-		StrSplit(szPath, vsSubDirectories, '\\');
+		StrSplit(szPath, vsSubDirectories);
 
 		if (vsSubDirectories.size() < 2)
 			throw("Incorrect path syntax");

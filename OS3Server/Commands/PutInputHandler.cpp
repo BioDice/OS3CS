@@ -25,12 +25,7 @@ namespace OS3CS
 			char buffer[MAXBUFFERSIZE + 1];
 			int bytesToRead, bytesRead, fileSize;
 			// merge path with filename
-			string path = ConvertPath(segments[0]) + "/" + GetFileName(segments[1]);
-			if (strcmp(segments[0].c_str(), "null") == 0)
-			{
-				path = ConvertPath(Currentpath()+"/mapje") + "/" + GetFileName(segments[1]);
-			}
-
+			string path = ConvertPath(segments[0]) +'/'+ GetFileName(segments[1]);
 			DirectoryReader::createSubDirectories(segments[0], false);
 
 			TransferManager *manager = new TransferManager();
@@ -46,7 +41,7 @@ namespace OS3CS
 			char*filename = &str[0];
 
 			vector<string> pathsegments = vector<string>();
-			StrSplit(path, pathsegments, '/');
+			StrSplit(path, pathsegments);
 
 			string directory = "";
 			vector<string>temp = pathsegments;

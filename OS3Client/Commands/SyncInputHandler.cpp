@@ -13,8 +13,9 @@ namespace OS3CS
 
 	void SyncInputHandler::Delete(Socket *socket, string path)
 	{
+		string deletepath = ConvertPath(path);
 		socket->write("DEL ");
-		socket->writeline(path);
+		socket->writeline(deletepath);
 
 		char line[MAXPATH + 1];
 
@@ -25,8 +26,10 @@ namespace OS3CS
 	}
 	void SyncInputHandler::Put(Socket *socket, string local,string remote)
 	{
-		socket->write("put "+remote+" ");
-		socket->writeline(local);
+		string remotepath = ConvertPath(remote);
+		string localpath = ConvertPath(local);
+		socket->write("put " + remotepath + " ");
+		socket->writeline(localpath);
 		char line[MAXPATH + 1];
 
 		socket->readline(line, MAXPATH);
@@ -42,7 +45,7 @@ namespace OS3CS
 
 		TransferManager *manager = new TransferManager();
 
-		manager->SendFile(socket,local);
+		manager->SendFile(socket,localpath);
 
 		delete manager;
 
@@ -140,11 +143,11 @@ namespace OS3CS
 				versionNode = serverDoc.FirstChild("rootPath");
 				TiXmlElement *versionelement = versionNode->ToElement();
 
-				string remotepath = versionelement->Attribute("path") + PATHSEPERATOR + local;
+				string remotepath = ConvertPath(versionelement->Attribute("path") + PATHSEPERATOR + local);
 				vector<string> segments = vector<string>();
 
 				std::string path = "";
-				StrSplit(remotepath, segments, '\\');
+				StrSplit(remotepath, segments);
 				segments.pop_back();
 				for (size_t i = 0; i < segments.size(); i++)
 				{

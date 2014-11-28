@@ -60,7 +60,8 @@ namespace OS3CS
 			if (reader->isFile(szCurrent))
 			{
 				vector<string> segments = vector<string>();
-				StrSplit(szCurrent, segments, '\\');
+				string currentPath = ConvertPath(szCurrent);
+				StrSplit(currentPath, segments);
 
 				string path = "";
 				vector<string>temp = segments;
@@ -153,7 +154,7 @@ namespace OS3CS
 				e->SetAttribute("filename", renamename.c_str());
 
 				vector<string> segments = vector<string>();
-				StrSplit(e->Attribute("directory"), segments, '\\');
+				StrSplit(e->Attribute("directory"), segments);
 
 				segments.pop_back();
 				segments.push_back(renamename);
@@ -203,7 +204,7 @@ namespace OS3CS
 			if (strcmp(attribute, nodeName.c_str()) == 0)
 			{
 				vector<string> segments = vector<string>();
-				StrSplit(e->Attribute("directory"), segments, '\\');
+				StrSplit(e->Attribute("directory"), segments);
 
 				segments.pop_back();
 				segments.push_back(nodeName);
