@@ -143,7 +143,7 @@ namespace OS3CS
 				versionNode = serverDoc.FirstChild("rootPath");
 				TiXmlElement *versionelement = versionNode->ToElement();
 
-				string remotepath = ConvertPath(versionelement->Attribute("path") + PATHSEPERATOR + local);
+				string remotepath = ConvertPath(versionelement->Attribute("path") + string("/") + local);
 				vector<string> segments = vector<string>();
 
 				std::string path = "";
@@ -154,10 +154,10 @@ namespace OS3CS
 					path.append(segments[i]);
 					if (i != segments.size() - 1)
 					{
-						path.append(PATHSEPERATOR);
+						path.append("/");
 					}
 				}
-				Put(socket, Currentpath().c_str() + PATHSEPERATOR + string(local), path);
+				Put(socket, Currentpath().c_str() + string("/") + string(local), path);
 			}
 		}
 

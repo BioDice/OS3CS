@@ -24,7 +24,6 @@ namespace OS3CS
 			while (socket->readline(response, MAXPATH) > 0)
 			{
 				vector<string> segments = vector<string>();
-				
 				StrSplit(response, segments, ' ');
 
 				// Converts the characters to lower case
@@ -35,7 +34,7 @@ namespace OS3CS
 				if (inputHandler != NULL)
 				{
 					cout << response << endl;
-					inputHandler->Process(socket, response);
+					inputHandler->Process(socket, ConvertPath(response));
 				}
 				else
 				{

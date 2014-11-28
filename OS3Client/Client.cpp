@@ -31,7 +31,7 @@ namespace OS3CS
 			{
 				if (response.size() == 0)
 					continue;
-
+				response = ConvertPath(response);
 				vector<string> segments = vector<string>();
 				StrSplit(response, segments, ' ');
 

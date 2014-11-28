@@ -49,13 +49,16 @@ namespace OS3CS
 				continue;
 
 			string szCurrent(szPath);
-			szCurrent.append(PATHSEPERATOR);
+			szCurrent.append("/");
 			szCurrent.append(pEnt->d_name);
-			
+			szCurrent = ConvertPath(szCurrent);
 			if (reader->isDir(szCurrent))
 			{
 				if (bRecursive)
-					RecursiveList(szCurrent, directoryMap, true);
+				{
+					
+					RecursiveList(ConvertPath(szCurrent), directoryMap, true);
+				}
 			}
 			if (reader->isFile(szCurrent))
 			{
@@ -83,7 +86,7 @@ namespace OS3CS
 					path.append(segments[i]);
 					if (i!=segments.size()-1)
 					{
-						path.append(PATHSEPERATOR);
+						path.append("/");
 					}
 				}
 
@@ -118,7 +121,7 @@ namespace OS3CS
 		doc.SaveFile("Config.xml");
 
 		map<string, string> directoryMap = map<string,string>();
-		RecursiveList(path+PATHSEPERATOR+"mapje", directoryMap,true);
+		RecursiveList(path+string("/")+"mapje", directoryMap,true);
 		
 		//TODO:Loop directory
 	}

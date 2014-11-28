@@ -22,8 +22,7 @@ namespace OS3CS
 		}
 
 		cCurrentPath[sizeof(cCurrentPath) - 1] = '/0'; /* not really required */
-
-		return cCurrentPath;
+		return ConvertPath(cCurrentPath);
 	}
 
 	void StrSplit(string str, vector<string> &tokens, char delim)
