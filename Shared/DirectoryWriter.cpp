@@ -173,9 +173,6 @@ namespace OS3CS
 		}
 
 		doc.SaveFile();
-		delete versionNode;
-		delete versionelement;
-		delete node;
 	}
 
 	void DirectoryWriter::UpdateNode(string nodeName, string directory, string editDate)
@@ -228,10 +225,6 @@ namespace OS3CS
 		}
 
 		doc.SaveFile();
-
-		delete versionNode;
-		delete versionelement;
-		delete node;
 	}
 
 	void DirectoryWriter::WriteNode(string nodeName, string directory,string editDate)
@@ -340,9 +333,5 @@ namespace OS3CS
 			delete attribute;
 		}
 		doc.SaveFile();
-
-		delete versionNode;
-		delete versionelement;
-		delete node;
 	}
 }

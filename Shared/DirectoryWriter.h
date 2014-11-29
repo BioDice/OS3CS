@@ -13,10 +13,9 @@ namespace OS3CS{
 	public:
 		DirectoryWriter(void);
 		~DirectoryWriter(void);
-		typedef map<string, string> directoryMap;
 		void Sync(Socket *socket);
 		void InitList();
-		void RecursiveList(string szPath, map<string, string> &value_type, bool bRecursive);
+		void RecursiveList(string szPath, bool bRecursive);
 		void DeleteNode(char *nodeName);
 		void WriteNode(string name, string directory,string editDate);
 		void UpdateNode(string name, string directory, string editDate);
