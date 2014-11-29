@@ -122,8 +122,6 @@ namespace OS3CS
 
 		map<string, string> directoryMap = map<string,string>();
 		RecursiveList(path+string("/")+"mapje", directoryMap,true);
-		
-		//TODO:Loop directory
 	}
 
 	void DirectoryWriter::RenameNode(string nodeName, string renamename)
@@ -157,7 +155,8 @@ namespace OS3CS
 				e->SetAttribute("filename", renamename.c_str());
 
 				vector<string> segments = vector<string>();
-				StrSplit(e->Attribute("directory"), segments);
+				const char *directoryAttribute = e->Attribute("directory");
+				StrSplit(directoryAttribute, segments);
 
 				segments.pop_back();
 				segments.push_back(renamename);
@@ -167,7 +166,7 @@ namespace OS3CS
 					directory.append(segments[i]);
 					if (i != segments.size() - 1)
 					{
-						directory.append(PATHSEPERATOR);
+						directory.append("/");
 					}
 				}
 
@@ -217,7 +216,7 @@ namespace OS3CS
 					directory.append(segments[i]);
 					if (i != segments.size() - 1)
 					{
-						directory.append(PATHSEPERATOR);
+						directory.append("/");
 					}
 				}
 				e->SetAttribute("filename", nodeName.c_str());
