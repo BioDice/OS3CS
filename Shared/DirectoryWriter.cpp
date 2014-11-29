@@ -35,7 +35,7 @@ namespace OS3CS
 		
 	}
 
-	void DirectoryWriter::RecursiveList(string szPath, map<string, string> &directoryMap, bool bRecursive)
+	void DirectoryWriter::RecursiveList(string szPath, bool bRecursive)
 	{
 		DirectoryReader * reader = new DirectoryReader();
 		DIR* pDir = reader->open(szPath);
@@ -56,8 +56,7 @@ namespace OS3CS
 			{
 				if (bRecursive)
 				{
-					
-					RecursiveList(ConvertPath(szCurrent), directoryMap, true);
+					RecursiveList(ConvertPath(szCurrent), true);
 				}
 			}
 			if (reader->isFile(szCurrent))
@@ -91,15 +90,15 @@ namespace OS3CS
 				}
 
 				time_t iLastModified = reader->getLastModifiedTime(szCurrent);
-				directoryMap[pEnt->d_name] = szCurrent;
 				WriteNode(pEnt->d_name, path, to_string(iLastModified));
 			}
 
 			count++;
 		}
-
+		
 		delete pEnt;
 		delete pDir;
+		delete reader;
 	}
 
 	void DirectoryWriter::InitList()
@@ -121,7 +120,7 @@ namespace OS3CS
 		doc.SaveFile("Config.xml");
 
 		map<string, string> directoryMap = map<string,string>();
-		RecursiveList(path+string("/")+"mapje", directoryMap,true);
+		RecursiveList(path+string("/")+"mapje",true);
 	}
 
 	void DirectoryWriter::RenameNode(string nodeName, string renamename)
@@ -145,7 +144,6 @@ namespace OS3CS
 
 		TiXmlNode *node = 0;
 		node = doc.FirstChild("Filesystem");
-		TiXmlElement *searchNode = 0;
 
 		for (TiXmlElement* e = node->FirstChildElement("File"); e != NULL; e = e->NextSiblingElement("File"))
 		{
@@ -175,6 +173,9 @@ namespace OS3CS
 		}
 
 		doc.SaveFile();
+		delete versionNode;
+		delete versionelement;
+		delete node;
 	}
 
 	void DirectoryWriter::UpdateNode(string nodeName, string directory, string editDate)
@@ -227,6 +228,10 @@ namespace OS3CS
 		}
 
 		doc.SaveFile();
+
+		delete versionNode;
+		delete versionelement;
+		delete node;
 	}
 
 	void DirectoryWriter::WriteNode(string nodeName, string directory,string editDate)
@@ -332,7 +337,12 @@ namespace OS3CS
 				node->RemoveChild(e);
 				break;
 			}
+			delete attribute;
 		}
 		doc.SaveFile();
+
+		delete versionNode;
+		delete versionelement;
+		delete node;
 	}
 }

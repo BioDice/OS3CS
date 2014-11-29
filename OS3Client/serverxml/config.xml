@@ -1,4 +1,9 @@
 <?xml version="1.0" ?>
-<Version Number="1" />
-<rootPath path="C:/Users/dev/Documents/GitHub/OS3CS/OS3Server" />
-<Filesystem />
+<Version Number="5" />
+<rootPath path="C:/Users/Leonvw/Documents/GitHub/OS3CS/OS3Server" />
+<Filesystem>
+    <File filename="fdsfdsfsd.txt" Originalname="fdsfdsfsd.txt" directory="mapje/fdsfdsfsd.txt" Editdate="1417120282" />
+    <File filename="gitignore_global.txt" Originalname="gitignore_global.txt" directory="mapje/gitignore_global.txt" Editdate="1417121558" />
+    <File filename="hai.txt" Originalname="hai.txt" directory="mapje/hai.txt" Editdate="1417120683" />
+    <File filename="NewMicrosofWord-document.docx" Originalname="NewMicrosofWord-document.docx" directory="mapje/map1/NewMicrosofWord-document.docx" Editdate="1417119948" />
+</Filesystem>

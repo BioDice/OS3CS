@@ -1,8 +1,12 @@
 // OS3Client.cpp : Defines the entry point for the console application.
 //
-
+//#include <vld.h>
 #include <string>
 #include "Client.h"
+
+#define _CRTDBG_MAP_ALLOC
+#include <crtdbg.h>
+
 
 using namespace OS3CS;
 volatile bool isRunning = true;
@@ -90,7 +94,6 @@ int main()
 			std::cout << ex.what() << endl;
 		}
 	}
-	
 	
 	return 0;
 }
