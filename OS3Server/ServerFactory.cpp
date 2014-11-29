@@ -9,6 +9,11 @@ namespace OS3CS
 
 	ServerFactory::~ServerFactory()
 	{
+		for (std::map<string, InputHandler*>::iterator MapItor = commands.begin(); MapItor != commands.end(); ++MapItor)
+		{
+			InputHandler* Value = (*MapItor).second;
+			delete Value;
+		}
 	}
 
 	void ServerFactory::Initialize()

@@ -97,9 +97,10 @@ namespace OS3CS
 
 			count++;
 		}
-
+		
 		delete pEnt;
 		delete pDir;
+		delete reader;
 	}
 
 	void DirectoryWriter::InitList()
@@ -122,7 +123,8 @@ namespace OS3CS
 
 		map<string, string> directoryMap = map<string,string>();
 		RecursiveList(path+string("/")+"mapje", directoryMap,true);
-		
+
+		//delete rootpath, version, declaration, filesystem;
 		//TODO:Loop directory
 	}
 
@@ -172,10 +174,13 @@ namespace OS3CS
 				}
 
 				e->SetAttribute("directory", directory.c_str());
+				//delete e;
 			}
 		}
 
 		doc.SaveFile();
+
+		//delete versionNode, versionelement, node;
 	}
 
 	void DirectoryWriter::UpdateNode(string nodeName, string directory, string editDate)

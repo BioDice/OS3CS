@@ -1,5 +1,6 @@
 // OS3Server.cpp : Defines the entry point for the console application.
 //
+//#include <vld.h>
 #include <string>
 #include "Server.h"
 
@@ -12,15 +13,39 @@ using namespace OS3CS;
 
 volatile bool isRunning = true;
 
-BOOL WINAPI HandlerRoutine(_In_ DWORD dwCtrlType) {
-	switch (dwCtrlType)
+BOOL CtrlHandler(DWORD fdwCtrlType)
+{
+	switch (fdwCtrlType)
 	{
+		// Handle the CTRL-C signal. 
 	case CTRL_C_EVENT:
-		isRunning = false;
-		// Signal is handled - don't pass it on to the next handler
-		return TRUE;
+		printf("Ctrl-C event\n\n");
+		Beep(750, 300);
+		return(0);
+
+		// CTRL-CLOSE: confirm that the user wants to exit. 
+	case CTRL_CLOSE_EVENT:
+		Beep(600, 200);
+		printf("Ctrl-Close event\n\n");
+		return(TRUE);
+
+		// Pass other signals to the next handler. 
+	case CTRL_BREAK_EVENT:
+		Beep(900, 200);
+		printf("Ctrl-Break event\n\n");
+		return FALSE;
+
+	case CTRL_LOGOFF_EVENT:
+		Beep(1000, 200);
+		printf("Ctrl-Logoff event\n\n");
+		return FALSE;
+
+	case CTRL_SHUTDOWN_EVENT:
+		Beep(750, 500);
+		printf("Ctrl-Shutdown event\n\n");
+		return FALSE;
+
 	default:
-		// Pass signal on to the next handler
 		return FALSE;
 	}
 }
@@ -38,12 +63,25 @@ int main()
 		return 1;
 	}*/
 #if defined(_WIN32)
-	SetConsoleCtrlHandler(HandlerRoutine, TRUE);
+	if (SetConsoleCtrlHandler((PHANDLER_ROUTINE)CtrlHandler, TRUE))
+	{
+
+	}
+	else
+	{
+		printf("\nERROR: Could not set control handler");
+		return 1;
+	}
 #endif
 	DirectoryWriter *writer = new DirectoryWriter();
 	writer->InitList();
+	writer->~DirectoryWriter();
+	delete writer;
+
 	Server *server = new Server();
 	server->listen(2500);
+	server->~Server();
+	delete server;
 
 	return 0;
 }

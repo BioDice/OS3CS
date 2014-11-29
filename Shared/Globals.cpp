@@ -111,11 +111,7 @@ namespace OS3CS
 	string ConvertPath(string path)
 	{
 		string temp = path;
-		#if defined(__APPLE__) || defined(__linux__)
-		std::replace(temp.begin(), temp.end(), '/', '\\');
-		#else
 		std::replace(temp.begin(), temp.end(), '\\', '/');
-		#endif
 		
 		return temp;
 	}
