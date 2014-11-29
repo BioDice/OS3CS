@@ -95,10 +95,6 @@ namespace OS3CS
 
 			count++;
 		}
-		
-		delete pEnt;
-		delete pDir;
-		delete reader;
 	}
 
 	void DirectoryWriter::InitList()
@@ -330,7 +326,6 @@ namespace OS3CS
 				node->RemoveChild(e);
 				break;
 			}
-			delete attribute;
 		}
 		doc.SaveFile();
 	}
