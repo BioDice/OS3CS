@@ -1,6 +1,6 @@
 // OS3Server.cpp : Defines the entry point for the console application.
 //
-//#include <vld.h>
+#include <vld.h>
 #include <string>
 #include "Server.h"
 
@@ -20,28 +20,28 @@ BOOL CtrlHandler(DWORD fdwCtrlType)
 		// Handle the CTRL-C signal. 
 	case CTRL_C_EVENT:
 		printf("Ctrl-C event\n\n");
-		Beep(750, 300);
+		//Beep(750, 300);
 		return(0);
 
 		// CTRL-CLOSE: confirm that the user wants to exit. 
 	case CTRL_CLOSE_EVENT:
-		Beep(600, 200);
+		//Beep(600, 200);
 		printf("Ctrl-Close event\n\n");
 		return(TRUE);
 
 		// Pass other signals to the next handler. 
 	case CTRL_BREAK_EVENT:
-		Beep(900, 200);
+		//Beep(900, 200);
 		printf("Ctrl-Break event\n\n");
 		return FALSE;
 
 	case CTRL_LOGOFF_EVENT:
-		Beep(1000, 200);
+		//Beep(1000, 200);
 		printf("Ctrl-Logoff event\n\n");
 		return FALSE;
 
 	case CTRL_SHUTDOWN_EVENT:
-		Beep(750, 500);
+		//Beep(750, 500);
 		printf("Ctrl-Shutdown event\n\n");
 		return FALSE;
 

@@ -15,7 +15,7 @@ namespace OS3CS
 	{
 	public:
 		ServerFactory();
-		~ServerFactory();
+		virtual ~ServerFactory();
 
 		virtual void Initialize();
 	};

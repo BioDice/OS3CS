@@ -11,7 +11,6 @@
 
 namespace OS3CS
 {
-
 	string Currentpath()
 	{
 		char cCurrentPath[FILENAME_MAX];

@@ -11,6 +11,7 @@ namespace OS3CS
 {
 	const int MAXBUFFERSIZE = 1024;
 	const int MAXPATH = 256;
+	static int Counter = 0;
 	static const string PATHSEPERATOR =
 	#if defined(__APPLE__) || defined(__linux__)
 			"/";

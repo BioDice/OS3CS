@@ -37,9 +37,11 @@ namespace OS3CS
 
 	void DirectoryWriter::RecursiveList(string szPath, bool bRecursive)
 	{
-		DirectoryReader * reader = new DirectoryReader();
-		DIR* pDir = reader->open(szPath);
+		DirectoryReader* reader = new DirectoryReader();
+		DIR* pDir = NULL;
 
+		pDir = reader->open(szPath, pDir);
+		
 		struct dirent* pEnt = NULL;
 
 		int count = 0;
@@ -56,6 +58,8 @@ namespace OS3CS
 			{
 				if (bRecursive)
 				{
+					// not sure...
+					delete reader;
 					RecursiveList(ConvertPath(szCurrent), true);
 				}
 			}
@@ -95,6 +99,7 @@ namespace OS3CS
 
 			count++;
 		}
+		delete pDir, reader;
 	}
 
 	void DirectoryWriter::InitList()

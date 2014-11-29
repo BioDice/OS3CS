@@ -4,8 +4,7 @@ namespace OS3CS
 {
 	Server::Server(void)
 	{
-		inputFactory = new ServerFactory();
-		inputFactory->Initialize();
+		
 	}
 
 	Server::~Server(void)
@@ -16,6 +15,8 @@ namespace OS3CS
 
 	void Server::handle(Socket *socket)
 	{
+		inputFactory = new ServerFactory();
+		inputFactory->Initialize();
 		char response[MAXPATH +1];
 		cout << "Client connected!\n";
 		socket->writeline("Welcome to this ultra pro *cough* Server");
@@ -51,6 +52,7 @@ namespace OS3CS
 		{
 			cout << "Socket exception occured: " << endl;
 		}
+		delete inputFactory;
 	}
 
 	void Server::listen(int port)

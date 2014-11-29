@@ -9,19 +9,19 @@ namespace OS3CS
 
 	}
 
-	DIR* DirectoryReader::open(string szPath)
+	DIR* DirectoryReader::open(string szPath, DIR* dir)
 	{
-		DIR* pDir = NULL;
+		//DIR* pDir = NULL;
 
-		pDir = opendir(szPath.c_str());
-
-		if (pDir == NULL)
+		dir = opendir(szPath.c_str());
+		
+		if (dir == NULL)
 		{
-			delete pDir;
+			delete dir;
 			throw("Directory cannot be opened");
 		}
 
-		return pDir;
+		return dir;
 	}
 
 	bool DirectoryReader::isDir(string szPath)

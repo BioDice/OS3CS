@@ -13,7 +13,7 @@ namespace OS3CS
 	{
 	public:
 		ClientFactory();
-		~ClientFactory();
+		virtual ~ClientFactory();
 
 		virtual void Initialize();
 	};

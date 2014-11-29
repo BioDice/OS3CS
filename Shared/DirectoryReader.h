@@ -35,7 +35,7 @@ namespace OS3CS
 
 		static time_t getLastModifiedTime(string szPath);
 		static void setLastModifiedTime(string, time_t);
-		static DIR* open(string);
+		static DIR* open(string, DIR* dir);
 	private:
 		
 	};

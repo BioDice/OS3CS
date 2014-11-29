@@ -4,8 +4,7 @@ namespace OS3CS
 {
     Client::Client(void)
     {
-		inputFactory = new ClientFactory();
-		inputFactory->Initialize();
+
     }
 
 
@@ -17,7 +16,8 @@ namespace OS3CS
     void Client::connect(const char* adress, int port)
     {
         Socket * s = NULL;
-
+		inputFactory = new ClientFactory();
+		inputFactory->Initialize();
         try
         {
             s = new ClientSocket(adress,port);
@@ -53,13 +53,13 @@ namespace OS3CS
 							cout << ex << endl;
 						}
 					 }
-					
 					else
 						inputFactory->CreateHandler("resp")->Process(s, response);
+					
 					delete inputHandler;
 				}
 			}
-
+			delete inputFactory;
 			delete s;
 		}
 		catch (runtime_error& ex)

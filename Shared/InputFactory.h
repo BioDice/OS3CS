@@ -17,7 +17,7 @@ namespace OS3CS
 
 	public:
 		InputFactory();
-		~InputFactory();
+		virtual ~InputFactory();
 
 		virtual void Initialize() = 0;
 		InputHandler* CreateHandler(string input);

@@ -1,12 +1,8 @@
 // OS3Client.cpp : Defines the entry point for the console application.
 //
-//#include <vld.h>
+#include <vld.h>
 #include <string>
 #include "Client.h"
-
-#define _CRTDBG_MAP_ALLOC
-#include <crtdbg.h>
-
 
 using namespace OS3CS;
 volatile bool isRunning = true;
@@ -35,7 +31,7 @@ void getConnectionDetails(Client& client)
 	cout << "[host] [port]" << endl;
 	string response;
 	getline(cin, response);
-
+	
 	if (response != "")
 	{
 		vector<string> segments = vector<string>();
@@ -65,10 +61,10 @@ int main()
 	//wcin.imbue(std::locale("English_United States.437"));
 	//wcout.imbue(std::locale("English_United States.437"));
 	//SetConsoleOutputCP(CP_UTF8);
-	DirectoryWriter * writer = new DirectoryWriter();
+	DirectoryWriter* writer = new DirectoryWriter();
 	writer->InitList();
-
-	//setlocale(LC_ALL, "");
+	delete writer;
+	
 	Client client = Client();
 
 	while (isRunning)
@@ -94,6 +90,7 @@ int main()
 			std::cout << ex.what() << endl;
 		}
 	}
+	
 	
 	return 0;
 }
