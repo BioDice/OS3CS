@@ -105,7 +105,7 @@ namespace OS3CS
 	void DirectoryWriter::InitList()
 	{
 		TiXmlDocument doc;
-		TiXmlDeclaration *declaration = new TiXmlDeclaration("1.0", "", "");
+		TiXmlDeclaration *declaration = new TiXmlDeclaration("1.0", "UTF-8", "");
 		TiXmlElement *version = new TiXmlElement("Version");
 		version->SetAttribute("Number", 1);
 

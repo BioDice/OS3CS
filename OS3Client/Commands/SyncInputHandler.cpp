@@ -14,6 +14,7 @@ namespace OS3CS
 	void SyncInputHandler::Delete(Socket *socket, string path)
 	{
 		string deletepath = ConvertPath(path);
+		deletepath = PATHQUOTES + deletepath + PATHQUOTES;
 		socket->write("DEL ");
 		socket->writeline(deletepath);
 
@@ -27,8 +28,10 @@ namespace OS3CS
 	void SyncInputHandler::Put(Socket *socket, string local,string remote)
 	{
 		string remotepath = ConvertPath(remote);
+		remotepath = PATHQUOTES + remotepath;
 		string localpath = ConvertPath(local);
-		socket->write("put " + remotepath + " ");
+		localpath = PATHQUOTES + localpath + PATHQUOTES;
+		socket->write("put " + remotepath);
 		socket->writeline(localpath);
 		char line[MAXPATH + 1];
 

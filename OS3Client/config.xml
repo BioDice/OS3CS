@@ -1,8 +1,9 @@
-<?xml version="1.0" ?>
-<Version Number="4" />
+<?xml version="1.0" encoding="UTF-8" ?>
+<Version Number="5" />
 <rootPath path="C:/Users/dev/Documents/GitHub/OS3CS/OS3Client" />
 <Filesystem>
-    <File filename="fdsfdsfsd.txt" Originalname="fdsfdsfsd.txt" directory="mapje/fdsfdsfsd.txt" Editdate="1417011405" />
-    <File filename="gitignore_global.txt" Originalname="gitignore_global.txt" directory="mapje/gitignore_global.txt" Editdate="1382115864" />
-    <File filename="NewMicrosofWord-document.docx" Originalname="NewMicrosofWord-document.docx" directory="mapje/map1/NewMicrosofWord-document.docx" Editdate="1417180552" />
+    <File filename="EENATW~1" Originalname="EENATW~1" directory="mapje/EENATW~1" Editdate="1389797254" />
+    <File filename=".DS_Store" Originalname=".DS_Store" directory="mapje/plaatje/.DS_Store" Editdate="1389797320" />
+    <File filename="frustrated.jpg" Originalname="frustrated.jpg" directory="mapje/plaatje/frustrated.jpg" Editdate="1389788340" />
+    <File filename="Studiegids Informatica 2013-2014 v1.pdf" Originalname="Studiegids Informatica 2013-2014 v1.pdf" directory="mapje/Studiegids Informatica 2013-2014 v1.pdf" Editdate="1377167036" />
 </Filesystem>

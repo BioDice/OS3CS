@@ -56,6 +56,11 @@ namespace OS3CS {
 			char buffer[MAXBUFFERSIZE + 1];
 			int bytesToRead, bytesRead, fileSize;
 
+			// Remove all double-quote characters
+			response.erase(
+				remove(response.begin(), response.end(), '\"'),
+				response.end()
+				);
 			ifstream myfile(response, ifstream::binary);
 
 			if (!myfile.is_open())

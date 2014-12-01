@@ -26,6 +26,13 @@ namespace OS3CS
 		'\"';
 	#endif
 
+	//static const char PATHESCAPE = 
+	//#if defined(__APPLE__) || defined(__linux__)
+	//		';
+	//#else
+	//		";
+	//#endif
+
 		static const char* OSRUNNING =
 	#if defined(__APPLE__) || defined(__linux__)
 			"GNU/Linux";
