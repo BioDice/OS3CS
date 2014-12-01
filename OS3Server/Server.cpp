@@ -9,7 +9,6 @@ namespace OS3CS
 
 	Server::~Server(void)
 	{
-		inputFactory->~InputFactory();
 		delete inputFactory;
 	}
 

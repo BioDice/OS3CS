@@ -9,12 +9,12 @@ namespace OS3CS
 
 	InputFactory::~InputFactory()
 	{
-		for (std::map<string, InputHandler*>::iterator MapItor = commands.begin(); MapItor != commands.end(); ++MapItor)
+		/*for (std::map<string, InputHandler*>::iterator MapItor = commands.begin(); MapItor != commands.end(); ++MapItor)
 		{
 			InputHandler* Value = (*MapItor).second;
 			delete Value;
 		}
-		/*for (std::map<std::string, InputHandler*>::iterator itr = commands.begin(); itr != commands.end(); itr++)
+		for (std::map<std::string, InputHandler*>::iterator itr = commands.begin(); itr != commands.end(); itr++)
 		{
 			delete itr->second;
 		}*/
