@@ -29,6 +29,10 @@ namespace OS3CS
 		else
 		{
 			puts( "File successfully deleted" );
+			std::string str = GetFileName(segments[0]);
+			char*filename = &str[0];
+			DirectoryWriter *writer = new DirectoryWriter();
+			writer->DeleteNode(filename);
 			//cout << "File succesfully deleted" ;
 			socket->writeline("");
 		}

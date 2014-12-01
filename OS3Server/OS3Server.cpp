@@ -1,6 +1,5 @@
 // OS3Server.cpp : Defines the entry point for the console application.
 //
-#include <vld.h>
 #include <string>
 #include "Server.h"
 
