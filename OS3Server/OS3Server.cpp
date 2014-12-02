@@ -12,7 +12,7 @@ using namespace OS3CS;
 #include <stdio.h>
 
 volatile bool isRunning = true;
-Server *server;
+//Server *server;
 
 BOOL CtrlHandler(DWORD fdwCtrlType)
 {
@@ -21,7 +21,7 @@ BOOL CtrlHandler(DWORD fdwCtrlType)
 		// Handle the CTRL-C signal. 
 	case CTRL_C_EVENT:
 		printf("Ctrl-C event\n\n");
-		delete server;
+		//delete server;
 		return(0);
 
 		// CTRL-CLOSE: confirm that the user wants to exit. 
@@ -86,7 +86,7 @@ int main()
 		cout << e.what() << endl;
 	}
 
-	server = new Server();
+	Server *server = new Server();
 	server->listen(2500);
 	delete server;
 
