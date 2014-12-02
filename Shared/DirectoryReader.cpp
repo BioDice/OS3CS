@@ -11,16 +11,13 @@ namespace OS3CS
 
 	DIR* DirectoryReader::open(string szPath, DIR* dir)
 	{
-		//DIR* pDir = NULL;
-
 		dir = opendir(szPath.c_str());
-		
+
 		if (dir == NULL)
 		{
 			delete dir;
 			throw("Directory cannot be opened");
 		}
-
 		return dir;
 	}
 

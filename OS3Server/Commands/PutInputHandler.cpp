@@ -66,13 +66,15 @@ namespace OS3CS
 				}
 			}
 
-			DirectoryReader * reader = new DirectoryReader();
+			DirectoryReader* reader = new DirectoryReader();
 			DIR* pDir = NULL;
 			pDir = reader->open(Currentpath() + PATHSEPERATOR + "mapje", pDir);
 			time_t iLastModified = reader->getLastModifiedTime(path);
 			writer->WriteNode(filename, directory, to_string(iLastModified));
+			delete writer;
 			// wordt niet gebruikt?
-			delete pDir;
+			closedir(pDir);
+			delete reader;
 		}
 		catch (exception ex)
 		{

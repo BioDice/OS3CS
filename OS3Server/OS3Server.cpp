@@ -1,5 +1,6 @@
 // OS3Server.cpp : Defines the entry point for the console application.
 //
+#include <vld.h>
 #include <string>
 #include "Server.h"
 
@@ -11,6 +12,7 @@ using namespace OS3CS;
 #include <stdio.h>
 
 volatile bool isRunning = true;
+Server *server;
 
 BOOL CtrlHandler(DWORD fdwCtrlType)
 {
@@ -19,7 +21,7 @@ BOOL CtrlHandler(DWORD fdwCtrlType)
 		// Handle the CTRL-C signal. 
 	case CTRL_C_EVENT:
 		printf("Ctrl-C event\n\n");
-		//Beep(750, 300);
+		delete server;
 		return(0);
 
 		// CTRL-CLOSE: confirm that the user wants to exit. 
@@ -72,14 +74,20 @@ int main()
 		return 1;
 	}
 #endif
-	DirectoryWriter *writer = new DirectoryWriter();
-	writer->InitList();
-	writer->~DirectoryWriter();
-	delete writer;
+	try
+	{
+		DirectoryWriter *writer = new DirectoryWriter();
+		writer->InitList();
+		delete writer;
 
-	Server *server = new Server();
+	}
+	catch (exception& e)
+	{
+		cout << e.what() << endl;
+	}
+
+	server = new Server();
 	server->listen(2500);
-	server->~Server();
 	delete server;
 
 	return 0;

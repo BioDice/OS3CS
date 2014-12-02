@@ -9,10 +9,10 @@ using namespace std;
 
 namespace OS3CS
 {
-	const int MAXBUFFERSIZE = 1024;
+	const int MAXBUFFERSIZE = 2048;
 	const int MAXPATH = 256;
 	static int Counter = 0;
-	static const string PATHSEPERATOR =
+	const string PATHSEPERATOR =
 	#if defined(__APPLE__) || defined(__linux__)
 			"/";
 	#else
@@ -33,7 +33,7 @@ namespace OS3CS
 	//		";
 	//#endif
 
-		static const char* OSRUNNING =
+	static const char* OSRUNNING =
 	#if defined(__APPLE__) || defined(__linux__)
 			"GNU/Linux";
 	#else

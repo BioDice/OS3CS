@@ -23,5 +23,6 @@ namespace OS3CS
 		void handle(Socket *socket);
 		void listen(int port);
 
+		bool IsRunning = true;
 	};
 }

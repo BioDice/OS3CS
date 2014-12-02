@@ -10,23 +10,23 @@ namespace OS3CS
 
     Client::~Client(void)
     {
-		delete inputFactory;
+		//delete inputFactory;
     }
 
     void Client::connect(const char* adress, int port)
     {
-        Socket * s = NULL;
+        Socket* s = NULL;
 		inputFactory = new ClientFactory();
 		inputFactory->Initialize();
         try
         {
-            s = new ClientSocket(adress,port);
+            s = new ClientSocket(adress, port);
 
 			cout << "Created ClientSocket" << endl;
 		
 			listenToSocket(s);
 			
-			string response;
+			string response = "";
 			while (getline(cin, response))
 			{
 				if (response.size() == 0)
@@ -51,11 +51,15 @@ namespace OS3CS
 						catch (const char* ex)
 						{
 							cout << ex << endl;
+							delete ex;
 						}
-					 }
+					}
 					else
-						inputFactory->CreateHandler("resp")->Process(s, response);
-					
+					{
+						inputHandler = inputFactory->CreateHandler("resp");
+						inputHandler->Process(s, response);
+					}
+
 					delete inputHandler;
 				}
 			}
@@ -64,6 +68,7 @@ namespace OS3CS
 		}
 		catch (runtime_error& ex)
 		{
+			delete inputFactory;
 			delete s;
 			throw(ex);
 		}

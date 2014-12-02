@@ -9,15 +9,16 @@ namespace OS3CS
 
 	Server::~Server(void)
 	{
-		delete inputFactory;
+		//delete inputFactory;
 	}
 
 	void Server::handle(Socket *socket)
 	{
 		inputFactory = new ServerFactory();
 		inputFactory->Initialize();
+
 		char response[MAXPATH +1];
-		cout << "Client connected!\n";
+		cout << "Client connected!" << endl;
 		socket->writeline("Welcome to this ultra pro *cough* Server");
 		socket->write("\n");
 		try
@@ -59,7 +60,6 @@ namespace OS3CS
 		ServerSocket serverSocket(port);
 
 		cout << "Server is listening..\n";
-
 		while (Socket *socket = serverSocket.accept())
 		{
 			cout << "New connection established..\n";
@@ -67,6 +67,7 @@ namespace OS3CS
 			this->handle(socket);
 
 			delete socket;
+
 			cout << "Client is disconnected\n";
 			cout << "Server is listening..\n";
 		}

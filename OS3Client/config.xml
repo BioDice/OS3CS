@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<Version Number="5" />
-<rootPath path="C:/Users/dev/Documents/GitHub/OS3CS/OS3Client" />
+<Version Number="6" />
+<rootPath path="C:/Users/dev/Documents/OS3CS/OS3Client" />
 <Filesystem>
-    <File filename="EENATW~1" Originalname="EENATW~1" directory="mapje/EENATW~1" Editdate="1389797254" />
-    <File filename=".DS_Store" Originalname=".DS_Store" directory="mapje/plaatje/.DS_Store" Editdate="1389797320" />
-    <File filename="frustrated.jpg" Originalname="frustrated.jpg" directory="mapje/plaatje/frustrated.jpg" Editdate="1389788340" />
-    <File filename="Studiegids Informatica 2013-2014 v1.pdf" Originalname="Studiegids Informatica 2013-2014 v1.pdf" directory="mapje/Studiegids Informatica 2013-2014 v1.pdf" Editdate="1377167036" />
+    <File filename="EENATW~1" Originalname="EENATW~1" directory="mapje/EENATW~1" Editdate="1417506577" />
+    <File filename="hai.txt~" Originalname="hai.txt~" directory="mapje/hai.txt~" Editdate="1417077201" />
+    <File filename=".DS_Store" Originalname=".DS_Store" directory="mapje/plaatje/.DS_Store" Editdate="1417506577" />
+    <File filename="frustrated.jpg" Originalname="frustrated.jpg" directory="mapje/plaatje/frustrated.jpg" Editdate="1417506577" />
+    <File filename="Studiegids Informatica 2013-2014 v1.pdf" Originalname="Studiegids Informatica 2013-2014 v1.pdf" directory="mapje/Studiegids Informatica 2013-2014 v1.pdf" Editdate="1417506577" />
 </Filesystem>

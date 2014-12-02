@@ -59,7 +59,7 @@ namespace OS3CS
 				if (bRecursive)
 				{
 					// not sure...
-					delete reader;
+					//delete reader;
 					RecursiveList(ConvertPath(szCurrent), true);
 				}
 			}
@@ -72,7 +72,6 @@ namespace OS3CS
 				string path = "";
 				vector<string>temp = segments;
 				for (size_t i = 0; i < temp.size(); i++)
-				//for each (string var in temp)
 				{
 					if (strcmp(temp[i].c_str(),"mapje")==0)
 					{
@@ -96,10 +95,11 @@ namespace OS3CS
 				time_t iLastModified = reader->getLastModifiedTime(szCurrent);
 				WriteNode(pEnt->d_name, path, to_string(iLastModified));
 			}
-
 			count++;
 		}
-		delete pDir, reader;
+		
+		closedir(pDir);
+		delete reader;
 	}
 
 	void DirectoryWriter::InitList()
@@ -108,7 +108,7 @@ namespace OS3CS
 		TiXmlDeclaration *declaration = new TiXmlDeclaration("1.0", "UTF-8", "");
 		TiXmlElement *version = new TiXmlElement("Version");
 		version->SetAttribute("Number", 1);
-
+		
 		TiXmlElement *rootpath = new TiXmlElement("rootPath");
 		string path = Currentpath().c_str();
 		rootpath->SetAttribute("path", path.c_str());

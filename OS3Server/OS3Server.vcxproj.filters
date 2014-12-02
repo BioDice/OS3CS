@@ -51,9 +51,6 @@
     <ClInclude Include="..\Shared\Globals.h">
       <Filter>Header Files\Shared</Filter>
     </ClInclude>
-    <ClInclude Include="ServerFactory.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\Shared\InputHandler.h">
       <Filter>Header Files\Shared</Filter>
     </ClInclude>
@@ -102,6 +99,7 @@
     <ClInclude Include="..\Shared\DirectoryReader.h">
       <Filter>Header Files\Shared</Filter>
     </ClInclude>
+    <ClInclude Include="ServerFactory.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Shared\Socket.cpp">

@@ -34,6 +34,8 @@ namespace OS3CS
 			DirectoryWriter *writer = new DirectoryWriter();
 			writer->DeleteNode(filename);
 			//cout << "File succesfully deleted" ;
+			delete writer;
+			socket->writeline("File succesfully deleted");
 			socket->writeline("");
 		}
 	}
