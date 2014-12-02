@@ -24,6 +24,7 @@ namespace OS3CS
 			socket->writeline(response);
 			TransferManager* manager = new TransferManager();
 			manager->SendFile(socket, segments[1]);
+			delete manager;
 		}
 		catch (exception ex)
 		{

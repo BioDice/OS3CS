@@ -1,1 +1,2 @@
 fuser -n tcp -k 2500
+fuser -k 8080/tcp
