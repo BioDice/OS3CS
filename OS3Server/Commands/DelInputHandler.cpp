@@ -24,8 +24,12 @@ namespace OS3CS
 			return;
 		}
 		
-		if( remove( segments[0].c_str() ) != 0 )
-			perror( "Error deleting file" );
+		if (remove(segments[0].c_str()) != 0)
+		{
+			perror("Error deleting file");
+			socket->writeline("Error deleting file");
+			socket->writeline("");
+		}
 		else
 		{
 			puts( "File successfully deleted" );

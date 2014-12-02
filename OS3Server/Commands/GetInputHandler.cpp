@@ -26,6 +26,7 @@ namespace OS3CS
 			
 			TransferManager *manager = new TransferManager();
 			manager->SendFile(socket,segments[0]);
+			delete manager;
 		}
 		catch (exception ex)
 		{

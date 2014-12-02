@@ -25,7 +25,7 @@ namespace OS3CS
 			string path = ConvertPath(segments[1]) + "/" + GetFileName(segments[0]);
 			TransferManager *manager = new TransferManager();
 			manager->ReceiveFile(socket,path);
-			
+			delete manager;
 		}
 		catch (exception ex)
 		{
