@@ -1,6 +1,6 @@
 // OS3Client.cpp : Defines the entry point for the console application.
 //
-#include <vld.h>
+//#include <vld.h>
 #include <string>
 #include "Client.h"
 
@@ -90,7 +90,6 @@ int main()
 			std::cout << ex.what() << endl;
 		}
 	}
-	
 	
 	return 0;
 }

@@ -14,7 +14,6 @@ namespace OS3CS
 	void QuitInputHandler::Process(Socket* socket, string response)
 	{
 		socket->writeline("Thank you for using Craptastic Server\r\nWe hope we never see you again. BYE!");
-		_CrtDumpMemoryLeaks();
 		socket->close();
 	}
 
