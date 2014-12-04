@@ -34,6 +34,7 @@ namespace OS3CS
 		catch (exception ex)
 		{
 			cout << "Something went wrong..." << endl;
+			return;
 		}
 	}
 

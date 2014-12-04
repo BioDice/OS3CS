@@ -33,7 +33,7 @@ namespace OS3CS {
 			catch (exception ex)
 			{
 				cout << "Error occured while reading file..." << endl;
-				throw ex;
+				return;
 			}
 
 			myfile.write(buffer, bytesRead);
@@ -66,7 +66,8 @@ namespace OS3CS {
 			if (!myfile.is_open())
 			{
 				myfile.close();
-				throw("Cannot open file");
+				cout << "Cannot open file" << endl;
+				return;
 			}
 
 			// goes to end of file to determine the size then sets the iterator back
@@ -84,7 +85,7 @@ namespace OS3CS {
 			socket->readline(line, MAXPATH);
 			if (strcmp(line, "READY") != 0)
 			{
-				throw("Server is not ready...");
+				cout << "Server is not ready..." << endl;
 				return;
 			}
 			cout << "Server is ready. Start sending content..." << endl;
@@ -107,6 +108,7 @@ namespace OS3CS {
 		catch (exception ex)
 		{
 			cout << "Something went wrong..." << endl;
+			return;
 		}
 	}
 

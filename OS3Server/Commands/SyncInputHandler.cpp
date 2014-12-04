@@ -30,7 +30,8 @@ namespace OS3CS
 		if (!myfile.is_open())
 		{
 			myfile.close();
-			throw("Cannot open file");
+			cout << "Cannot open file" << endl;
+			return;
 		}
 
 		// goes to end of file to determine the size then sets the iterator back
@@ -49,7 +50,7 @@ namespace OS3CS
 		socket->readline(line, MAXPATH);
 		if (strcmp(line, "READY") != 0)
 		{
-			throw("Client is not ready...");
+			cout << "Client is not read..." << endl;
 			return;
 		}
 		cout << "Client is ready. Start sending content..." << endl;

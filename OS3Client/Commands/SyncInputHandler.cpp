@@ -197,7 +197,7 @@ namespace OS3CS
 				catch (exception ex)
 				{
 					cout << "Error occured while reading file..." << endl;
-					throw ex;
+					return;
 				}
 
 				myfile.write(buffer, bytesRead);
@@ -216,6 +216,7 @@ namespace OS3CS
 		catch (exception ex)
 		{
 			cout << "Something went wrong..." << endl;
+			return;
 		}
 	}
 
