@@ -70,21 +70,33 @@ namespace OS3CS
 	bool FormatCommandPath(string commandLine, vector<string> &tokens, int outputNumber)
 	{
 		commandLine = commandLine.erase(0, 4);
-		StrSplit(commandLine, tokens, PATHQUOTES);
+		StrSplit(commandLine, tokens, '\"');
 		
 		if (tokens.size() == 1)
 		{
 			tokens.clear();
 			StrSplit(commandLine, tokens, ' ');
 		}
-		
 
 		StripWhiteSpaces(tokens);
 		if (tokens.size() == outputNumber)
 			return true;
 		else
-			return false;
+		{
+			StrSplit(commandLine, tokens, '\'');
 
+			if (tokens.size() == 1)
+			{
+				tokens.clear();
+				StrSplit(commandLine, tokens, ' ');
+			}
+			StripWhiteSpaces(tokens);
+			if (tokens.size() == outputNumber)
+				return true;
+			else
+				return false;
+		}
+		return false;
 	}
 
 	bool FormatConnectionString(string commandLine, vector<string> &tokens, int outputNumber)
