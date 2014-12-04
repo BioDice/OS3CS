@@ -62,7 +62,7 @@ namespace OS3CS
 				directory.append(pathsegments[i]);
 				if (i != pathsegments.size() - 1)
 				{
-					directory.append(PATHSEPERATOR);
+					directory.append("/");
 				}
 			}
 

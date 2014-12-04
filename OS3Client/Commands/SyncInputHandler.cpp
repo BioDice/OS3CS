@@ -70,6 +70,7 @@ namespace OS3CS
 	{
 		TiXmlDocument clientDoc("Config.xml");
 		TiXmlDocument serverDoc("serverxml/Config.xml");
+
 		bool loadOkay = clientDoc.LoadFile();
 		if (!loadOkay)
 		{

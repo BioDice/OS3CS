@@ -5,6 +5,7 @@
 #include "../../Shared/Socket.h"
 #include "../../Shared/Globals.h"
 #include "../../Shared/TransferManager.h"
+#include "../../Shared/DirectoryWriter.h"
 namespace OS3CS
 {
 	class GetInputHandler : public InputHandler
