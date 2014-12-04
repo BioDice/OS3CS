@@ -31,13 +31,15 @@ namespace OS3CS
 			throw("Can't stat dir");
 	}
 
-	void DirectoryReader::createSubDirectories(string szPath, bool bIgnoreLastPart)
+	bool DirectoryReader::createSubDirectories(string szPath, bool bIgnoreLastPart)
 	{
 		vector<string> vsSubDirectories = vector<string>();
 		StrSplit(szPath, vsSubDirectories);
 
 		if (vsSubDirectories.size() < 2)
-			throw("Incorrect path syntax");
+		{
+			return false;
+		}
 
 		bool bDirectoryExists = false;
 		string sCurrentDirectory(vsSubDirectories[0]);
@@ -61,9 +63,10 @@ namespace OS3CS
 #else
 				if (_mkdir(sCurrentDirectory.c_str()) != 0)
 #endif
-					throw("Could not make subdirectory.");
+					return false;
 			}
 		}
+		return true;
 	}
 
 	bool DirectoryReader::isFile(string szPath)
@@ -73,7 +76,7 @@ namespace OS3CS
 		if (stat(szPath.c_str(), &s) == 0)
 			return ((s.st_mode & S_IFDIR) != S_IFDIR);
 		else
-			throw("Can't stat file");
+			return false;
 	}
 
 	time_t DirectoryReader::getLastModifiedTime(string szPath)
@@ -83,7 +86,7 @@ namespace OS3CS
 		if (stat(szPath.c_str(), &s) == 0)
 			return s.st_mtime;
 		else
-			throw("Can't stat file");
+			return false;
 	}
 
 	void DirectoryReader::setLastModifiedTime(string szPath, time_t lModTime)
@@ -93,7 +96,7 @@ namespace OS3CS
 
 		if (stat(szPath.c_str(), &s) < 0)
 		{
-			throw("Can't stat file");
+			return;
 		}
 
 		new_times.actime = s.st_atime;
@@ -101,7 +104,7 @@ namespace OS3CS
 
 		if (utime(szPath.c_str(), &new_times) < 0)
 		{
-			throw("Can't utime file");
+			return;
 		}
 
 	}

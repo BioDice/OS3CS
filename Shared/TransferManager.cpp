@@ -15,8 +15,12 @@ namespace OS3CS {
 		int bytesToRead, bytesRead, fileSize;
 
 		ofstream myfile(response, ofstream::binary | ofstream::trunc);
-
 		socket->readline(buffer, MAXBUFFERSIZE);
+		if (strcmp(buffer, "ERROR") == 0)
+		{
+			return;
+		}
+
 		fileSize = stoi(buffer);
 		bytesToRead = fileSize;
 
@@ -67,6 +71,7 @@ namespace OS3CS {
 			{
 				myfile.close();
 				cout << "Cannot open file" << endl;
+				socket->writeline("ERROR");
 				return;
 			}
 
@@ -85,10 +90,10 @@ namespace OS3CS {
 			socket->readline(line, MAXPATH);
 			if (strcmp(line, "READY") != 0)
 			{
-				cout << "Server is not ready..." << endl;
+				cout << "Not ready..." << endl;
 				return;
 			}
-			cout << "Server is ready. Start sending content..." << endl;
+			cout << "Ready.. Start sending content..." << endl;
 			// send bytes to socket
 			while (bytesToRead > 0)
 			{

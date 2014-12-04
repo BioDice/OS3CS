@@ -31,7 +31,7 @@ namespace OS3CS
 		static bool isDir(string);
 		static bool isFile(string);
 
-		static void createSubDirectories(string, bool);
+		static bool createSubDirectories(string, bool);
 
 		static time_t getLastModifiedTime(string szPath);
 		static void setLastModifiedTime(string, time_t);
