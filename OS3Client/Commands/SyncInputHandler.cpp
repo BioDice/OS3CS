@@ -51,7 +51,7 @@ namespace OS3CS
 		manager->SendFile(socket,localpath);
 
 		delete manager;
-
+		
 		while (socket->readline(line, MAXPATH) > 0)
 		{
 			cout << line << endl;
@@ -162,6 +162,7 @@ namespace OS3CS
 					}
 				}
 				Put(socket, Currentpath().c_str() + string("/") + string(local), path);
+
 			}
 		}
 

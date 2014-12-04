@@ -34,7 +34,7 @@ namespace OS3CS
 
 			delete manager;
 
-			socket->writeline("");
+			//socket->writeline("");
 
 			DirectoryWriter *writer = new DirectoryWriter();
 			std::string str = GetFileName(segments[1]);
@@ -75,6 +75,8 @@ namespace OS3CS
 			// wordt niet gebruikt?
 			closedir(pDir);
 			delete reader;
+
+			socket->writeline("");
 		}
 		catch (exception ex)
 		{

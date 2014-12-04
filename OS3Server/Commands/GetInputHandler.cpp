@@ -21,8 +21,6 @@ namespace OS3CS
 				cout << "Syntax error: use put [remote file] [local dir]" << endl;
 				return;
 			}
-			char buffer[MAXBUFFERSIZE+1];
-			int bytesToRead, bytesRead, fileSize;
 			
 			TransferManager *manager = new TransferManager();
 			manager->SendFile(socket,segments[0]);

@@ -25,6 +25,11 @@ namespace OS3CS
 			TransferManager* manager = new TransferManager();
 			manager->SendFile(socket, segments[1]);
 			delete manager;
+			char line[MAXPATH];
+			while (socket->readline(line, MAXPATH) > 0)
+			{
+				cout << line << endl;
+			}
 		}
 		catch (exception ex)
 		{
